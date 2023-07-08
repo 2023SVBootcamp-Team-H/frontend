@@ -4,5 +4,17 @@ export default {
   theme: {
     extend: {},
   },
+  olors: {
+    dontworrybg: '#1A0C2F',
+    pageOutline: '#AF9ECC',
+    pageBackgroud: '#E9E4DA',
+    frameColor: '#727272',
+    textTitle: '#4E157A',
+    satisfactionTop: '#C5A7EC',
+    satisfactionBack: '#F2F1F3',
+    satisfactionButton: '#E3D8F0',
+    likeBackgroud: '#F4F1EC',
+  },
+
   plugins: [],
 };
