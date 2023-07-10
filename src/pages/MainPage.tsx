@@ -1,9 +1,10 @@
 import React from 'react';
 // import back from '@/assets/images/back.png';
+import Book from '@/components/Book';
 
 function MainPage() {
   return (
-    <div className="bg-dontworrybg bg-bgsub h-screen w-screen bg-cover">
+    <div className="bg-dontworrybg bg-bgsub h-full w-full bg-cover">
       {/* 배경이미지 */}
       {/* <img
         className="bg-dontworrybg bg-repeat z-40"
@@ -19,6 +20,7 @@ function MainPage() {
         <button
           className="text-white font-ham-l rounded-full bg-mainbutton px-16 py-4 text-[20px] mt-10 ml-10
           transition hover:bg-[#F8ECFF] hover:text-mainbutton "
+          onClick={Book}
           type="button"
         >
           고민 해결하러 가기

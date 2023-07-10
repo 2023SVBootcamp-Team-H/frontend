@@ -1,7 +1,7 @@
 import React from 'react';
 
-function statistics() {
+function Statistics() {
   return <div />;
 }
 
-export default statistics;
+export default Statistics;
