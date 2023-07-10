@@ -129,3 +129,24 @@ table {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'HahmletRegular';
+  src: url('./assets/fonts/HahmletRegular.ttf');
+}
+@font-face {
+  font-family: 'HahmletBold';
+  src: url('./assets/fonts/HahmletBold.ttf');
+}
+@font-face {
+  font-family: 'HahmletLight';
+  src: url('./assets/fonts/HahmletLight.ttf');
+}
+@font-face {
+  font-family: 'HahmletMedium';
+  src: url('./assets/fonts/HahmletMedium.ttf');
+}
+@font-face {
+  font-family: 'HahmletSemiBold';
+  src: url('./assets/fonts/HahmletSemiBold.ttf');
+}
