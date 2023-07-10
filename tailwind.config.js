@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         dontworrybg: '#1A0C2F',
+        mainbutton: '#885BD6',
         pageOutline: '#AF9ECC',
         pageBackgroud: '#E9E4DA',
         frameColor: '#727272',
@@ -21,6 +22,9 @@ export default {
         'ham-l': ['HahmletLight', 'sans-serif'],
         'ham-m': ['HahmletMedium', 'sans-serif'],
         'ham-sb': ['HahmletSemiBold', 'sans-serif'],
+      },
+      backgroundImage: {
+        main: "url('/assets/images/back.png')",
       },
     },
   },

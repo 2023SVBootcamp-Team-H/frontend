@@ -131,9 +131,22 @@ table {
 }
 
 @font-face {
-  font-family: 'Hahmlet-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2')
-    format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'HahmletRegular';
+  src: url('./assets/fonts/HahmletRegular.ttf');
+}
+@font-face {
+  font-family: 'HahmletBold';
+  src: url('./assets/fonts/HahmletBold.ttf');
+}
+@font-face {
+  font-family: 'HahmletLight';
+  src: url('./assets/fonts/HahmletLight.ttf');
+}
+@font-face {
+  font-family: 'HahmletMedium';
+  src: url('./assets/fonts/HahmletMedium.ttf');
+}
+@font-face {
+  font-family: 'HahmletSemiBold';
+  src: url('./assets/fonts/HahmletSemiBold.ttf');
 }
