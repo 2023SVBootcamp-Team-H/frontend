@@ -14,13 +14,14 @@ function MainPage() {
           Don&rsquo;t
         </div>
         <div className="text-white font-ham text-[120px] z-50 ">Worry</div>
+        <button
+          className="text-white font-ham-l rounded-full bg-mainbutton px-16 py-4 text-[20px] 
+          transition hover:bg-[#F8ECFF] hover:text-mainbutton animate-bounce"
+          type="button"
+        >
+          고민 해결하러 가기
+        </button>
       </div>
-      <button
-        className="text-white font-ham-l rounded-full bg-mainbutton px-16 py-4 text-[20px]"
-        type="button"
-      >
-        고민 해결하러 가기
-      </button>
     </div>
     // <div className="bg-dontworrybg">
     //   <div className="bg-main h-screen w-screen bg-cover" />
