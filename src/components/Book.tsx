@@ -11,6 +11,7 @@ function Book() {
       <img className="p-3" src={frame} alt="frame" />
       <div className="border-solid border-x-2 h-auto border-[#A9A9A9] blur-sm" />
       <img className="p-3" src={frame} alt="frame" />
+      <div>이미지</div>
     </div>
   );
 }
