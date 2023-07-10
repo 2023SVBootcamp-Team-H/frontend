@@ -24,7 +24,8 @@ export default {
         'ham-sb': ['HahmletSemiBold', 'sans-serif'],
       },
       backgroundImage: {
-        main: "url('/assets/images/back.png')",
+        bgmain: "url('@/assets/images/back.png')",
+        bgsub: "url('@/assets/images/back2.png')",
       },
     },
   },
