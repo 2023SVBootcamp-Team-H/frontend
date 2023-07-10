@@ -12,13 +12,13 @@ function MainPage() {
         alt="backgroundImage"
       /> */}
 
-      <div className="justify-center items-center content-center z-50 ml-[550px] pt-[430px] ">
+      <div className="flex flex-col items-center justify-center z-50 pt-[430px] ">
         {/* 로고 텍스트 */}
         <div className="text-white font-ham text-[120px] ">Don&rsquo;t</div>
         <div className="text-white font-ham text-[120px] ">Worry</div>
         {/* 고민해결하러가기 버튼 */}
         <button
-          className="text-white font-ham-l rounded-full bg-mainbutton px-16 py-4 text-[20px] mt-10 ml-10
+          className="text-white font-ham-l rounded-full bg-mainbutton px-16 py-4 text-[20px] mt-10
           transition hover:bg-[#F8ECFF] hover:text-mainbutton "
           onClick={Book}
           type="button"
@@ -26,6 +26,7 @@ function MainPage() {
           고민 해결하러 가기
         </button>
       </div>
+      <Book />
     </div>
     // <div className="bg-dontworrybg">
     //   <div className="bg-main h-screen w-screen bg-cover" />
