@@ -37,10 +37,6 @@ function MainPage() {
         </button>
       </div>
     </div>
-    // <div className="bg-dontworrybg">
-    //   <div className="bg-main h-screen w-screen bg-cover" />
-    //   <div className="text-white font-ham text-[120px]">Don&rsquo;t Worry</div>
-    // </div>
   );
 }
 
