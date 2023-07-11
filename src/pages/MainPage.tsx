@@ -5,14 +5,9 @@ import { useNavigate } from 'react-router-dom';
 function MainPage() {
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
 
-  // function toBook() {
-  //   // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
-  //   navigate('/book');
-  // }
-
-  // 만족도 조사 임시 버튼
   function toBook() {
-    navigate('/SatisfactionModal');
+    // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
+    navigate('/book');
   }
 
   return (
