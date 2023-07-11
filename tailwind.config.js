@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        dontworrybg: '#1A0C2F',
+        dontworrybg: '#1D1136',
         mainbutton: '#885BD6',
         pageOutline: '#AF9ECC',
         pageBackgroud: '#E9E4DA',
@@ -24,8 +24,9 @@ export default {
         'ham-sb': ['HahmletSemiBold', 'sans-serif'],
       },
       backgroundImage: {
-        bgmain: "url('@/assets/images/back.png')",
-        bgsub: "url('@/assets/images/back2.png')",
+        bgmain: "url('@/assets/images/backgroundMain.png')",
+        bgsub: "url('@/assets/images/backgroundSub.png')",
+        bookframe: "url('@/assets/images/frame.png')",
       },
     },
   },
