@@ -1,5 +1,6 @@
 import React from 'react';
 import 'animate.css';
+import SelectWorryL from '@/components/SelectWorryL';
 // import HTMLFlipBook from 'react-pageflip';
 // import family from '@/assets/images/category/family.png';
 // import frame from '@/assets/images/frame.png';
@@ -23,9 +24,10 @@ function BookPage() {
           className="bg-pageBackgroud  h-[620px] w-[450px]
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
-    flex "
+        "
         >
-          왼쪽 이미지
+          {/* 왼쪽 이미지 */}
+          <SelectWorryL />
         </div>
         {/* 오른쪽 페이지 */}
         <div
@@ -33,7 +35,7 @@ function BookPage() {
       bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
   flex "
         >
-          오른쪽 이미지
+          {/* 오른쪽 이미지 */}
         </div>
       </div>
     </div>

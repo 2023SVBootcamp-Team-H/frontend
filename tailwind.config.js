@@ -10,6 +10,7 @@ export default {
         pageBackgroud: '#E9E4DA',
         frameColor: '#727272',
         textTitle: '#4E157A',
+        textCategory: '#2C2C2C',
         satisfactionTop: '#C5A7EC',
         satisfactionBack: '#F2F1F3',
         satisfactionButton: '#E3D8F0',
