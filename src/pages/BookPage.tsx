@@ -1,6 +1,7 @@
 import React from 'react';
 import 'animate.css';
 import SelectWorryL from '@/components/SelectWorryL';
+import SelectWorryR from '@/components/SelectWorryR';
 // import HTMLFlipBook from 'react-pageflip';
 // import family from '@/assets/images/category/family.png';
 // import frame from '@/assets/images/frame.png';
@@ -36,6 +37,7 @@ function BookPage() {
   flex "
         >
           {/* 오른쪽 이미지 */}
+          <SelectWorryR />
         </div>
       </div>
     </div>
