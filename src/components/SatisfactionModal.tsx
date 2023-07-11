@@ -16,6 +16,7 @@ function SatisfactionModal({ onClickLikeToggleModal }: Props) {
     w-[410px] translate-x-1/2  transform rounded-[20px] bg-satisfactionBack
     sm:w-2/4 sm:h-96"
         >
+          {/* 모달 상단 헤더 */}
           <div
             className="flex justify-center
            bg-satisfactionTop rounded-t-[20px] p-6
@@ -34,6 +35,7 @@ function SatisfactionModal({ onClickLikeToggleModal }: Props) {
             </button> */}
           </div>
 
+          {/* 별점 */}
           <div className="">
             <div className="flex justify-center items-center mt-20 space-x-3 ">
               <button type="button">
@@ -53,6 +55,7 @@ function SatisfactionModal({ onClickLikeToggleModal }: Props) {
               </button>
             </div>
 
+            {/* 버튼 */}
             <div className="flex justify-center mt-16 drop-shadow-md">
               <button
                 type="button"
