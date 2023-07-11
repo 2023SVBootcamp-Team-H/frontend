@@ -13,11 +13,29 @@ function BookPage() {
     >
       {/* 책 요소 */}
       <div
-        className="bg-pageBackgroud  outline-pageOutline outline outline-[15px] rounded-md h-[600px] w-[430px]
+        className=" animate__animated animate__jackInTheBox
+        flex justify-center items-center
+        w-[fit] h-[fit] p-4 bg-pageBackgroud 
+       outline-pageOutline outline outline-[15px] rounded-md "
+      >
+        {/* 왼쪽 페이지 */}
+        <div
+          className="bg-pageBackgroud  h-[620px] w-[450px]
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
-    flex 
-    animate__animated animate__jackInTheBox"
-      />
+        border-solid border-r-[3px] border-[#D9D3C8] 
+    flex "
+        >
+          왼쪽 이미지
+        </div>
+        {/* 오른쪽 페이지 */}
+        <div
+          className="bg-pageBackgroud h-[620px] w-[450px]
+      bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
+  flex "
+        >
+          오른쪽 이미지
+        </div>
+      </div>
     </div>
   );
 }
