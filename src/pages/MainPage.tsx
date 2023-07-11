@@ -5,9 +5,14 @@ import { useNavigate } from 'react-router-dom';
 function MainPage() {
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
 
+  // function toBook() {
+  //   // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
+  //   navigate('/book');
+  // }
+
+  // 만족도 조사 임시 버튼
   function toBook() {
-    // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
-    navigate('/book');
+    navigate('/SatisfactionModal');
   }
 
   return (
@@ -37,10 +42,6 @@ function MainPage() {
         </button>
       </div>
     </div>
-    // <div className="bg-dontworrybg">
-    //   <div className="bg-main h-screen w-screen bg-cover" />
-    //   <div className="text-white font-ham text-[120px]">Don&rsquo;t Worry</div>
-    // </div>
   );
 }
 
