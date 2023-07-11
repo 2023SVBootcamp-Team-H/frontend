@@ -11,7 +11,7 @@ function BookPage() {
       className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     flex justify-center items-center"
     >
-      {/* 책 요소 */}
+      {/* 책 전체 요소 */}
       <div
         className=" animate__animated animate__jackInTheBox
         flex justify-center items-center
