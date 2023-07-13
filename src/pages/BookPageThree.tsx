@@ -18,7 +18,8 @@ function BookPageThree() {
         className=" animate__animated animate__jackInTheBox
         flex justify-center items-center
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
-       outline-pageOutline outline outline-[15px] rounded-md "
+       outline-pageOutline outline outline-[15px] rounded-md 
+       px-4 pt-5 pb-8"
       >
         {/* 왼쪽 페이지 */}
         <div

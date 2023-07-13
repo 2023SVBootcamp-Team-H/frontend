@@ -7,7 +7,7 @@ function MainPage() {
 
   function toBook() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
-    navigate('/book3');
+    navigate('/book');
   }
 
   return (
