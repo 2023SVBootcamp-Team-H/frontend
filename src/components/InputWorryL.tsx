@@ -6,7 +6,7 @@ function InputWorryL() {
     <div className=" ">
       {/* 고민 입력 창 제목 */}
       <div
-        className="font-ham-m text-textTitle text-[25px] mt-10 flex justify-center items-center text-center 
+        className="font-ham-m text-textTitle text-[25px] mt-10 flex justify-center items-center text-center
         leading-[55px] tracking-wider font-medium
         "
       >
@@ -30,11 +30,11 @@ function InputWorryL() {
               {/* 10대 버튼 */}
               <button
                 type="button"
-                className="flex justify-center items-center w-[60px] h-[27px] 
+                className="flex justify-center items-center w-[60px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-6"
               >
                 <div
-                  className="flex justify-center items-center text-center 
+                  className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
                 >
                   10대
@@ -43,11 +43,11 @@ function InputWorryL() {
               {/* 20대 버튼 */}
               <button
                 type="button"
-                className="flex justify-center items-center w-[60px] h-[27px] 
+                className="flex justify-center items-center w-[60px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-2"
               >
                 <div
-                  className="flex justify-center items-center text-center 
+                  className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
                 >
                   20대
@@ -56,11 +56,11 @@ function InputWorryL() {
               {/* 30대 버튼 */}
               <button
                 type="button"
-                className="flex justify-center items-center w-[60px] h-[27px] 
+                className="flex justify-center items-center w-[60px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-2"
               >
                 <div
-                  className="flex justify-center items-center text-center 
+                  className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
                 >
                   30대
@@ -72,11 +72,11 @@ function InputWorryL() {
               {/* 40대 버튼 */}
               <button
                 type="button"
-                className="flex justify-center items-center w-[60px] h-[27px] 
+                className="flex justify-center items-center w-[60px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-6"
               >
                 <div
-                  className="flex justify-center items-center text-center 
+                  className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
                 >
                   40대
@@ -85,11 +85,11 @@ function InputWorryL() {
               {/* 50대 버튼 */}
               <button
                 type="button"
-                className="flex justify-center items-center w-[60px] h-[27px] 
+                className="flex justify-center items-center w-[60px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-2"
               >
                 <div
-                  className="flex justify-center items-center text-center 
+                  className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
                 >
                   50대
@@ -98,11 +98,11 @@ function InputWorryL() {
               {/* 60대 버튼 */}
               <button
                 type="button"
-                className="flex justify-center items-center w-[60px] h-[27px] 
+                className="flex justify-center items-center w-[60px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-2"
               >
                 <div
-                  className="flex justify-center items-center text-center 
+                  className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
                 >
                   60대
@@ -125,11 +125,11 @@ function InputWorryL() {
             {/* 여자 버튼 */}
             <button
               type="button"
-              className="flex justify-center items-center w-[94px] h-[27px] 
+              className="flex justify-center items-center w-[94px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-6"
             >
               <div
-                className="flex justify-center items-center text-center 
+                className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
               >
                 여자
@@ -138,11 +138,11 @@ function InputWorryL() {
             {/* 남자 버튼 */}
             <button
               type="button"
-              className="flex justify-center items-center w-[94px] h-[27px] 
+              className="flex justify-center items-center w-[94px] h-[27px]
               bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner mt-1 ml-2"
             >
               <div
-                className="flex justify-center items-center text-center 
+                className="flex justify-center items-center text-center
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px] h-screen"
               >
                 남자
@@ -162,12 +162,12 @@ function InputWorryL() {
       <div>
         <button
           type="button"
-          className="flex justify-center items-center 
+          className="flex flex-col justify-center items-centern text-center m-auto
           w-[222px] h-[37px] bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
-          mt-6 ml-2 "
+          mt-6"
         >
           <div
-            className="flex font-ham-m justify-center items-center text-center 
+            className="flex font-ham-m justify-center items-center text-center ml-10
                 text-stone-600 text-xs font-normal origin-center leading-[13.20px]"
           >
             할머니에게 고민 상담 받기
@@ -178,3 +178,14 @@ function InputWorryL() {
   );
 }
 export default InputWorryL;
+
+// function InputWorryL() {
+//   return (
+//     <div className="flex flex-col">
+//       {/* 고민 입력 페이지 title */}
+//       <div className="flex">무엇이 고민인가요?</div>;
+//     </div>
+//   );
+// }
+
+// export default InputWorryL;
