@@ -9,6 +9,11 @@ function MainPage() {
 
   function toBook() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
+    navigate('/book');
+  }
+
+  function toStatistics() {
+    // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
     navigate('/book4');
   }
 
@@ -35,7 +40,7 @@ function MainPage() {
         {/* 통계 보러가기 버튼 */}
         <button
           className="flex items-center justify-center mt-4 text-white font-ham-l text-[15px]"
-          onClick={() => toBook()}
+          onClick={() => toStatistics()}
           type="button"
         >
           상담 인격 인기도 보러 가기
