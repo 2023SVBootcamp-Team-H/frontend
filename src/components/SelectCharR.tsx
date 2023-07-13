@@ -8,7 +8,7 @@ import youngboy from '@/assets/images/category/youngboy.png';
 
 function SelectCharR() {
   return (
-    <div className="justify-center items-center ml-12">
+    <div className="justify-center items-center ml-2">
       <div className="font-ham-m text-textCategory flex justify-center items-center mt-10">
         {/* 부모님 버튼 */}
         <button type="button">

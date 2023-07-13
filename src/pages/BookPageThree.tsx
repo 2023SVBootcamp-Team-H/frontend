@@ -1,12 +1,12 @@
 import React from 'react';
 import 'animate.css';
-import SelectWorryL from '@/components/SelectWorryL';
-import SelectWorryR from '@/components/SelectWorryR';
+import InputWorryL from '@/components/InputWorryL';
+import InputWorryR from '@/components/InputWorryR';
 // import HTMLFlipBook from 'react-pageflip';
 // import family from '@/assets/images/category/family.png';
 // import frame from '@/assets/images/frame.png';
 
-function BookPage() {
+function BookPageThree() {
   return (
     // 배경
     <div
@@ -26,32 +26,23 @@ function BookPage() {
           className="bg-pageBackgroud  h-[620px] w-[450px]
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
-        flex flex-col items-center
         "
         >
           {/* 왼쪽 이미지 */}
-          <SelectWorryL />
+          <InputWorryL />
         </div>
         {/* 오른쪽 페이지 */}
         <div
           className="bg-pageBackgroud h-[620px] w-[450px]
       bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
-  flex flex-col items-center"
+  flex "
         >
           {/* 오른쪽 이미지 */}
-          <SelectWorryR />
-          <button
-            type="button"
-            className="px-6 py-1 mt-10
-        bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
-         text-[#7C5197] font-ham-l text-center"
-          >
-            Next
-          </button>
+          <InputWorryR />
         </div>
       </div>
     </div>
   );
 }
 
-export default BookPage;
+export default BookPageThree;
