@@ -11,7 +11,7 @@ import wedding from '@/assets/images/category/wedding.png';
 
 function SelectWorryR() {
   return (
-    <div className="justify-center items-center ml-20">
+    <div className="flex flex-col justify-center items-center m-auto space-y-5">
       <div className="font-ham-m text-textCategory flex justify-center items-center mt-5">
         {/* 운동 버튼 */}
         <button type="button">
