@@ -1,7 +1,7 @@
 import React from 'react';
 import 'animate.css';
 import StatisticsL from '@/components/StatisticsL';
-// import StatisticsR from '@/components/StatisticsR';
+import StatisticsR from '@/components/StatisticsR';
 // import HTMLFlipBook from 'react-pageflip';
 // import family from '@/assets/images/category/family.png';
 // import frame from '@/assets/images/frame.png';
@@ -37,7 +37,7 @@ function BookPageFour() {
   flex "
         >
           {/* 오른쪽 이미지 */}
-          {/* <StatisticsR /> */}
+          <StatisticsR />
         </div>
       </div>
     </div>
