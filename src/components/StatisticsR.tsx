@@ -10,9 +10,9 @@ function StatisticsR() {
   // };
 
   return (
-    <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full ">
+    <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full mt-16">
       <div className="items-center text-[23px]">인기도 통계</div>
-      <div className="w-full h-full">
+      <div className="w-96 h-full mt-10">
         <BarChart test={[50, 92, 24, 56, 78]} />
       </div>
     </div>
