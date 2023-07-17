@@ -1,13 +1,27 @@
-// import React, { useState, useRef, useEffect, Ref } from 'react';
-// import HTMLFlipBook, { PageFlip } from 'react-pageflip';
-// import PropTypes from 'prop-types';
+// import React, {
+//   useState,
+//   useRef,
+//   useEffect,
+//   ForwardedRef,
+//   // LegacyRef,
+//   // MutableRefObject,
+// } from 'react';
+// import HTMLFlipBook from 'react-pageflip';
+// import { PageFlip } from 'page-flip';
 
-// interface PageCoverProps {
-//   children: React.ReactNode;
+// const bookElement = document.getElementById('book');
+// if (bookElement) {
+//   const pageFlip = new PageFlip(bookElement, {
+//     width: 400, // required parameter - base page width
+//     // 다른 설정들...
+//   });
+// } else {
+//   // 'book' 요소가 존재하지 않을 때에 대한 예외 처리
+//   console.error("Element with ID 'book' not found.");
 // }
 
-// const PageCover = React.forwardRef<HTMLDivElement, PageCoverProps>(
-//   (props, ref) => {
+// const PageCover = React.forwardRef(
+//   (props: { children: React.ReactNode }, ref: ForwardedRef<HTMLDivElement>) => {
 //     return (
 //       <div className="page page-cover" ref={ref} data-density="hard">
 //         <div className="page-content">
@@ -17,52 +31,41 @@
 //     );
 //   },
 // );
-
-// PageCover.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };
-
-// interface PageProps {
-//   number: number;
-//   children: React.ReactNode;
-// }
-
-// const Page = React.forwardRef<HTMLDivElement, PageProps>((props, ref) => {
-//   return (
-//     <div className="page" ref={ref}>
-//       <div className="page-content">
-//         <h2 className="page-header">페이지 헤더 - {props.number}</h2>
-//         <div className="page-image" />
-//         <div className="page-text">{props.children}</div>
-//         <div className="page-footer">{props.number + 1}</div>
+// const Page = React.forwardRef(
+//   (
+//     props: { number: number; children: React.ReactNode },
+//     ref: ForwardedRef<HTMLDivElement>,
+//   ) => {
+//     return (
+//       <div className="page" ref={ref}>
+//         <div className="page-content">
+//           <h2 className="page-header">페이지 헤더 - {props.number}</h2>
+//           <div className="page-image" />
+//           <div className="page-text">{props.children}</div>
+//           <div className="page-footer">{props.number + 1}</div>
+//         </div>
 //       </div>
-//     </div>
-//   );
-// });
-
-// Page.propTypes = {
-//   number: PropTypes.number.isRequired,
-//   children: PropTypes.node.isRequired,
-// };
+//     );
+//   },
+// );
 
 // function DemoBook() {
 //   const [page, setPage] = useState(0);
 //   const [totalPage, setTotalPage] = useState(0);
-//   const flipBook = useRef<PageFlip>(null);
+//   const flipBook = useRef<HTMLFlipBook>(null);
 //   const nextButtonClick = () => {
-//     flipBook.current?.getPageFlip().flipNext();
+//     flipBook.current!.getPageFlip().flipNext();
 //   };
 //   const prevButtonClick = () => {
-//     flipBook.current?.getPageFlip().flipPrev();
+//     flipBook.current!.getPageFlip().flipPrev();
 //   };
-//   const onPage = (e: { data: number }) => {
+//   const onPage = (e) => {
 //     setPage(e.data);
 //   };
 //   useEffect(() => {
 //     console.log(flipBook);
-//     setTotalPage(flipBook.current?.getPageFlip().getPageCount() || 0);
+//     setTotalPage(flipBook.current.getPageFlip().getPageCount());
 //   }, []);
-
 //   return (
 //     <div>
 //       <HTMLFlipBook
@@ -78,7 +81,7 @@
 //         mobileScrollSupport
 //         onFlip={onPage}
 //         className="demo-book"
-//         ref={flipBook as Ref<HTMLFlipBook>}
+//         ref={flipBook}
 //       >
 //         <PageCover>책 제목</PageCover>
 //         <Page number={1}>Lorem ipsum...</Page>
@@ -102,5 +105,4 @@
 //     </div>
 //   );
 // }
-
 // export default DemoBook;

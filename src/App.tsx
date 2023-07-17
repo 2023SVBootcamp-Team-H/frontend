@@ -5,6 +5,7 @@ import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
 
 import MainPage from '@/pages/MainPage';
+// import DemoBook from './components/Book';
 import BookPageFour from './pages/BookPageFour';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/book3" element={<BookPageThree />} />
         <Route path="/book2" element={<BookPageTwo />} />
         <Route path="/book4" element={<BookPageFour />} />
+        {/* <Route path="/demobook" element={<DemoBook />} /> */}
       </Routes>
     </BrowserRouter>
   );
