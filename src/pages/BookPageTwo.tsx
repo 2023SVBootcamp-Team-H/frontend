@@ -1,5 +1,6 @@
 import React from 'react';
 import 'animate.css';
+import { useNavigate } from 'react-router-dom';
 import SelectCharL from '@/components/SelectCharL';
 import SelectCharR from '@/components/SelectCharR';
 // import HTMLFlipBook from 'react-pageflip';
@@ -7,6 +8,17 @@ import SelectCharR from '@/components/SelectCharR';
 // import frame from '@/assets/images/frame.png';
 
 function BookPageTwo() {
+  const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
+
+  function toBookPageTwo() {
+    // react-router-dom을 이용한 고민 입력 페이지로 이동 함수
+    navigate('/book');
+  }
+
+  function toBookPageThree() {
+    // react-router-dom을 이용한 고민 입력 페이지로 이동 함수
+    navigate('/book3');
+  }
   return (
     // 배경
     <div
@@ -15,8 +27,9 @@ function BookPageTwo() {
     >
       {/* 책 전체 요소 */}
       <div
-        className=" animate__animated animate__jackInTheBox
+        className=" 
         flex justify-center items-center
+        animate__animated animate__fadeIn
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
        px-4 pt-5 pb-8"
@@ -33,6 +46,7 @@ function BookPageTwo() {
           <SelectCharL />
           <button
             type="button"
+            onClick={() => toBookPageTwo()}
             className="px-6 py-1 mt-72 items-center
         bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
          text-[#7C5197] font-ham-l text-center"
@@ -50,6 +64,7 @@ function BookPageTwo() {
           <SelectCharR />
           <button
             type="button"
+            onClick={() => toBookPageThree()}
             className="px-6 py-1 mt-12
         bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
          text-[#7C5197] font-ham-l text-center"

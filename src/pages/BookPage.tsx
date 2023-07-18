@@ -23,7 +23,7 @@ function BookPage() {
     >
       {/* 책 전체 요소 */}
       <div
-        className=" animate__animated animate__jackInTheBox
+        className=" animate__animated animate__fadeIn
         flex justify-center items-center
         w-[fit] h-[fit] p-4 bg-pageBackgroud
        outline-pageOutline outline outline-[15px] rounded-md
