@@ -120,13 +120,13 @@ import wedding from '@/assets/images/category/wedding.png';
 
 // export default SelectWorryR;
 
-interface SelectWorryLProps {
+interface SelectWorryRProps {
   category: string;
   imageSrc: string;
   buttonText: string;
 }
 
-interface ButtonProps extends SelectWorryLProps {
+interface ButtonProps extends SelectWorryRProps {
   handleButtonClick: (buttonName: string) => void;
   activeButton: string | null;
 }
@@ -152,7 +152,7 @@ function Button({
   );
 }
 
-function SelectWorryL() {
+function SelectWorryR() {
   const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const handleButtonClick = (buttonName: string) => {
@@ -229,4 +229,4 @@ function SelectWorryL() {
   );
 }
 
-export default SelectWorryL;
+export default SelectWorryR;
