@@ -44,6 +44,11 @@ function InputWorryL() {
     return !(selectedAge && selectedGender && inputText.trim().length > 0);
   };
 
+  // 고민 상담받기 버튼 비활성화일 때 투명도 조정을 위한 클래스 반환 함수
+  const getSubmitButtonOpacityClass = () => {
+    return isSubmitButtonDisabled() ? 'opacity-60' : '';
+  };
+
   return (
     <div className=" flex flex-col mt-10 justify-center items-center space-y-8 ">
       {/* 고민 입력 창 제목 */}
@@ -149,9 +154,9 @@ function InputWorryL() {
       <div>
         <button
           type="button"
-          className=" m-auto text-center p-3 px-9 text-[13px]
-         bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
-         text-stone-600 font-ham-m "
+          className={`m-auto text-center p-3 px-9 text-[13px]
+          bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
+          text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
           disabled={isSubmitButtonDisabled()}
         >
           할머니에게 고민 상담 받기
