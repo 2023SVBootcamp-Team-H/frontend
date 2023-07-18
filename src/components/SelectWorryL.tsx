@@ -6,7 +6,7 @@ import friendship from '@/assets/images/category/friendship.png';
 import job from '@/assets/images/category/job.png';
 import love from '@/assets/images/category/love.png';
 import study from '@/assets/images/category/study.png';
-
+import { SelectWorryProps } from '@/pages/BookPage';
 // function SelectWorryL() {
 //   const [activeButton, setActiveButton] = useState(null);
 
@@ -174,7 +174,10 @@ function Button({
   );
 }
 
-function SelectWorryL() {
+function SelectWorryL({
+  selectedButton,
+  handleSelectButton,
+}: SelectWorryProps) {
   const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const handleButtonClick = (buttonName: string) => {

@@ -4,9 +4,9 @@ import popularbuttonIcon from '@/assets/images/popularbuttonIcon.svg';
 import star from '@/assets/images/star.svg';
 
 interface Props {
-  onClickLikeToggleModal: () => void;
+  onClickToggleModal: () => void;
 }
-function SatisfactionModal({ onClickLikeToggleModal }: Props) {
+function SatisfactionModal({ onClickToggleModal }: Props) {
   return (
     <div>
       <div>
@@ -88,8 +88,8 @@ function SatisfactionModal({ onClickLikeToggleModal }: Props) {
           onClick={(e: React.MouseEvent) => {
             e.preventDefault();
 
-            if (onClickLikeToggleModal) {
-              onClickLikeToggleModal();
+            if (onClickToggleModal) {
+              onClickToggleModal();
             }
           }}
           type="button"

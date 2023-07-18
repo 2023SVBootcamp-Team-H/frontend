@@ -8,6 +8,7 @@ import military from '@/assets/images/category/military.png';
 import money from '@/assets/images/category/money.png';
 import sports from '@/assets/images/category/sports.png';
 import wedding from '@/assets/images/category/wedding.png';
+import { SelectWorryProps } from '@/pages/BookPage';
 
 // function SelectWorryR() {
 //   return (
@@ -152,7 +153,10 @@ function Button({
   );
 }
 
-function SelectWorryR() {
+function SelectWorryR({
+  selectedButton,
+  handleSelectButton,
+}: SelectWorryProps) {
   const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const handleButtonClick = (buttonName: string) => {

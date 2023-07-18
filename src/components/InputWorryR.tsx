@@ -1,8 +1,15 @@
-import React from 'react';
+import { useState, useCallback } from 'react';
 import 'animate.css';
 import grandma from '@/assets/images/category/grandma.png';
+import SatisfactionModal from '@/components/SatisfactionModal';
 
 function InputWorryR() {
+  const [isOpenModal, setOpenModal] = useState<boolean>(false);
+
+  const onClickToggleModal = useCallback(() => {
+    setOpenModal(!isOpenModal);
+    console.log(isOpenModal);
+  }, [isOpenModal]);
   return (
     <div className="flex flex-col justify-center items-center m-auto space-y-5">
       <div className="font-ham-m text-textTitle text-center text-[25px]">
@@ -20,10 +27,15 @@ function InputWorryR() {
       </div>
       <button
         type="button"
+        onClick={onClickToggleModal}
         className="w-72 py-2 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
       >
         할머니의 답변을 만족하시나요?
       </button>
+
+      {isOpenModal ? (
+        <SatisfactionModal onClickToggleModal={onClickToggleModal} />
+      ) : null}
     </div>
   );
 }
