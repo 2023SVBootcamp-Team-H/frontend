@@ -143,7 +143,7 @@ function Button({
       type="button"
       onClick={() => handleButtonClick(category)}
       className={`flex flex-col items-center justify-center opacity-60 mr-10 ml-10 ${
-        activeButton === category ? 'text-textTitle' : ''
+        activeButton === category ? 'text-textTitle opacity-90' : ''
       }`}
     >
       <img className="w-[90px] h-[90px]" src={imageSrc} alt={category} />
