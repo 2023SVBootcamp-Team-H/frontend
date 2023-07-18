@@ -1,7 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'animate.css';
 
 function InputWorryL() {
+  const [selectedAge, setSelectedAge] = useState<number | null>(null);
+  const [selectedGender, setSelectedGender] = useState<string | null>(null);
+  const [inputText, setInputText] = useState('');
+
+  // 나이 버튼 클릭 핸들러
+  const handleAgeButtonClick = (age: number) => {
+    setSelectedAge(age);
+  };
+
+  // 성별 버튼 클릭 핸들러
+  const handleGenderButtonClick = (gender: string) => {
+    setSelectedGender(gender);
+  };
+
+  // 고민 입력 핸들러
+  const handleInputTextChange = (event: any) => {
+    setInputText(event.target.value);
+  };
+
+  // 선택된 나이 버튼의 색상을 반환하는 함수
+  const getAgeButtonStyle = (age: number) => {
+    return `w-[60px] h-[27px] bg ${
+      selectedAge === age ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
+    } rounded-[39px] border ${
+      selectedAge === age ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
+    } shadow-inner text-stone-600 text-xs font-normal origin-center leading-[13.20px]`;
+  };
+
+  // 선택된 성별 버튼의 색상을 반환하는 함수
+  const getGenderButtonStyle = (gender: string) => {
+    return `w-[94px] h-[27px] bg ${
+      selectedGender === gender ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
+    } rounded-[39px] border ${
+      selectedGender === gender ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
+    } shadow-inner text-stone-600 text-xs font-normal origin-center leading-[13.20px] `;
+  };
+
+  // 고민 상담받기 버튼 활성화 여부 확인 함수
+  const isSubmitButtonDisabled = () => {
+    return !(selectedAge && selectedGender && inputText.trim().length > 0);
+  };
+
   return (
     <div className=" flex flex-col mt-10 justify-center items-center space-y-8 ">
       {/* 고민 입력 창 제목 */}
@@ -18,27 +60,24 @@ function InputWorryL() {
               {/* 10대 버튼 */}
               <button
                 type="button"
-                className=" w-[60px] h-[27px]
-              bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner
-              text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+                className={getAgeButtonStyle(10)}
+                onClick={() => handleAgeButtonClick(10)}
               >
                 10대
               </button>
               {/* 20대 버튼 */}
               <button
                 type="button"
-                className=" w-[60px] h-[27px]
-              bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-              text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+                className={getAgeButtonStyle(20)}
+                onClick={() => handleAgeButtonClick(20)}
               >
                 20대
               </button>
               {/* 30대 버튼 */}
               <button
                 type="button"
-                className=" w-[60px] h-[27px]
-              bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-              text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+                className={getAgeButtonStyle(30)}
+                onClick={() => handleAgeButtonClick(30)}
               >
                 30대
               </button>
@@ -47,27 +86,24 @@ function InputWorryL() {
               {/* 40대 버튼 */}
               <button
                 type="button"
-                className=" w-[60px] h-[27px]
-          bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-          text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+                className={getAgeButtonStyle(40)}
+                onClick={() => handleAgeButtonClick(40)}
               >
                 40대
               </button>
               {/* 50대 버튼 */}
               <button
                 type="button"
-                className=" w-[60px] h-[27px]
-          bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-          text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+                className={getAgeButtonStyle(50)}
+                onClick={() => handleAgeButtonClick(50)}
               >
                 50대
               </button>
               {/* 60대 버튼 */}
               <button
                 type="button"
-                className=" w-[60px] h-[27px]
-          bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-          text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+                className={getAgeButtonStyle(60)}
+                onClick={() => handleAgeButtonClick(60)}
               >
                 60대
               </button>
@@ -84,18 +120,16 @@ function InputWorryL() {
             {/* 여자 버튼 */}
             <button
               type="button"
-              className=" w-[94px] h-[27px]
-          bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-          text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+              className={getGenderButtonStyle('여자')}
+              onClick={() => handleGenderButtonClick('여자')}
             >
               여자
             </button>
             {/* 남자 버튼 */}
             <button
               type="button"
-              className=" w-[94px] h-[27px]
-          bg-white bg-opacity-25 rounded-[39px] border border-stone-400 shadow-inner 
-          text-stone-600 text-xs font-normal origin-center leading-[13.20px] "
+              className={getGenderButtonStyle('남자')}
+              onClick={() => handleGenderButtonClick('남자')}
             >
               남자
             </button>
@@ -107,6 +141,8 @@ function InputWorryL() {
           w-[280px] h-[200px] bg-slate-100 bg-opacity-30 rounded-[19px] outline-none
         text-center font-ham-l text-[#505050] text-[14px]"
           placeholder="고민을 입력해주세요"
+          value={inputText}
+          onChange={handleInputTextChange}
         />
       </div>
       {/* 고민 상담받기 버튼 */}
@@ -116,6 +152,7 @@ function InputWorryL() {
           className=" m-auto text-center p-3 px-9 text-[13px]
          bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
          text-stone-600 font-ham-m "
+          disabled={isSubmitButtonDisabled()}
         >
           할머니에게 고민 상담 받기
         </button>
