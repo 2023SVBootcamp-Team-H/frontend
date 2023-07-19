@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import 'animate.css';
 import InputWorryL from '@/components/InputWorryL';
 import InputWorryR from '@/components/InputWorryR';
+import SatisfactionModal from '@/components/SatisfactionModal';
 
-function BookPageThree() {
+function BookPageThree({ props: onClickToggleModal }: any) {
   // const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
   // const onSelectChar = (char: string) => {
   //   setSelectedChar(char);
   // };
-
   return (
     // 배경
     <div className="flex justify-center items-center">
@@ -27,17 +27,15 @@ function BookPageThree() {
         border-solid border-r-[3px] border-[#D9D3C8] 
         "
         >
-          {/* 왼쪽 이미지 */}
           <InputWorryL />
         </div>
         {/* 오른쪽 페이지 */}
         <div
-          className="bg-pageBackgroud h-[620px] w-[450px]
-      bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
-  flex "
+          className=" flex flex-col
+          bg-pageBackgroud h-[620px] w-[450px]
+            bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat "
         >
-          {/* 오른쪽 이미지 */}
-          <InputWorryR />
+          <InputWorryR props={onClickToggleModal} />
         </div>
       </div>
     </div>
