@@ -10,15 +10,14 @@ function BookPage() {
   return (
     // 배경
     <div
-      className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
-    flex justify-center items-center"
+      className="
+    flex justify-center items-center "
     >
       {/* 책 전체 요소 */}
       <div
-        className=" animate__animated animate__jackInTheBox
+        className="
         flex justify-center items-center
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
-       outline-pageOutline outline outline-[15px] rounded-md 
        px-4 pt-5 pb-8"
       >
         {/* 왼쪽 페이지 */}
