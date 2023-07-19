@@ -3,9 +3,6 @@ import 'animate.css';
 import { useNavigate } from 'react-router-dom';
 import SelectCharL from '@/components/SelectCharL';
 import SelectCharR from '@/components/SelectCharR';
-// import HTMLFlipBook from 'react-pageflip';
-// import family from '@/assets/images/category/family.png';
-// import frame from '@/assets/images/frame.png';
 
 function BookPageTwo() {
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
@@ -32,7 +29,6 @@ function BookPageTwo() {
       <div
         className=" 
         flex justify-center items-center
-        animate__animated animate__fadeIn
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
        px-4 pt-5 pb-8"

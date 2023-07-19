@@ -17,9 +17,6 @@
 //     <div>
 //       <BookPageThree />
 //     </div>,
-//     <div>
-//       <BookPageFour />
-//     </div>,
 //   ];
 
 //   return (

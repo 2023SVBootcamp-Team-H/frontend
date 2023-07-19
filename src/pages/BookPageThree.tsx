@@ -2,24 +2,20 @@ import React, { useState } from 'react';
 import 'animate.css';
 import InputWorryL from '@/components/InputWorryL';
 import InputWorryR from '@/components/InputWorryR';
-// import HTMLFlipBook from 'react-pageflip';
-// import family from '@/assets/images/category/family.png';
-// import frame from '@/assets/images/frame.png';
 
 function BookPageThree() {
-  const [selectedChar, setSelectedChar] = useState<string | undefined>();
+  // const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
-  const onSelectChar = (char: string) => {
-    setSelectedChar(char);
-  };
+  // const onSelectChar = (char: string) => {
+  //   setSelectedChar(char);
+  // };
 
   return (
     // 배경
     <div className="flex justify-center items-center">
       {/* 책 전체 요소 */}
       <div
-        className="animate__animated animate__fadeIn
-        flex justify-center items-center
+        className="flex justify-center items-center
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
        px-4 pt-5 pb-8"
@@ -32,7 +28,7 @@ function BookPageThree() {
         "
         >
           {/* 왼쪽 이미지 */}
-          <InputWorryL selectedChar={selectedChar} />
+          <InputWorryL />
         </div>
         {/* 오른쪽 페이지 */}
         <div
