@@ -52,11 +52,15 @@
 //       >
 //         {pages}
 //       </FlipPage>
-//       <div className="mt-5">
+//       <div className="mt-5 mx-auto">
 //         <button type="button" onClick={handlePrevPage} className="bg-amber-300">
 //           Prev
 //         </button>
-//         <button type="button" onClick={handleNextPage} className="bg-amber-300">
+//         <button
+//           type="button"
+//           onClick={handleNextPage}
+//           className="bg-amber-300  r-24"
+//         >
 //           Next
 //         </button>
 //       </div>

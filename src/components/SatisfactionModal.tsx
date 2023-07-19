@@ -38,8 +38,11 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
 
   function toStatistics() {
-    // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
     navigate('/satis');
+  }
+
+  function toMain() {
+    navigate('/');
   }
   return (
     <div>
@@ -78,6 +81,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
             <div className="flex justify-center mt-16 drop-shadow-md">
               <button
                 type="button"
+                onClick={() => toMain()}
                 className="font-ham text-[#A16AE7] 
                 bg-satisfactionButton px-12 py-4 rounded-full
                 mr-4"
