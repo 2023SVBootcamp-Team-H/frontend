@@ -14,7 +14,7 @@ function MainPage() {
 
   function toStatistics() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
-    navigate('/book4');
+    navigate('/satis');
   }
 
   return (
