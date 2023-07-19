@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'animate.css';
 import InputWorryL from '@/components/InputWorryL';
 import InputWorryR from '@/components/InputWorryR';
@@ -7,12 +7,18 @@ import InputWorryR from '@/components/InputWorryR';
 // import frame from '@/assets/images/frame.png';
 
 function BookPageThree() {
+  const [selectedChar, setSelectedChar] = useState<string | undefined>();
+
+  const onSelectChar = (char: string) => {
+    setSelectedChar(char);
+  };
+
   return (
     // 배경
     <div className="flex justify-center items-center">
       {/* 책 전체 요소 */}
       <div
-        className="
+        className="animate__animated animate__fadeIn
         flex justify-center items-center
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
@@ -26,7 +32,7 @@ function BookPageThree() {
         "
         >
           {/* 왼쪽 이미지 */}
-          <InputWorryL />
+          <InputWorryL selectedChar={selectedChar} />
         </div>
         {/* 오른쪽 페이지 */}
         <div

@@ -1,15 +1,22 @@
-import React from 'react';
+import { useState, useCallback } from 'react';
 import 'animate.css';
 import grandma from '@/assets/images/category/grandma.png';
+import SatisfactionModal from '@/components/SatisfactionModal';
 
 function InputWorryR() {
+  const [isOpenModal, setOpenModal] = useState<boolean>(false);
+
+  const onClickToggleModal = useCallback(() => {
+    setOpenModal(!isOpenModal);
+    console.log(isOpenModal);
+  }, [isOpenModal]);
   return (
     <div className="flex flex-col justify-center items-center m-auto space-y-5">
       <div className="font-ham-m text-textTitle text-center text-[25px]">
         할머니의 답변
       </div>
       <img className=" opacity-60 w-[150px]" src={grandma} alt="grandma" />
-      <div className="w-[330px] h-[270px] text-center font-ham-l text-[18px] leading-snug">
+      <div className="w-[350px] h-[270px] text-center font-ham-l text-[16px] leading-6">
         아이고, 내 별님아, 어려운 날이 있죠. 그런s데 그게 다 살아가는
         과정이란다. 우선은 차분하게 마음을 가라앉히고, 따뜻한 차 한 잔도 괜찮을
         거 같네. 때론 이야기를 친구나 가족에게 나누는 것도 마음을 가볍게
@@ -18,9 +25,17 @@ function InputWorryR() {
         생각해봐, 내 새끼야. 그리고 잊지 말고 자기 전에 따뜻한 목욕도 한 번
         즐겨봐. 그게 마음을 편안하게 해줄 거라네.
       </div>
-      <div className="w-72 py-1 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner">
+      <button
+        type="button"
+        onClick={onClickToggleModal}
+        className="w-72 py-2 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
+      >
         할머니의 답변을 만족하시나요?
-      </div>
+      </button>
+
+      {isOpenModal ? (
+        <SatisfactionModal onClickToggleModal={onClickToggleModal} />
+      ) : null}
     </div>
   );
 }
