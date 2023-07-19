@@ -15,10 +15,7 @@ function BookPageThree() {
 
   return (
     // 배경
-    <div
-      className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
-    flex justify-center items-center"
-    >
+    <div className="flex justify-center items-center">
       {/* 책 전체 요소 */}
       <div
         className="animate__animated animate__fadeIn
