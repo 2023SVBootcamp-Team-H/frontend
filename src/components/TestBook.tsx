@@ -1,6 +1,5 @@
 // import React from 'react';
 // import BookPage from '@/pages/BookPage';
-// import BookPageFour from '@/pages/BookPageFour';
 // import BookPageThree from '@/pages/BookPageThree';
 // import BookPageTwo from '@/pages/BookPageTwo';
 // import PageFlipAnimation from '@/components/PageFlipAnimation';

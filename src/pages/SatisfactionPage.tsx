@@ -6,7 +6,7 @@ import StatisticsR from '@/components/StatisticsR';
 // import family from '@/assets/images/category/family.png';
 // import frame from '@/assets/images/frame.png';
 
-function BookPageFour() {
+function SatisfactionPage() {
   return (
     // 배경
     <div className=" flex justify-center items-center">
@@ -41,4 +41,4 @@ function BookPageFour() {
   );
 }
 
-export default BookPageFour;
+export default SatisfactionPage;
