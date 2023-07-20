@@ -24,13 +24,14 @@ function MainPage() {
     >
       <div className="flex flex-col items-center justify-center z-50  ">
         {/* 로고 텍스트 */}
-        <div className="text-white font-ham text-[105px] ">Don&rsquo;t</div>
-        <div className="text-white font-ham text-[105px] ">Worry</div>
+        <div className="text-white font-ham text-[90px] ">Witch&rsquo;s</div>
+        <div className="text-white font-ham text-[105px] ">Mind</div>
 
         {/* 고민해결하러가기 버튼 */}
         <button
-          className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-10
-          transition hover:bg-[#F8ECFF] hover:text-mainbutton "
+          className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
+          transition hover:bg-[#F8ECFF] hover:text-mainbutton
+          animate-pulse "
           onClick={() => toBook()}
           type="button"
         >
