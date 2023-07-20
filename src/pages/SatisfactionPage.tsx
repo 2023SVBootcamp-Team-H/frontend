@@ -6,13 +6,16 @@ import StatisticsR from '@/components/StatisticsR';
 // import family from '@/assets/images/category/family.png';
 // import frame from '@/assets/images/frame.png';
 
-function BookPageFour() {
+function SatisfactionPage() {
   return (
     // 배경
-    <div className=" flex justify-center items-center">
+    <div
+      className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
+    flex justify-center items-center"
+    >
       {/* 책 전체 요소 */}
       <div
-        className="
+        className="animate__animated animate__fadeIn
         flex justify-center items-center
         w-[fit] h-[fit] px-4 pt-5 pb-8 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md "
@@ -41,4 +44,4 @@ function BookPageFour() {
   );
 }
 
-export default BookPageFour;
+export default SatisfactionPage;

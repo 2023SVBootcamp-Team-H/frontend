@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import 'animate.css';
 
-interface InputWorryLProps {
-  selectedChar: string;
-}
+// interface InputWorryLProps {
+//   selectedChar: string;
+// }
 
-function InputWorryL({ selectedChar }: InputWorryLProps) {
+// function InputWorryL({ selectedChar }: InputWorryLProps) {
+function InputWorryL() {
   const [selectedAge, setSelectedAge] = useState<number | null>(null);
   const [selectedGender, setSelectedGender] = useState<string | null>(null);
   const [inputText, setInputText] = useState('');
@@ -163,7 +164,8 @@ function InputWorryL({ selectedChar }: InputWorryLProps) {
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
           disabled={isSubmitButtonDisabled()}
         >
-          {`${selectedChar}`}에게 고민 상담 받기
+          {/* {`${selectedChar}`}에게 고민 상담 받기 */}
+          할머니에게 고민 상담 받기
         </button>
       </div>
     </div>
