@@ -57,14 +57,14 @@ function SelectWorryL({
       </div>
       <div className="font-ham-m flex justify-center items-center mt-10">
         <Button
-          category="family"
+          category="가족관계"
           imageSrc={family}
           buttonText="가족관계"
           handleButtonClick={handleButtonClick}
           activeButton={activeButton}
         />
         <Button
-          category="study"
+          category="학업"
           imageSrc={study}
           buttonText="학업"
           handleButtonClick={handleButtonClick}
@@ -73,14 +73,14 @@ function SelectWorryL({
       </div>
       <div className="font-ham-m flex justify-center items-center mt-10">
         <Button
-          category="job"
+          category="직장/알바"
           imageSrc={job}
           buttonText="직장/알바"
           handleButtonClick={handleButtonClick}
           activeButton={activeButton}
         />
         <Button
-          category="course"
+          category="진로/취업"
           imageSrc={course}
           buttonText="진로/취업"
           handleButtonClick={handleButtonClick}
@@ -89,14 +89,14 @@ function SelectWorryL({
       </div>
       <div className="font-ham-m flex justify-center items-center mt-10">
         <Button
-          category="friendship"
+          category="우정"
           imageSrc={friendship}
           buttonText="우정"
           handleButtonClick={handleButtonClick}
           activeButton={activeButton}
         />
         <Button
-          category="love"
+          category="연애"
           imageSrc={love}
           buttonText="연애"
           handleButtonClick={handleButtonClick}
