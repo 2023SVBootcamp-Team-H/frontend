@@ -35,7 +35,6 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
         flex flex-col items-center
         "
         >
-          {/* onClick={(e) => {this.handleClick(e)}} */}
           {/* 왼쪽 이미지 */}
           <SelectCharL />
           <button
