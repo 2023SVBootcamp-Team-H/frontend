@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainPage from '@/pages/MainPage';
-// import TestBook from '@/components/TestBook';
+// import FlipBook from '@/components/FlipBook';
 import SatisfactionPage from './pages/SatisfactionPage';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        {/* <Route path="/book" element={<TestBook />} /> */}
+        {/* <Route path="/book" element={<FlipBook />} /> */}
         <Route path="/satis" element={<SatisfactionPage />} />
       </Routes>
     </BrowserRouter>

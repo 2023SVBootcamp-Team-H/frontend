@@ -4,12 +4,20 @@ import InputWorryL from '@/components/InputWorryL';
 import InputWorryR from '@/components/InputWorryR';
 import SatisfactionModal from '@/components/SatisfactionModal';
 
-function BookPageThree({ props: onClickToggleModal }: any) {
+type handleProps = {
+  handlePrevPage: () => void;
+};
+
+function BookPageThree(
+  { props: onClickToggleModal }: any,
+  { handlePrevPage }: handleProps,
+) {
   // const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
   // const onSelectChar = (char: string) => {
   //   setSelectedChar(char);
   // };
+
   return (
     // 배경
     <div className="flex justify-center items-center">
@@ -27,7 +35,20 @@ function BookPageThree({ props: onClickToggleModal }: any) {
         border-solid border-r-[3px] border-[#D9D3C8] 
         "
         >
-          <InputWorryL />
+          <div>
+            <InputWorryL />
+            <button
+              type="button"
+              onClick={() => {
+                handlePrevPage();
+              }}
+              className="px-6 py-1 mt-10 ml-40
+               bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
+               text-[#7C5197] font-ham-l text-center"
+            >
+              Prev
+            </button>
+          </div>
         </div>
         {/* 오른쪽 페이지 */}
         <div

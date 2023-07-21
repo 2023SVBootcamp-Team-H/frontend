@@ -7,7 +7,7 @@
 //   pages: JSX.Element[];
 // }
 
-// const PageFlipAnimation: React.FC<PageFlipAnimationProps> = ({ pages }) => {
+// function PageFlipAnimation({ pages }: PageFlipAnimationProps) {
 //   const flipPageRef = useRef<ReactFlipPage | null>(null);
 
 //   useEffect(() => {
@@ -66,6 +66,6 @@
 //       </div>
 //     </div>
 //   );
-// };
+// }
 
 // export default PageFlipAnimation;
