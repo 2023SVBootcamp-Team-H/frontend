@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import 'animate.css';
 import grandma from '@/assets/images/category/grandma.png';
 import SatisfactionModal from '@/components/SatisfactionModal';
+import LoadingScreen from './LoadingScreen';
 
 function InputWorryR({ props: onClickToggleModal }: any) {
   // const [isOpenModal, setOpenModal] = useState<boolean>(false);
@@ -12,6 +13,7 @@ function InputWorryR({ props: onClickToggleModal }: any) {
   // }, [isOpenModal]);
   return (
     <div className="flex flex-col justify-center items-center m-auto space-y-5">
+      <LoadingScreen />
       <div className="font-ham-m text-textTitle text-center text-[25px]">
         할머니의 답변
       </div>
@@ -35,4 +37,5 @@ function InputWorryR({ props: onClickToggleModal }: any) {
     </div>
   );
 }
+
 export default InputWorryR;

@@ -24,6 +24,8 @@
     "faker": "^6.6.6",
     "highcharts": "^11.1.0",
     "highcharts-react-official": "^3.2.0",
+    "lottie-colorify": "^0.8.0",
+    "lottie-react": "^2.4.0",
     "page-flip": "^2.0.7",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
