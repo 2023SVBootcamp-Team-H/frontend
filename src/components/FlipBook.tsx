@@ -59,12 +59,11 @@
 //     </div>,
 //     <div>
 //       <BookPageThree
-//         props={onClickToggleModal}
+//         onClickToggleModal={onClickToggleModal}
 //         handlePrevPage={handlePrevPage}
 //       />
 //     </div>,
 //   ];
-
 //   return (
 //     <div
 //       className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center

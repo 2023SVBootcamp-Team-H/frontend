@@ -5,13 +5,10 @@ import InputWorryR from '@/components/InputWorryR';
 import SatisfactionModal from '@/components/SatisfactionModal';
 
 type handleProps = {
+  onClickToggleModal: () => void;
   handlePrevPage: () => void;
 };
-
-function BookPageThree(
-  { props: onClickToggleModal }: any,
-  { handlePrevPage }: handleProps,
-) {
+function BookPageThree(attribute: handleProps) {
   // const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
   // const onSelectChar = (char: string) => {
@@ -40,7 +37,7 @@ function BookPageThree(
             <button
               type="button"
               onClick={() => {
-                handlePrevPage();
+                attribute.handlePrevPage();
               }}
               className="px-6 py-1 mt-10 ml-40
                bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
@@ -56,7 +53,7 @@ function BookPageThree(
           bg-pageBackgroud h-[620px] w-[450px]
             bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat "
         >
-          <InputWorryR props={onClickToggleModal} />
+          <InputWorryR props={attribute.onClickToggleModal} />
         </div>
       </div>
     </div>
