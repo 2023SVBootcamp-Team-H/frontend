@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { activeButtonState } from '@/Recoil';
 import care from '@/assets/images/category/care.png';
 import future from '@/assets/images/category/future.png';
 import health from '@/assets/images/category/health.png';
@@ -46,7 +48,7 @@ function SelectWorryR({
   selectedButton,
   handleSelectButton,
 }: SelectWorryProps) {
-  const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [activeButton, setActiveButton] = useRecoilState(activeButtonState);
 
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);

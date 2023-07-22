@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { personalityState } from '@/Recoil';
 import friend from '@/assets/images/category/friend.png';
 import grandma from '@/assets/images/category/grandma.png';
 import parents from '@/assets/images/category/parents.png';
@@ -11,10 +13,11 @@ interface SelectCharRProps {
 }
 
 function SelectCharR({ onSelectChar }: SelectCharRProps) {
-  const [selectedChar, setSelectedChar] = useState<string>('');
+  // 사용자가 선택한 인격 저장할 Recoil
+  const [, setPersonality] = useRecoilState(personalityState);
 
   const handleCharButtonClick = (character: string) => {
-    setSelectedChar(character);
+    setPersonality(character);
     onSelectChar(character);
   };
 

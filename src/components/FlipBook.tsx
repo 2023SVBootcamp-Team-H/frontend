@@ -1,18 +1,18 @@
 // import { useState, useCallback, useRef, useEffect } from 'react';
 // // @ts-ignore
 // import FlipPage, { ReactFlipPage } from 'react-flip-page';
+// import { useRecoilState } from 'recoil';
 // import BookPage from '@/pages/BookPage';
 // import BookPageThree from '@/pages/BookPageThree';
 // import BookPageTwo from '@/pages/BookPageTwo';
 // import SatisfactionModal from '@/components/SatisfactionModal';
 
 // function FlipBook() {
-//   const [isOpenModal, setOpenModal] = useState<boolean>(false);
+//   const [isOpenModal, setOpenModal] = useState<boolean>(() => false);
 //   const flipPageRef = useRef<ReactFlipPage | null>(null);
 
 //   const onClickToggleModal = useCallback(() => {
 //     setOpenModal(!isOpenModal);
-//     console.log(isOpenModal);
 //   }, [isOpenModal]);
 //   const nextButton = () => {
 //     // 클릭하면
@@ -48,16 +48,16 @@
 //     }
 //   };
 //   const pages = [
-//     <div>
+//     <div key="page1">
 //       <BookPage handleNextPage={handleNextPage} />
 //     </div>,
-//     <div>
+//     <div key="page2">
 //       <BookPageTwo
 //         handlePrevPage={handlePrevPage}
 //         handleNextPage={handleNextPage}
 //       />
 //     </div>,
-//     <div>
+//     <div key="page3">
 //       <BookPageThree
 //         onClickToggleModal={onClickToggleModal}
 //         handlePrevPage={handlePrevPage}

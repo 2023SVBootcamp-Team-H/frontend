@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import 'animate.css';
-import { useNavigate } from 'react-router-dom';
 import SelectWorryL from '@/components/SelectWorryL';
 import SelectWorryR from '@/components/SelectWorryR';
 
@@ -14,25 +13,19 @@ type handleProps = {
 };
 
 function BookPage({ handleNextPage }: handleProps) {
-  const navigate = useNavigate();
   const [selectedButton, setSelectedButton] = useState<string>('');
 
   const handleSelectButtonL: SelectWorryProps['handleSelectButton'] = (
-    category,
+    categorySelected,
   ) => {
-    setSelectedButton(category);
+    setSelectedButton(categorySelected);
   };
 
   const handleSelectButtonR: SelectWorryProps['handleSelectButton'] = (
-    category,
+    categorySelected,
   ) => {
-    setSelectedButton(category);
+    setSelectedButton(categorySelected);
   };
-
-  function toBookPageTwo() {
-    navigate('/book2');
-  }
-
   return (
     <div className="">
       <div className="flex justify-center items-center w-[fit] h-[fit] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8">

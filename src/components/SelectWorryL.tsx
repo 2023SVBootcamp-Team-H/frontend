@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { activeButtonState } from '@/Recoil';
 import course from '@/assets/images/category/course.png';
 import family from '@/assets/images/category/family.png';
 import friendship from '@/assets/images/category/friendship.png';
@@ -44,7 +46,7 @@ function SelectWorryL({
   selectedButton,
   handleSelectButton,
 }: SelectWorryProps) {
-  const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [activeButton, setActiveButton] = useRecoilState(activeButtonState);
 
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);
