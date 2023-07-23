@@ -21,6 +21,9 @@ function InputWorryL() {
   const [gender, setGender] = useRecoilState(genderState);
   const [inputText, setInputText] = useRecoilState(contentState);
 
+  const [showPersonality, setShowPersonality] =
+    useRecoilState(personalityState);
+
   const category = useRecoilValue(categoryState);
   const personality = useRecoilValue(personalityState);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -216,8 +219,7 @@ function InputWorryL() {
           disabled={isSubmitButtonDisabled()}
           onClick={handleWorrySubmit}
         >
-          {/* {`${selectedChar}`}에게 고민 상담 받기 */}
-          할머니에게 고민 상담 받기
+          {`${showPersonality}`}에게 고민 상담 받기
         </button>
       </div>
     </div>

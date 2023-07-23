@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { personalityState } from '@/Recoil';
 import popularbuttonIcon from '@/assets/images/popularbuttonIcon.svg';
 import star from '@/assets/images/star.svg';
 import starYellow from '@/assets/images/starYellow.svg';
@@ -10,6 +12,9 @@ interface Props {
 
 function SatisfactionModal({ onClickToggleModal }: Props) {
   const [selectedRating, setSelectedRating] = useState(0);
+
+  const [showPersonality, setShowPersonality] =
+    useRecoilState(personalityState);
 
   const handleRatingClick = (rating: number) => {
     setSelectedRating(rating);
@@ -60,7 +65,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
             "
           >
             <div className="text-[21px] font-ham-m">
-              <span className="text-[#7A44A4]">할머니</span>
+              <span className="text-[#7A44A4]">{`${showPersonality}`}</span>
               <span>의 답변을 평가해주세요!</span>
             </div>
             {/* <button type="button">

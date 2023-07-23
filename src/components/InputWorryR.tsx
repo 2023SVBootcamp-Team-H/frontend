@@ -1,15 +1,26 @@
 import { useState, useCallback } from 'react';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import {
+  categoryState,
+  personalityState,
+  ageState,
+  genderState,
+  contentState,
+} from '@/Recoil';
 import grandma from '@/assets/images/category/grandma.png';
 import SatisfactionModal from '@/components/SatisfactionModal';
 import LoadingScreen from './LoadingScreen';
 
 function InputWorryR({ props: onClickToggleModal }: any) {
+  const [showPersonality, setShowPersonality] =
+    useRecoilState(personalityState);
+
   return (
     <div className="flex flex-col justify-center items-center m-auto space-y-5">
       {/* <LoadingScreen /> */}
       <div className="font-ham-m text-textTitle text-center text-[25px]">
-        할머니의 답변
+        {`${showPersonality}`}의 답변
       </div>
       <img className=" opacity-60 w-[150px]" src={grandma} alt="grandma" />
       <div className="w-[350px] h-[270px] text-center font-ham-l text-[16px] leading-6">
@@ -26,7 +37,7 @@ function InputWorryR({ props: onClickToggleModal }: any) {
         onClick={onClickToggleModal}
         className="w-72 py-2 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
       >
-        할머니의 답변을 만족하시나요?
+        {`${showPersonality}`}의 답변을 만족하시나요?
       </button>
     </div>
   );
