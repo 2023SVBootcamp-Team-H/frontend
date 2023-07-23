@@ -110,6 +110,7 @@ function InputWorryL() {
               {/* 10대 버튼 */}
               <button
                 type="button"
+                value={10}
                 className={getAgeButtonStyle(10)}
                 onClick={() => handleAgeButtonClick(10)}
               >
@@ -118,6 +119,7 @@ function InputWorryL() {
               {/* 20대 버튼 */}
               <button
                 type="button"
+                value={20}
                 className={getAgeButtonStyle(20)}
                 onClick={() => handleAgeButtonClick(20)}
               >
@@ -126,6 +128,7 @@ function InputWorryL() {
               {/* 30대 버튼 */}
               <button
                 type="button"
+                value={30}
                 className={getAgeButtonStyle(30)}
                 onClick={() => handleAgeButtonClick(30)}
               >
@@ -136,6 +139,7 @@ function InputWorryL() {
               {/* 40대 버튼 */}
               <button
                 type="button"
+                value={40}
                 className={getAgeButtonStyle(40)}
                 onClick={() => handleAgeButtonClick(40)}
               >
@@ -144,6 +148,7 @@ function InputWorryL() {
               {/* 50대 버튼 */}
               <button
                 type="button"
+                value={50}
                 className={getAgeButtonStyle(50)}
                 onClick={() => handleAgeButtonClick(50)}
               >
@@ -152,6 +157,7 @@ function InputWorryL() {
               {/* 60대 버튼 */}
               <button
                 type="button"
+                value={60}
                 className={getAgeButtonStyle(60)}
                 onClick={() => handleAgeButtonClick(60)}
               >

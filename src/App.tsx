@@ -8,7 +8,7 @@ import {
   useRecoilValue,
 } from 'recoil';
 import MainPage from '@/pages/MainPage';
-// import FlipBook from '@/components/FlipBook';
+import FlipBook from '@/components/FlipBook';
 import SatisfactionPage from './pages/SatisfactionPage';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          {/* <Route path="/book" element={<FlipBook />} /> */}
+          <Route path="/book" element={<FlipBook />} />
           <Route path="/satis" element={<SatisfactionPage />} />
         </Routes>
       </BrowserRouter>
