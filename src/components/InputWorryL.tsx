@@ -17,8 +17,8 @@ import {
 // function InputWorryL({ selectedChar }: InputWorryLProps) {
 function InputWorryL() {
   // Recoil
-  const [selectedAge, setSelectedAge] = useRecoilState(ageState);
-  const [selectedGender, setSelectedGender] = useRecoilState(genderState);
+  const [age, setAge] = useRecoilState(ageState);
+  const [gender, setGender] = useRecoilState(genderState);
   const [inputText, setInputText] = useRecoilState(contentState);
 
   const category = useRecoilValue(categoryState);
@@ -34,12 +34,12 @@ function InputWorryL() {
   };
   // 나이 버튼 클릭 핸들러
   const handleAgeButtonClick = (ageSelected: number) => {
-    setSelectedAge(ageSelected);
+    setAge(ageSelected);
   };
 
   // 성별 버튼 클릭 핸들러
   const handleGenderButtonClick = (genderSelected: string) => {
-    setSelectedGender(genderSelected);
+    setGender(genderSelected);
   };
 
   // 고민 입력 핸들러
@@ -50,26 +50,24 @@ function InputWorryL() {
   // 선택된 나이 버튼의 색상을 반환하는 함수
   const getAgeButtonStyle = (ageSelected: number) => {
     return `w-[60px] h-[27px] bg ${
-      selectedAge === ageSelected ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
+      age === ageSelected ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
     } rounded-[39px] border ${
-      selectedAge === ageSelected ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
+      age === ageSelected ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
     } shadow-inner text-stone-600 text-xs font-normal origin-center leading-[13.20px]`;
   };
 
   // 선택된 성별 버튼의 색상을 반환하는 함수
   const getGenderButtonStyle = (genderSelected: string) => {
     return `w-[94px] h-[27px] bg ${
-      selectedGender === genderSelected ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
+      gender === genderSelected ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
     } rounded-[39px] border ${
-      selectedGender === genderSelected
-        ? 'border-[#7C5197]'
-        : 'border-[#B1AAA2]'
+      gender === genderSelected ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
     } shadow-inner text-stone-600 text-xs font-normal origin-center leading-[13.20px] `;
   };
 
   // 고민 상담받기 버튼 활성화 여부 확인 함수
   const isSubmitButtonDisabled = () => {
-    return !(selectedAge && selectedGender && inputText.trim().length > 0);
+    return !(age && gender && inputText.trim().length > 0);
   };
 
   // 고민 상담받기 버튼 비활성화일 때 투명도 조정을 위한 클래스 반환 함수
@@ -79,8 +77,8 @@ function InputWorryL() {
 
   const handleWorrySubmit = () => {
     const data = {
-      gender: selectedGender,
-      age: selectedAge,
+      gender,
+      age,
       // nickname: 'string',
       content: inputText,
       category,
@@ -199,9 +197,9 @@ function InputWorryL() {
         >
           <textarea
             ref={textareaRef}
-            className="mt-7 ml-7 z-50
+            className="mt-7 ml-7 z-50 py-4 px-4 leading-6
           w-[280px] h-[200px] bg-slate-100 bg-opacity-30 rounded-[19px] outline-none
-        text-center font-ham-l text-[#505050] text-[14px]"
+         font-ham-l text-[#505050] text-[14px]"
             value={inputText}
             onChange={handleInputTextChange}
             placeholder="고민을 입력해주세요."

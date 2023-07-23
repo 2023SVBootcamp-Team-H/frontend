@@ -5,15 +5,9 @@ import SatisfactionModal from '@/components/SatisfactionModal';
 import LoadingScreen from './LoadingScreen';
 
 function InputWorryR({ props: onClickToggleModal }: any) {
-  // const [isOpenModal, setOpenModal] = useState<boolean>(false);
-
-  // const onClickToggleModal = useCallback(() => {
-  //   setOpenModal(!isOpenModal);
-  //   console.log(isOpenModal);
-  // }, [isOpenModal]);
   return (
     <div className="flex flex-col justify-center items-center m-auto space-y-5">
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <div className="font-ham-m text-textTitle text-center text-[25px]">
         할머니의 답변
       </div>
