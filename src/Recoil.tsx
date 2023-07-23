@@ -54,6 +54,20 @@ const avgState = atom<number>({
   key: 'avgState',
   default: 0,
 });
+const loadingState = atom<number>({
+  key: 'loadingState',
+  default: 0,
+});
+
+const messageState = atom<string>({
+  key: 'messageState',
+  default: '',
+});
+
+const likeState = atom<string>({
+  key: 'likeState',
+  default: '',
+});
 
 export {
   categoryState,
@@ -65,4 +79,7 @@ export {
   imageurlState,
   answeridState,
   avgState,
+  loadingState,
+  messageState,
+  likeState,
 };

@@ -8,6 +8,9 @@ import {
   ageState,
   genderState,
   contentState,
+  loadingState,
+  messageState,
+  answeridState,
 } from '@/Recoil';
 
 // interface InputWorryLProps {
@@ -24,9 +27,13 @@ function InputWorryL() {
   const [showPersonality, setShowPersonality] =
     useRecoilState(personalityState);
 
+  const [, setLoading] = useRecoilState(loadingState);
+
   const category = useRecoilValue(categoryState);
   const personality = useRecoilValue(personalityState);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const [, setMessage] = useRecoilState(messageState);
+  const [, setAnswerId] = useRecoilState(answeridState);
 
   const handleButtonClick = () => {
     // Check if the input field is indeed present
@@ -78,7 +85,7 @@ function InputWorryL() {
     return isSubmitButtonDisabled() ? 'opacity-60' : '';
   };
 
-  const handleWorrySubmit = () => {
+  const handleWorrySubmit = async () => {
     const data = {
       gender,
       age,
@@ -88,10 +95,15 @@ function InputWorryL() {
       personality,
     };
     try {
-      const res = axios.post('https://www.witchsmind.com/worry', data);
+      setLoading(1);
+      const res = await axios.post('https://www.witchsmind.com/worry', data);
       console.log(res);
+      setMessage(res.data.message);
+      setAnswerId(res.data.answerid);
+      setLoading(2);
     } catch (e) {
       console.log(e);
+      setLoading(0);
     }
   };
 
@@ -177,16 +189,16 @@ function InputWorryL() {
             {/* 여자 버튼 */}
             <button
               type="button"
-              className={getGenderButtonStyle('여자')}
-              onClick={() => handleGenderButtonClick('여자')}
+              className={getGenderButtonStyle('woman')}
+              onClick={() => handleGenderButtonClick('woman')}
             >
               여자
             </button>
             {/* 남자 버튼 */}
             <button
               type="button"
-              className={getGenderButtonStyle('남자')}
-              onClick={() => handleGenderButtonClick('남자')}
+              className={getGenderButtonStyle('man')}
+              onClick={() => handleGenderButtonClick('man')}
             >
               남자
             </button>
