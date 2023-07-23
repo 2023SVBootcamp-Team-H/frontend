@@ -15,10 +15,6 @@ function FlipBook() {
   const onClickToggleModal = useCallback(() => {
     setOpenModal(!isOpenModal);
   }, [isOpenModal]);
-  const nextButton = () => {
-    // 클릭하면
-    // 값 넘겨줍니다.
-  };
 
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
