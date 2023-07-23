@@ -2,9 +2,6 @@ import React from 'react';
 import 'animate.css';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
-// import HTMLFlipBook from 'react-pageflip';
-// import family from '@/assets/images/category/family.png';
-// import frame from '@/assets/images/frame.png';
 
 function SatisfactionPage() {
   return (
@@ -27,16 +24,15 @@ function SatisfactionPage() {
         border-solid border-r-[3px] border-[#D9D3C8] 
         "
         >
-          {/* 왼쪽 이미지 */}
           <StatisticsL />
         </div>
+
         {/* 오른쪽 페이지 */}
         <div
           className="bg-pageBackgroud h-[620px] w-[450px]
       bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
   flex "
         >
-          {/* 오른쪽 이미지 */}
           <StatisticsR />
         </div>
       </div>
