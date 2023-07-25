@@ -42,12 +42,16 @@ const answeridState = atom<number>({
   default: 0,
 });
 
-// 별점 평균(number) - 이 데이터 가지고 %로 값 변환
-const avgState = atom<number>({
+type itemType = {
+  personality_name: string;
+  image_url: string;
+  avg: number;
+};
+// 별점 평균(number) - 이 데이터 가지고 *20%를 해서 인격별 인기도 통계
+const avgState = atom<itemType[]>({
   key: 'avgState',
-  default: 0,
+  default: [],
 });
-
 //
 const loadingState = atom<number>({
   key: 'loadingState',

@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'animate.css';
 import { useRecoilState } from 'recoil';
-import { dataState, femaleState, maleState } from '@/Recoil';
+import { dataState, femaleState, maleState, avgState } from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
 
 function SatisfactionPage() {
-  const [totaldata, setTotalData] = useRecoilState(dataState);
-  const [femaledata, setFemaleData] = useRecoilState(femaleState);
-  const [maledata, setMaleData] = useRecoilState(maleState);
+  const [totalData, setTotalData] = useRecoilState(dataState);
+  const [femaleData, setFemaleData] = useRecoilState(femaleState);
+  const [maleData, setMaleData] = useRecoilState(maleState);
+  const [avgData, setAvgData] = useRecoilState(avgState);
+
   // const [totaldata, setTotalData] = useState([]);
   function toStatistics() {
     const totalRating = axios
@@ -17,6 +19,7 @@ function SatisfactionPage() {
       .then((response) => {
         console.log(response);
         setTotalData(response.data.result);
+        setAvgData(response.data.result);
       });
     // console.log(totalRating.data.result);
     // setTotalData(totalRating.data.result);
@@ -25,9 +28,9 @@ function SatisfactionPage() {
       .then((response) => {
         console.log(response);
         setFemaleData(response.data.result.female);
-        console.log(femaledata);
+        console.log(femaleData);
         setMaleData(response.data.result.male);
-        console.log(maledata);
+        console.log(maleData);
       });
     // console.log(genderRating);
   }
@@ -35,7 +38,7 @@ function SatisfactionPage() {
   useEffect(() => {
     toStatistics();
     // genderStatistics();
-  }, [setTotalData, setFemaleData, setMaleData]);
+  }, [setTotalData, setAvgData, setFemaleData, setMaleData]);
   return (
     // 배경
     <div
