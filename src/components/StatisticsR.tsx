@@ -17,20 +17,20 @@ function StatisticsR() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full mt-16">
-      <div className="items-center text-[23px]">인기도 통계</div>
-      <div className="w-96 h-full mt-10">
+    <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full mt-12">
+      <div className="text-[23px]">인기도 통계</div>
+      <div className="w-96 h-full mt-10 ">
         <BarChart test={[50, 92, 24, 56, 78]} />
+        <button
+          className="m-auto text-center p-3 px-9 text-[13px] mt-6 ml-28
+          bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
+          text-stone-600 font-ham-m"
+          onClick={() => toBook()}
+          type="button"
+        >
+          고민 해결하러 가기
+        </button>
       </div>
-      <button
-        className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
-          transition hover:bg-[#F8ECFF] hover:text-mainbutton
-          animate-pulse "
-        onClick={() => toBook()}
-        type="button"
-      >
-        고민 해결하러 가기
-      </button>
     </div>
   );
 }
