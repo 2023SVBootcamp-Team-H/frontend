@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import 'animate.css';
 import { useRecoilState } from 'recoil';
 import { personalityState } from '@/Recoil';
-import friend from '@/assets/images/category/friend.png';
-import grandma from '@/assets/images/category/grandma.png';
-import parents from '@/assets/images/category/parents.png';
-import teacher from '@/assets/images/category/teacher.png';
-import youngboy from '@/assets/images/category/youngboy.png';
+import friendF_off from '@/assets/images/character/friendF_off.png';
+import friendF_on from '@/assets/images/character/friendF_on.png';
+import friendT_off from '@/assets/images/character/friendT_off.png';
+import friendT_on from '@/assets/images/character/friendT_on.png';
+import gradeTwo_off from '@/assets/images/character/gradeTwo_off.png';
+import gradeTwo_on from '@/assets/images/character/gradeTwo_on.png';
+import grandma_off from '@/assets/images/character/grandma_off.png';
+import grandma_on from '@/assets/images/character/grandma_on.png';
+import rapper_off from '@/assets/images/character/rapper_off.png';
+import rapper_on from '@/assets/images/character/rapper_on.png';
 
 interface SelectCharRProps {
   onSelectChar: (character: string) => void;
@@ -21,63 +26,103 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
     onSelectChar(character);
   };
 
+  const [isHoveringGrandma, setIsHoveringGrandma] = useState(false);
+  const [isHoveringF, setIsHoveringF] = useState(false);
+  const [isHoveringT, setIsHoveringT] = useState(false);
+  const [isHoveringGradeT, setIsHoveringGradeT] = useState(false);
+  const [isHoveringRap, setIsHoveringRap] = useState(false);
+
   return (
     <div className="justify-center items-center ml-2">
-      <div className="font-ham-m text-textCategory flex justify-center items-center mt-10">
-        {/* 부모님 버튼 */}
-        <button type="button" onClick={() => handleCharButtonClick('부모님')}>
-          <img
-            className="flex items-center justify-center opacity-80 w-[230px]"
-            src={parents}
-            alt="parents"
-          />
-          <div className="flex justify-center">부모님</div>
-        </button>
-      </div>
-
-      <div className="font-ham-m text-textCategory flex justify-center items-center mt-4">
+      <div className="font-ham-m text-textCategory flex justify-center items-center mt-6">
         {/* 할머니 버튼 */}
-        <button type="button" onClick={() => handleCharButtonClick('할머니')}>
+        <button
+          type="button"
+          onMouseOver={() => setIsHoveringGrandma(true)}
+          onMouseOut={() => setIsHoveringGrandma(false)}
+          onFocus={() => setIsHoveringGrandma(true)}
+          onBlur={() => setIsHoveringGrandma(false)}
+          onClick={() => handleCharButtonClick('할머니')}
+        >
           <img
-            className="flex items-center justify-center opacity-80 w-[140px] mr-10"
-            src={grandma}
-            alt="grandma"
+            className="flex items-center justify-center opacity-70 hover:opacity-100 onclick:opacity-100 w-[140px]"
+            src={isHoveringGrandma ? grandma_on : grandma_off}
+            alt="grandma_on"
           />
-          <div className="flex items-center justify-center mr-10">할머니</div>
-        </button>
-
-        {/* 선생님 버튼 */}
-        <button type="button" onClick={() => handleCharButtonClick('선생님')}>
-          <img
-            className="flex items-center justify-center opacity-80 w-[135px] h-[128px]"
-            src={teacher}
-            alt="teacher"
-          />
-          <div className="flex items-center justify-center mt-3">선생님</div>
+          <div className="flex justify-center">할머니</div>
         </button>
       </div>
 
       <div className="font-ham-m text-textCategory flex justify-center items-center mt-6">
-        {/* 친구 버튼 */}
-        <button type="button" onClick={() => handleCharButtonClick('친구')}>
+        {/* F친구 버튼 */}
+        <button
+          type="button"
+          onMouseOver={() => setIsHoveringF(true)}
+          onMouseOut={() => setIsHoveringF(false)}
+          onFocus={() => setIsHoveringF(true)}
+          onBlur={() => setIsHoveringF(false)}
+          onClick={() => handleCharButtonClick('F친구')}
+        >
           <img
-            className="flex items-center justify-center opacity-80 w-[138px] mr-10"
-            src={friend}
-            alt="friend"
+            className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+            src={isHoveringF ? friendF_on : friendF_off}
+            alt="friendF_on"
           />
-          <div className="flex items-center justify-center mr-10 mt-1">
-            친구
-          </div>
+
+          <div className="flex justify-center">F친구</div>
+        </button>
+
+        {/* T친구 버튼 */}
+        <button
+          type="button"
+          onMouseOver={() => setIsHoveringT(true)}
+          onMouseOut={() => setIsHoveringT(false)}
+          onFocus={() => setIsHoveringT(true)}
+          onBlur={() => setIsHoveringT(false)}
+          onClick={() => handleCharButtonClick('T친구')}
+        >
+          <img
+            className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+            src={isHoveringT ? friendT_on : friendT_off}
+            alt="friendT_on"
+          />
+          <div className="flex justify-center">T친구</div>
+        </button>
+      </div>
+
+      <div className="font-ham-m text-textCategory flex justify-center items-center mt-6">
+        {/* 래퍼 버튼 */}
+        <button
+          type="button"
+          onMouseOver={() => setIsHoveringRap(true)}
+          onMouseOut={() => setIsHoveringRap(false)}
+          onFocus={() => setIsHoveringRap(true)}
+          onBlur={() => setIsHoveringRap(false)}
+          onClick={() => handleCharButtonClick('래퍼')}
+        >
+          <img
+            className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+            src={isHoveringRap ? rapper_on : rapper_off}
+            alt="rapper_on"
+          />
+          <div className="flex justify-center">래퍼</div>
         </button>
 
         {/* 중2 버튼 */}
-        <button type="button" onClick={() => handleCharButtonClick('중2')}>
+        <button
+          type="button"
+          onMouseOver={() => setIsHoveringGradeT(true)}
+          onMouseOut={() => setIsHoveringGradeT(false)}
+          onFocus={() => setIsHoveringGradeT(true)}
+          onBlur={() => setIsHoveringGradeT(false)}
+          onClick={() => handleCharButtonClick('중2')}
+        >
           <img
-            className="flex items-center justify-center opacity-80 w-[150px]"
-            src={youngboy}
-            alt="youngboy"
+            className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+            src={isHoveringGradeT ? gradeTwo_on : gradeTwo_off}
+            alt="gradeTwo_on"
           />
-          <div className="flex items-center justify-center mt-8">중2</div>
+          <div className="flex justify-center mt-4">중2</div>
         </button>
       </div>
     </div>
