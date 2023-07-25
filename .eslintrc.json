@@ -152,6 +152,8 @@
     "no-param-reassign": "off",
     "react/no-danger": "off",
     "react-hooks/rules-of-hooks": "error",
+    "no-await-in-loop": "off",
+    "no-shadow": "off",
     "react-hooks/exhaustive-deps": [
       "warn",
       {

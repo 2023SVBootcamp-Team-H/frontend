@@ -42,30 +42,54 @@ function InputWorryR({ props: onClickToggleModal }: any) {
     if (loading === 1) {
       return <LoadingScreen />;
     }
-    return (
-      <div className="flex flex-col justify-center items-center m-auto space-y-5">
-        <div className="font-ham-m text-textTitle text-center text-[25px]">
-          {`${showPersonality}`}의 답변
+    if (loading === 2) {
+      return (
+        <div className="flex flex-col justify-center items-center m-auto space-y-5">
+          <div className="font-ham-m text-textTitle text-center text-[25px]">
+            {`${showPersonality}`}의 답변
+          </div>
+          <img
+            className="opacity-60 w-[150px]"
+            src={findImage(showPersonality)}
+            alt={`${showPersonality}`}
+          />
+          <div className="w-[350px] h-[270px] text-center font-ham-l text-[16px] leading-6">
+            {message}
+          </div>
+          <button
+            type="button"
+            onClick={onClickToggleModal}
+            className="w-72 py-2 text-[16px] invisible text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
+          >
+            {`${showPersonality}`}의 답변을 만족하시나요?
+          </button>
         </div>
-
-        <img
-          className="opacity-60 w-[150px]"
-          src={findImage(showPersonality)}
-          alt={`${showPersonality}`}
-        />
-
-        <div className="w-[350px] h-[270px] text-center font-ham-l text-[16px] leading-6">
-          {message}
+      );
+    }
+    if (loading === 3) {
+      return (
+        <div className="flex flex-col justify-center items-center m-auto space-y-5">
+          <div className="font-ham-m text-textTitle text-center text-[25px]">
+            {`${showPersonality}`}의 답변
+          </div>
+          <img
+            className="opacity-60 w-[150px]"
+            src={findImage(showPersonality)}
+            alt={`${showPersonality}`}
+          />
+          <div className="w-[350px] h-[270px] flex-wrap overflow-auto text-center font-ham-l text-[16px] leading-6">
+            {message}
+          </div>
+          <button
+            type="button"
+            onClick={onClickToggleModal}
+            className="w-72 py-2 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
+          >
+            {`${showPersonality}`}의 답변을 만족하시나요?
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={onClickToggleModal}
-          className="w-72 py-2 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
-        >
-          {`${showPersonality}`}의 답변을 만족하시나요?
-        </button>
-      </div>
-    );
+      );
+    }
   }
 
   return (

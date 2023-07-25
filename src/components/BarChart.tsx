@@ -31,19 +31,46 @@ const options = {
     },
   },
 };
-const labels = ['할머니', '선생님', '부모님', '중2', '친구'];
+const labels = ['할머니', '중2', 'T 친구', 'F 친구', '래퍼'];
 
-type BarChartPropsType = {
-  test: number[];
+type itemType = {
+  personality_name: string;
+  image_url: string;
+  avg: number;
 };
 
-export function BarChart({ test }: BarChartPropsType) {
+type BarChartPropsType = {
+  avgData: itemType[];
+};
+// {totalData.length === 0 ? '' : totalData[0].personality_name}
+export function BarChart({ avgData }: BarChartPropsType) {
+  console.log('avgData');
+  console.log(avgData);
+  const likeList =
+    avgData.length === 0 ? [] : avgData.map((item) => item.personality_name);
+  const avgList = avgData.length === 0 ? [] : avgData.map((item) => item.avg);
   const data = {
-    labels,
+    labels:
+      avgData.length === 0 ? [] : avgData.map((item) => item.personality_name),
     datasets: [
       {
         label: '인기도',
-        data: test,
+        data:
+          avgData.length === 0
+            ? []
+            : avgData.map((item) => {
+                if (item.avg < 0) {
+                  return 0;
+                }
+                return item.avg;
+              }),
+        // backgroundColor: [
+        //   '#C8A6D4',
+        //   '#E6DED3',
+        //   '#D4C6A6',
+        //   '#D4A6A6',
+        //   '#A6D4C8',
+        // ],
         backgroundColor: '#C8A6D4',
       },
     ],

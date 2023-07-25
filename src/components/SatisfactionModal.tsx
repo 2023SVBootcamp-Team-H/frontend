@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { personalityState, answeridState, likeState } from '@/Recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
+import {
+  personalityState,
+  answeridState,
+  likeState,
+  selectedRatingState,
+  dataState,
+} from '@/Recoil';
 import popularbuttonIcon from '@/assets/images/popularbuttonIcon.svg';
 import star from '@/assets/images/star.svg';
 import starYellow from '@/assets/images/starYellow.svg';
@@ -12,16 +18,15 @@ interface Props {
 }
 
 function SatisfactionModal({ onClickToggleModal }: Props) {
-  const [selectedRating, setSelectedRating] = useState(0);
-
   const [showPersonality, setShowPersonality] =
     useRecoilState(personalityState);
 
   const answerid = useRecoilValue(answeridState);
-  const like = useRecoilValue(likeState);
+  const [like, setLike] = useRecoilState(likeState);
+  const [totaldata, setTotalData] = useRecoilState(dataState);
 
   const handleRatingClick = (rating: number) => {
-    setSelectedRating(rating);
+    setLike(rating);
   };
 
   const renderStars = () => {
@@ -29,7 +34,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
     const stars = [];
 
     for (let i = 1; i <= totalStars; i += 1) {
-      const isFilled = i <= selectedRating;
+      const isFilled = i <= like;
       stars.push(
         <button type="button" key={i} onClick={() => handleRatingClick(i)}>
           <img
@@ -46,7 +51,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
 
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
 
-  function toStatistics() {
+  async function toStatistics() {
     navigate('/satis');
   }
 
@@ -60,7 +65,9 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
       likes: like,
     };
     try {
-      const res = await axios.post('https://www.witchsmind.com/worry/', data);
+      console.log(data);
+      // const res = await axios.post('http://34.195.3.25:5000/answer/', data);
+      const res = await axios.post('http://127.0.0.1:8000/answer/', data);
       console.log(res);
       toMain();
     } catch (e) {

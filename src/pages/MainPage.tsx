@@ -1,11 +1,44 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useResetRecoilState, useRecoilState } from 'recoil';
+import {
+  personalityState,
+  answeridState,
+  likeState,
+  ageState,
+  genderState,
+  contentState,
+  categoryState,
+  loadingState,
+  messageState,
+  activeButtonState,
+} from '@/Recoil';
 import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
 
 // import back from '@/assets/images/back.png';
 
 function MainPage() {
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
+  const [, setLike] = useRecoilState(likeState);
+  const [, setAge] = useRecoilState(ageState);
+  const [, setGender] = useRecoilState(genderState);
+  const [, setInputText] = useRecoilState(contentState);
+  const [, setCategory] = useRecoilState(categoryState);
+  const [, setLoading] = useRecoilState(loadingState);
+  const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
+  const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
+  const [answerId, setAnswerId] = useRecoilState(answeridState);
+
+  // recoil state 초기화
+  setCategory('');
+  setActiveButton('');
+  setPersonality('');
+  setAge(0);
+  setGender('');
+  setInputText('');
+  setLoading(0);
+  setAnswerId(0);
+  setLike(0);
 
   function toBook() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
