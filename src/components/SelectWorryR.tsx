@@ -33,7 +33,10 @@ function Button({
   return (
     <button
       type="button"
-      onClick={() => handleButtonClick(category)}
+      onClick={() => {
+        handleButtonClick(buttonText);
+        console.log(buttonText);
+      }}
       className={`flex flex-col items-center justify-center opacity-60 mr-10 ml-10 ${
         activeButton === category ? 'text-textTitle opacity-90' : ''
       }`}

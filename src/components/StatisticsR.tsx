@@ -8,7 +8,6 @@ function StatisticsR() {
   // const rankdata = {
   //   /* rankdata 데이터를 정의하세요 */
   // };
-
   return (
     <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full mt-16">
       <div className="items-center text-[23px]">인기도 통계</div>

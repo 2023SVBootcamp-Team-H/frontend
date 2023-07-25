@@ -31,7 +31,10 @@ function Button({
   return (
     <button
       type="button"
-      onClick={() => handleButtonClick(category)}
+      onClick={() => {
+        handleButtonClick(buttonText);
+        console.log(buttonText);
+      }}
       className={`flex flex-col items-center justify-center opacity-60 mr-9 ml-9 ${
         activeButton === category ? 'text-textTitle opacity-90' : ''
       }`}
@@ -48,8 +51,8 @@ function SelectWorryL({
 }: SelectWorryProps) {
   const [activeButton, setActiveButton] = useRecoilState(activeButtonState);
 
-  const handleButtonClick = (buttonName: string) => {
-    setActiveButton(buttonName);
+  const handleButtonClick = (category: string) => {
+    setActiveButton(category);
   };
 
   return (

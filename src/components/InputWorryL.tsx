@@ -11,6 +11,7 @@ import {
   loadingState,
   messageState,
   answeridState,
+  activeButtonState,
 } from '@/Recoil';
 
 // interface InputWorryLProps {
@@ -18,7 +19,7 @@ import {
 // }
 
 // function InputWorryL({ selectedChar }: InputWorryLProps) {
-function InputWorryL() {
+function InputWorryL({ props: onClickToggleModal }: any) {
   // Recoil
   const [age, setAge] = useRecoilState(ageState);
   const [gender, setGender] = useRecoilState(genderState);
@@ -29,11 +30,11 @@ function InputWorryL() {
 
   const [, setLoading] = useRecoilState(loadingState);
 
-  const category = useRecoilValue(categoryState);
-  const personality = useRecoilValue(personalityState);
+  const activeButton = useRecoilValue(activeButtonState); // 선택된 카테고리
+  const personality = useRecoilValue(personalityState); // 선택된 인격
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const [, setMessage] = useRecoilState(messageState);
-  const [, setAnswerId] = useRecoilState(answeridState);
+  const [message, setMessage] = useRecoilState(messageState);
+  const [answerId, setAnswerId] = useRecoilState(answeridState);
 
   const handleButtonClick = () => {
     // Check if the input field is indeed present
@@ -89,18 +90,54 @@ function InputWorryL() {
     const data = {
       gender,
       age,
-      // nickname: 'string',
+      job: '안녕',
+      nickname: '민아',
+      address: '123rf',
       content: inputText,
-      category,
+      category: activeButton,
       personality,
     };
+    console.log(data);
     try {
       setLoading(1);
-      const res = await axios.post('https://www.witchsmind.com/worry', data);
-      console.log(res);
-      setMessage(res.data.message);
-      setAnswerId(res.data.answerid);
+
+      // const response = await fetch('http://34.195.3.25:5000/worry/sse', {
+      const response = await fetch('http://127.0.0.1:8000/worry/sse', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/event-stream',
+        },
+        body: JSON.stringify(data),
+      });
       setLoading(2);
+      const reader = response
+        .body!.pipeThrough(new TextDecoderStream())
+        .getReader();
+      let str = '';
+      while (true) {
+        // value: 서버에서 보내는 딸깍 단어, done: 스트림이 끝났는지 여부
+        const { value, done } = await reader.read();
+        // 스트림이 끝나면 break! (여기서 하고싶은 작업을 한다.. ex: 로딩창 제거)
+        if (value === 'stop') {
+          const { value, done } = await reader.read();
+          setAnswerId(Number(value!));
+          break;
+        }
+        // error 발생시 에러 메시지를 읽어올수있다.
+        if (value === 'error_message') {
+          const { value, done } = await reader.read();
+          const error_message = value;
+          console.log(error_message);
+          break;
+        }
+        if (done === true) break;
+        str += value;
+        setMessage(str);
+      }
+      setLoading(3);
+      //
+      // setMessage(response.data.message);
+      // setAnswerId(response.data.answerid);
     } catch (e) {
       console.log(e);
       setLoading(0);
@@ -189,16 +226,16 @@ function InputWorryL() {
             {/* 여자 버튼 */}
             <button
               type="button"
-              className={getGenderButtonStyle('woman')}
-              onClick={() => handleGenderButtonClick('woman')}
+              className={getGenderButtonStyle('female')}
+              onClick={() => handleGenderButtonClick('female')}
             >
               여자
             </button>
             {/* 남자 버튼 */}
             <button
               type="button"
-              className={getGenderButtonStyle('man')}
-              onClick={() => handleGenderButtonClick('man')}
+              className={getGenderButtonStyle('male')}
+              onClick={() => handleGenderButtonClick('male')}
             >
               남자
             </button>

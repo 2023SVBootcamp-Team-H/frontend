@@ -64,11 +64,36 @@ const messageState = atom<string>({
   default: '',
 });
 
-const likeState = atom<string>({
+const likeState = atom<number>({
   key: 'likeState',
-  default: '',
+  default: 0,
 });
 
+const selectedRatingState = atom<number>({
+  key: 'selectedRatingState',
+  default: 0,
+});
+
+export interface ResultElement {
+  personality_name?: string;
+  image_url?: string;
+  avg?: number;
+}
+
+const dataState = atom<ResultElement[]>({
+  key: 'dataState',
+  default: [],
+});
+
+const femaleState = atom<any>({
+  key: 'femaleState',
+  default: [],
+});
+
+const maleState = atom<any>({
+  key: 'maleState',
+  default: [],
+});
 export {
   categoryState,
   activeButtonState,
@@ -82,4 +107,8 @@ export {
   loadingState,
   messageState,
   likeState,
+  selectedRatingState,
+  dataState,
+  femaleState,
+  maleState,
 };

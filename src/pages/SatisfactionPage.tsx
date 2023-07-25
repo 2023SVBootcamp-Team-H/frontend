@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { dataState, femaleState, maleState } from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
 
 function SatisfactionPage() {
+  const [totaldata, setTotalData] = useRecoilState(dataState);
+  const [femaledata, setFemaleData] = useRecoilState(femaleState);
+  const [maledata, setMaleData] = useRecoilState(maleState);
+  // const [totaldata, setTotalData] = useState([]);
+  function toStatistics() {
+    const totalRating = axios
+      .get('http://127.0.0.1:8000/rank/')
+      .then((response) => {
+        console.log(response);
+        setTotalData(response.data.result);
+      });
+    // console.log(totalRating.data.result);
+    // setTotalData(totalRating.data.result);
+    const genderRating = axios
+      .get('http://127.0.0.1:8000/rank/gender/')
+      .then((response) => {
+        console.log(response);
+        setFemaleData(response.data.result.female);
+        console.log(femaledata);
+        setMaleData(response.data.result.male);
+        console.log(maledata);
+      });
+    // console.log(genderRating);
+  }
+
+  useEffect(() => {
+    toStatistics();
+    // genderStatistics();
+  }, [setTotalData, setFemaleData, setMaleData]);
   return (
     // 배경
     <div
