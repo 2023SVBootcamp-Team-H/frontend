@@ -25,23 +25,9 @@ function MainPage() {
   const [, setInputText] = useRecoilState(contentState);
   const [, setCategory] = useRecoilState(categoryState);
   const [, setLoading] = useRecoilState(loadingState);
-
   const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
   const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
-  const [message, setMessage] = useRecoilState(messageState);
-
   const [answerId, setAnswerId] = useRecoilState(answeridState);
-  // recoil state 초기화
-
-  useResetRecoilState(answeridState);
-  useResetRecoilState(likeState);
-  useResetRecoilState(ageState);
-  useResetRecoilState(genderState);
-  useResetRecoilState(contentState);
-  useResetRecoilState(categoryState);
-  useResetRecoilState(loadingState);
-  useResetRecoilState(messageState);
-  useResetRecoilState(activeButtonState);
 
   // recoil state 초기화
   setCategory('');
