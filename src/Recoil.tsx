@@ -36,14 +36,7 @@ const contentState = atom<string>({
   key: 'contentState',
   default: '',
 });
-
-// 인격 이미지URL(string)
-const imageurlState = atom<string>({
-  key: 'imageurlState',
-  default: '',
-});
-
-// 고민 답변 ID(number) - 저장해둔 후, 이 데이터 가지고 별점 부여
+// 고민 답변 ID(number)
 const answeridState = atom<number>({
   key: 'answeridState',
   default: 0,
@@ -54,6 +47,8 @@ const avgState = atom<number>({
   key: 'avgState',
   default: 0,
 });
+
+//
 const loadingState = atom<number>({
   key: 'loadingState',
   default: 0,
@@ -74,6 +69,7 @@ const selectedRatingState = atom<number>({
   default: 0,
 });
 
+// 서버에서 받아오는 배열 데이터
 export interface ResultElement {
   personality_name?: string;
   image_url?: string;
@@ -85,15 +81,18 @@ const dataState = atom<ResultElement[]>({
   default: [],
 });
 
+// 통계 페이지에서 사용하는 데이터(여성 1위 인격)
 const femaleState = atom<any>({
   key: 'femaleState',
   default: [],
 });
 
+// 통계 페이지에서 사용하는 데이터(남성 1위 인격)
 const maleState = atom<any>({
   key: 'maleState',
   default: [],
 });
+
 export {
   categoryState,
   activeButtonState,
@@ -101,7 +100,6 @@ export {
   ageState,
   genderState,
   contentState,
-  imageurlState,
   answeridState,
   avgState,
   loadingState,

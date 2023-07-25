@@ -19,10 +19,20 @@ import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
 
 function MainPage() {
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
-  const [like, setLike] = useRecoilState(likeState);
+  const [, setLike] = useRecoilState(likeState);
+  const [, setAge] = useRecoilState(ageState);
+  const [, setGender] = useRecoilState(genderState);
+  const [, setInputText] = useRecoilState(contentState);
+  const [, setCategory] = useRecoilState(categoryState);
+  const [, setLoading] = useRecoilState(loadingState);
 
+  const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
+  const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
+  const [message, setMessage] = useRecoilState(messageState);
+
+  const [answerId, setAnswerId] = useRecoilState(answeridState);
   // recoil state 초기화
-  useResetRecoilState(personalityState);
+
   useResetRecoilState(answeridState);
   useResetRecoilState(likeState);
   useResetRecoilState(ageState);
@@ -32,6 +42,16 @@ function MainPage() {
   useResetRecoilState(loadingState);
   useResetRecoilState(messageState);
   useResetRecoilState(activeButtonState);
+
+  // recoil state 초기화
+  setCategory('');
+  setActiveButton('');
+  setPersonality('');
+  setAge(0);
+  setGender('');
+  setInputText('');
+  setLoading(0);
+  setAnswerId(0);
   setLike(0);
 
   function toBook() {
