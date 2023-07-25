@@ -1,8 +1,8 @@
-import friend from '@/assets/images/category/friend.png';
-import grandma from '@/assets/images/category/grandma.png';
-import parents from '@/assets/images/category/parents.png';
-import teacher from '@/assets/images/category/teacher.png';
-import youngboy from '@/assets/images/category/youngboy.png';
+import friendF from '@/assets/images/character/friendF_on.png';
+import friendT from '@/assets/images/character/friendT_on.png';
+import gradeTwo from '@/assets/images/character/gradeTwo_on.png';
+import grandma from '@/assets/images/character/grandma_on.png';
+import rapper from '@/assets/images/character/rapper_on.png';
 
 class Character {
   name: string;
@@ -16,11 +16,11 @@ class Character {
 }
 
 const AllCharacter = [
-  new Character('친구', friend),
+  new Character('F친구', friendF),
   new Character('할머니', grandma),
-  new Character('부모님', parents),
-  new Character('선생님', teacher),
-  new Character('중2', youngboy),
+  new Character('T친구', friendT),
+  new Character('래퍼', rapper),
+  new Character('중2', gradeTwo),
 ];
 
 export default AllCharacter;
