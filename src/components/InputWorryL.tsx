@@ -268,7 +268,10 @@ function InputWorryL({ props: onClickToggleModal }: any) {
           disabled={isSubmitButtonDisabled()}
           onClick={handleWorrySubmit}
         >
-          {`${showPersonality}`}에게 고민 상담 받기
+          {/* {`${showPersonality}`}에게 고민 상담 받기 */}
+          {showPersonality === ''
+            ? '선택된 인격이 없습니다.'
+            : `${showPersonality}에게 고민 상담 받기`}
         </button>
       </div>
     </div>
