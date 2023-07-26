@@ -20,6 +20,23 @@ ChartJS.register(
 );
 
 const options = {
+  elements: {
+    point: {
+      radius: 0,
+    },
+  },
+  transitions: {
+    show: {
+      animations: {
+        x: {
+          from: 0,
+        },
+        y: {
+          from: 0,
+        },
+      },
+    },
+  },
   responsive: true,
   plugins: {
     legend: {
@@ -28,6 +45,22 @@ const options = {
     title: {
       display: false,
       text: '인기도 통계',
+    },
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false,
+        drawBorder: false,
+        drawThicks: false,
+      },
+    },
+    y: {
+      grid: {
+        display: false,
+        drawBorder: false,
+        drawThicks: false,
+      },
     },
   },
 };
@@ -65,12 +98,21 @@ export function BarChart({ avgData }: BarChartPropsType) {
                 return item.avg;
               }),
         // backgroundColor: [
-        //   '#C8A6D4',
-        //   '#E6DED3',
-        //   '#D4C6A6',
-        //   '#D4A6A6',
-        //   '#A6D4C8',
+        //   'rgba(255, 99, 132, 0.2)',
+
+        //   'rgba(255, 205, 86, 0.2)',
+        //   'rgba(75, 192, 192, 0.2)',
+        //   'rgba(54, 162, 235, 0.2)',
+        //   'rgba(153, 102, 255, 0.2)',
         // ],
+        // borderColor: [
+        //   'rgb(255, 99, 132)',
+        //   'rgb(255, 205, 86)',
+        //   'rgb(75, 192, 192)',
+        //   'rgb(54, 162, 235)',
+        //   'rgb(153, 102, 255)',
+        // ],
+        // borderWidth: 1,
         backgroundColor: '#C8A6D4',
       },
     ],
