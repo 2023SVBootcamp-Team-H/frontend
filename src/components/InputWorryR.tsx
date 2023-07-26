@@ -83,9 +83,12 @@ function InputWorryR({ props: onClickToggleModal }: any) {
           <button
             type="button"
             onClick={onClickToggleModal}
-            className="w-72 py-2 text-[16px]  text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
+            className="w-72  p-3 px-9 text-[13px] font-ham-m text-center  text-stone-600 
+             bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
+              border border-stone-400"
           >
-            {`${showPersonality}`}의 답변을 만족하시나요?
+            <span className="font-bold text-textTitle">{`${showPersonality}`}</span>
+            의 답변을 만족하시나요?
           </button>
         </div>
       );

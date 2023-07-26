@@ -263,7 +263,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
         <button
           type="button"
           className={`m-auto text-center p-3 px-9 text-[13px]
-          bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
+          bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
           disabled={isSubmitButtonDisabled()}
           onClick={handleWorrySubmit}
