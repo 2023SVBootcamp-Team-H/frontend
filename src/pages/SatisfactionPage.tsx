@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'animate.css';
 import { useRecoilState } from 'recoil';
-import { dataState, femaleState, maleState, avgState } from '@/Recoil';
+import {
+  dataState,
+  femaleState,
+  maleState,
+  avgState,
+  personalityState,
+  answeridState,
+  likeState,
+  ageState,
+  genderState,
+  contentState,
+  categoryState,
+  loadingState,
+  messageState,
+  activeButtonState,
+} from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
 
@@ -12,10 +28,32 @@ function SatisfactionPage() {
   const [maleData, setMaleData] = useRecoilState(maleState);
   const [avgData, setAvgData] = useRecoilState(avgState);
 
+  const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
+  const [, setLike] = useRecoilState(likeState);
+  const [, setAge] = useRecoilState(ageState);
+  const [, setGender] = useRecoilState(genderState);
+  const [, setInputText] = useRecoilState(contentState);
+  const [, setCategory] = useRecoilState(categoryState);
+  const [, setLoading] = useRecoilState(loadingState);
+  const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
+  const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
+  const [answerId, setAnswerId] = useRecoilState(answeridState);
+
+  // recoil state 초기화
+  setCategory('');
+  setActiveButton('');
+  setPersonality('');
+  setAge(0);
+  setGender('');
+  setInputText('');
+  setLoading(0);
+  setAnswerId(0);
+  setLike(0);
+
   // const [totaldata, setTotalData] = useState([]);
   function toStatistics() {
     const totalRating = axios
-      .get('http://127.0.0.1:8000/rank/')
+      .get('http://34.195.3.25:5000/rank/')
       .then((response) => {
         console.log(response);
         setTotalData(response.data.result);
@@ -24,7 +62,7 @@ function SatisfactionPage() {
     // console.log(totalRating.data.result);
     // setTotalData(totalRating.data.result);
     const genderRating = axios
-      .get('http://127.0.0.1:8000/rank/gender/')
+      .get('http://34.195.3.25:5000/rank/gender/')
       .then((response) => {
         console.log(response);
         setFemaleData(response.data.result.female);

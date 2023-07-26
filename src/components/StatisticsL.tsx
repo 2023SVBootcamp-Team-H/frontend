@@ -1,36 +1,59 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useRecoilState } from 'recoil';
+import AllCharacter from '@/Character';
 import { dataState, femaleState, maleState } from '@/Recoil';
+
 import grandma from '@/assets/images/category/grandma.png';
 import parents from '@/assets/images/category/parents.png';
 import youngboy from '@/assets/images/category/youngboy.png';
 
+function findImage(tag: string | undefined) {
+  return AllCharacter.map((x) => x.image)[
+    AllCharacter.map((x) => x.name).findIndex((x) => x === tag)
+  ];
+}
 function StatisticsL() {
   const [totalData, setTotalData] = useRecoilState(dataState);
   const [femaleData, setFemaleData] = useRecoilState(femaleState);
   const [maleData, setMaleData] = useRecoilState(maleState);
-
   // console.log(totaldata);
   // useEffect(() => {}, []);
 
   return (
     <div className="flex flex-col justify-center  items-center font-ham-m  text-textTitle ">
-      <div className="flex flex-col justify-center items-center space-y-4  mt-12">
+      <div className="flex flex-col justify-center items-center space-y-4  mt-10">
         <span className="text-[23px]">인기도 1위 인격</span>
-        <img className="w-44 " src={grandma} alt="grandma" />
+        <img
+          className="w-44 "
+          src={
+            totalData.length === 0
+              ? ''
+              : findImage(totalData[0].personality_name)
+          }
+          // src={findImage(totalData[0].personality_name)} -> 이 코드 사용하면 빈 배열이 올 때 오류 발생하기에 삼항연산자 사용하여 빈 배열 상황 처리
+          alt="grandma"
+        />
         <span className="text-[20px]">
           {totalData.length === 0 ? '' : totalData[0].personality_name}
           {/* {`${totaldata[0]}`} */}
         </span>
       </div>
 
-      <div className="border border-solid border-[#DBD4C7] w-96 mt-10" />
+      <div className="border border-solid border-[#DBD4C7] w-96 mt-8" />
 
-      <div className="flex mt-8 space-x-2">
+      <div className="flex mt-8 space-x-2 w-[340px] space-x-6">
         <div className="flex flex-col justify-center items-center space-y-4">
           <span className=" text-[15px]">여성이 뽑은 1위</span>
-          <img className="w-48 " src={parents} alt="parents" />
+          <img
+            className="w-auto"
+            src={
+              femaleData.length === 0
+                ? ''
+                : findImage(femaleData[0].personality_name)
+            }
+            alt="parents"
+          />
           <span className="text-[12px]">
             {' '}
             {femaleData.length === 0 ? '' : femaleData[0].personality_name}
@@ -39,7 +62,15 @@ function StatisticsL() {
         <div className="border-solid border h-auto  border-[#DBD4C7] " />
         <div className="flex flex-col justify-center items-center space-y-4">
           <span className=" text-[15px]">남성이 뽑은 1위</span>
-          <img className="w-40 " src={youngboy} alt="youngboy" />
+          <img
+            className="w-auto "
+            src={
+              maleData.length === 0
+                ? ''
+                : findImage(maleData[0].personality_name)
+            }
+            alt="youngboy"
+          />
           <span className="text-[12px]">
             {maleData.length === 0 ? '' : maleData[0].personality_name}
           </span>

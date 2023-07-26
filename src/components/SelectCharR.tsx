@@ -89,9 +89,9 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
           onMouseOut={() => setIsHoveringF(false)}
           onFocus={() => setIsHoveringF(true)}
           onBlur={() => setIsHoveringF(false)}
-          onClick={() => handleCharButtonClick('F친구')}
+          onClick={() => handleCharButtonClick('맑눈광')}
         >
-          {personality === 'F친구' ? (
+          {personality === '맑눈광' ? (
             <img
               className="flex items-center justify-center w-[180px] px-4"
               src={friendF_on}
@@ -104,7 +104,7 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
               alt="friendF_on"
             />
           )}
-          <div className="flex justify-center">F친구</div>
+          <div className="flex justify-center">F 친구</div>
         </button>
 
         {/* T친구 버튼 */}
@@ -114,9 +114,9 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
           onMouseOut={() => setIsHoveringT(false)}
           onFocus={() => setIsHoveringT(true)}
           onBlur={() => setIsHoveringT(false)}
-          onClick={() => handleCharButtonClick('T친구')}
+          onClick={() => handleCharButtonClick('친구')}
         >
-          {personality === 'T친구' ? (
+          {personality === '친구' ? (
             <img
               className="flex items-center justify-center w-[180px] px-4"
               src={friendT_on}
@@ -129,7 +129,7 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
               alt="friendF_on"
             />
           )}
-          <div className="flex justify-center">T친구</div>
+          <div className="flex justify-center">T 친구</div>
         </button>
       </div>
 
@@ -166,9 +166,9 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
           onMouseOut={() => setIsHoveringGradeT(false)}
           onFocus={() => setIsHoveringGradeT(true)}
           onBlur={() => setIsHoveringGradeT(false)}
-          onClick={() => handleCharButtonClick('중2')}
+          onClick={() => handleCharButtonClick('중2병')}
         >
-          {personality === '중2' ? (
+          {personality === '중2병' ? (
             <img
               className="flex items-center justify-center w-[180px] px-4"
               src={gradeTwo_on}
