@@ -32,7 +32,11 @@ function StatisticsL() {
               : findImage(totalData[0].personality_name)
           }
           // src={findImage(totalData[0].personality_name)} -> 이 코드 사용하면 빈 배열이 올 때 오류 발생하기에 삼항연산자 사용하여 빈 배열 상황 처리
-          alt="grandma"
+          alt={
+            totalData.length === 0
+              ? ''
+              : findImage(totalData[0].personality_name)
+          }
         />
         <span className="text-[20px]">
           {totalData.length === 0 ? '' : totalData[0].personality_name}
@@ -52,7 +56,11 @@ function StatisticsL() {
                 ? ''
                 : findImage(femaleData[0].personality_name)
             }
-            alt="parents"
+            alt={
+              femaleData.length === 0
+                ? ''
+                : findImage(femaleData[0].personality_name)
+            }
           />
           <span className="text-[12px]">
             {' '}
@@ -69,7 +77,11 @@ function StatisticsL() {
                 ? ''
                 : findImage(maleData[0].personality_name)
             }
-            alt="youngboy"
+            alt={
+              maleData.length === 0
+                ? ''
+                : findImage(maleData[0].personality_name)
+            }
           />
           <span className="text-[12px]">
             {maleData.length === 0 ? '' : maleData[0].personality_name}

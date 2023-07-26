@@ -15,9 +15,9 @@ function StatisticsR() {
   //   /* rankdata 데이터를 정의하세요 */
   // };
 
-  function toBook() {
+  function toMain() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
-    navigate('/book');
+    navigate('/');
   }
 
   return (
@@ -32,10 +32,10 @@ function StatisticsR() {
           className="m-auto text-center p-3 px-9 text-[13px] mt-6 ml-28
           bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m"
-          onClick={() => toBook()}
+          onClick={() => toMain()}
           type="button"
         >
-          고민 해결하러 가기
+          홈페이지로 돌아가기
         </button>
       </div>
     </div>
