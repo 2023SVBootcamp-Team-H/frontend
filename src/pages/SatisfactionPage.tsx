@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'animate.css';
 import { useRecoilState } from 'recoil';
-import { dataState, femaleState, maleState, avgState } from '@/Recoil';
+import {
+  dataState,
+  femaleState,
+  maleState,
+  avgState,
+  personalityState,
+  answeridState,
+  likeState,
+  ageState,
+  genderState,
+  contentState,
+  categoryState,
+  loadingState,
+  messageState,
+  activeButtonState,
+} from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
 
@@ -11,6 +27,28 @@ function SatisfactionPage() {
   const [femaleData, setFemaleData] = useRecoilState(femaleState);
   const [maleData, setMaleData] = useRecoilState(maleState);
   const [avgData, setAvgData] = useRecoilState(avgState);
+
+  const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
+  const [, setLike] = useRecoilState(likeState);
+  const [, setAge] = useRecoilState(ageState);
+  const [, setGender] = useRecoilState(genderState);
+  const [, setInputText] = useRecoilState(contentState);
+  const [, setCategory] = useRecoilState(categoryState);
+  const [, setLoading] = useRecoilState(loadingState);
+  const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
+  const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
+  const [answerId, setAnswerId] = useRecoilState(answeridState);
+
+  // recoil state 초기화
+  setCategory('');
+  setActiveButton('');
+  setPersonality('');
+  setAge(0);
+  setGender('');
+  setInputText('');
+  setLoading(0);
+  setAnswerId(0);
+  setLike(0);
 
   // const [totaldata, setTotalData] = useState([]);
   function toStatistics() {
