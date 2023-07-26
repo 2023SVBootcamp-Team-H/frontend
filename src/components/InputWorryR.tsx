@@ -49,11 +49,11 @@ function InputWorryR({ props: onClickToggleModal }: any) {
             {`${showPersonality}`}의 답변
           </div>
           <img
-            className="opacity-60 w-[150px]"
+            className=" w-[180px]"
             src={findImage(showPersonality)}
             alt={`${showPersonality}`}
           />
-          <div className="w-[350px] h-[270px] text-center font-ham-l text-[16px] leading-6">
+          <div className="w-[350px] h-[230px] text-center font-ham-l text-[16px] leading-6">
             {message}
           </div>
           <button
@@ -73,11 +73,11 @@ function InputWorryR({ props: onClickToggleModal }: any) {
             {`${showPersonality}`}의 답변
           </div>
           <img
-            className="opacity-60 w-[150px]"
+            className="w-[180px]"
             src={findImage(showPersonality)}
             alt={`${showPersonality}`}
           />
-          <div className="w-[350px] h-[270px] flex-wrap overflow-auto text-center font-ham-l text-[16px] leading-6">
+          <div className="w-[350px] h-[230px] flex-wrap overflow-auto text-center font-ham-l text-[16px] leading-6">
             {message}
           </div>
           <button

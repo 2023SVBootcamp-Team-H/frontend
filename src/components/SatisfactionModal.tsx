@@ -66,8 +66,8 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
     };
     try {
       console.log(data);
-      // const res = await axios.post('http://34.195.3.25:5000/answer/', data);
-      const res = await axios.post('http://127.0.0.1:8000/answer/', data);
+      const res = await axios.post('http://34.195.3.25:5000/answer/', data);
+      // const res = await axios.post('http://127.0.0.1:8000/answer/', data);
       console.log(res);
       toMain();
     } catch (e) {
@@ -121,7 +121,10 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
               </button>
               <button
                 type="button"
-                onClick={() => toStatistics()}
+                onClick={() => {
+                  starSubmit();
+                  toStatistics();
+                }}
                 className="flex font-ham text-[#A16AE7]  justify-items-center
                 bg-satisfactionButton px-8 py-4 rounded-full"
               >

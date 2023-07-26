@@ -15,7 +15,7 @@ function SatisfactionPage() {
   // const [totaldata, setTotalData] = useState([]);
   function toStatistics() {
     const totalRating = axios
-      .get('http://127.0.0.1:8000/rank/')
+      .get('http://34.195.3.25:5000/rank/')
       .then((response) => {
         console.log(response);
         setTotalData(response.data.result);
@@ -24,7 +24,7 @@ function SatisfactionPage() {
     // console.log(totalRating.data.result);
     // setTotalData(totalRating.data.result);
     const genderRating = axios
-      .get('http://127.0.0.1:8000/rank/gender/')
+      .get('http://34.195.3.25:5000/rank/gender/')
       .then((response) => {
         console.log(response);
         setFemaleData(response.data.result.female);

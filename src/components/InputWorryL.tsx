@@ -101,8 +101,8 @@ function InputWorryL({ props: onClickToggleModal }: any) {
     try {
       setLoading(1);
 
-      // const response = await fetch('http://34.195.3.25:5000/worry/sse', {
-      const response = await fetch('http://127.0.0.1:8000/worry/sse', {
+      const response = await fetch('http://34.195.3.25:5000/worry/sse', {
+        // const response = await fetch('http://127.0.0.1:8000/worry/sse', {
         method: 'POST',
         headers: {
           'Content-Type': 'text/event-stream',
