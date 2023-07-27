@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  plugins,
 } from 'chart.js';
 
 ChartJS.register(
@@ -56,6 +57,9 @@ const options = {
       },
     },
     y: {
+      suggestedMin: 0,
+      suggestedMax: 5,
+      stepSize: 1,
       grid: {
         display: false,
         drawBorder: false,
@@ -64,6 +68,7 @@ const options = {
     },
   },
 };
+
 const labels = ['할머니', '중2', 'T 친구', 'F 친구', '래퍼'];
 
 type itemType = {
@@ -79,43 +84,57 @@ type BarChartPropsType = {
 export function BarChart({ avgData }: BarChartPropsType) {
   console.log('avgData');
   console.log(avgData);
-  const likeList =
-    avgData.length === 0 ? [] : avgData.map((item) => item.personality_name);
-  const avgList = avgData.length === 0 ? [] : avgData.map((item) => item.avg);
+  // const likeList =
+  //   avgData.length === 0 ? [] : avgData.map((item) => item.personality_name);
+  // const avgList = avgData.length === 0 ? [] : avgData.map((item) => item.avg);
   const data = {
     labels:
-      avgData.length === 0 ? [] : avgData.map((item) => item.personality_name),
+      avgData.length === 0
+        ? ['', '', '', '', '']
+        : avgData.map((item) => item.personality_name),
     datasets: [
       {
-        label: '인기도',
+        // label: '인기도',
         data:
           avgData.length === 0
-            ? []
+            ? [0, 0, 0, 0, 0]
             : avgData.map((item) => {
                 if (item.avg < 0) {
                   return 0;
                 }
                 return item.avg;
               }),
-        // backgroundColor: [
-        //   'rgba(255, 99, 132, 0.2)',
-
-        //   'rgba(255, 205, 86, 0.2)',
-        //   'rgba(75, 192, 192, 0.2)',
-        //   'rgba(54, 162, 235, 0.2)',
-        //   'rgba(153, 102, 255, 0.2)',
-        // ],
-        // borderColor: [
-        //   'rgb(255, 99, 132)',
-        //   'rgb(255, 205, 86)',
-        //   'rgb(75, 192, 192)',
-        //   'rgb(54, 162, 235)',
-        //   'rgb(153, 102, 255)',
-        // ],
-        // borderWidth: 1,
-        backgroundColor: '#C8A6D4',
+        backgroundColor: [
+          'rgba(173, 140, 199, 0.5)',
+          'rgba(187, 140, 224, 0.5)',
+          'rgba(224, 189, 227, 0.5)',
+          'rgba(200, 166, 212, 0.5)',
+          'rgba(191, 126, 192, 0.5)',
+        ],
+        borderColor: [
+          'rgb(173, 140, 199)',
+          'rgb(187, 140, 224)',
+          'rgb(224, 189, 227)',
+          'rgb(200, 166, 212)',
+          'rgb(191, 126, 192)',
+        ],
+        borderWidth: 1,
+        // backgroundColor: '#C8A6D4',
       },
     ],
   };
-  return <Bar options={options} data={data} width="100%" height="100%" />;
+  return (
+    <Bar
+      options={{
+        ...options,
+        plugins: {
+          ...options.plugins,
+          legend: { ...options.plugins.legend, display: false },
+        },
+      }}
+      data={data}
+      width="100%"
+      height="100%"
+    />
+  );
 }
