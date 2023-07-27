@@ -22,7 +22,7 @@ function StatisticsL() {
 
   return (
     <div className="flex flex-col justify-center  items-center font-ham-m  text-textTitle ">
-      <div className="flex flex-col justify-center items-center space-y-4  mt-10">
+      <div className="flex flex-col justify-start items-center space-y-4  mt-12 h-[280px]">
         <span className="text-[23px]">인기도 1위 인격</span>
         <img
           className="w-44 "
@@ -46,8 +46,8 @@ function StatisticsL() {
 
       <div className="border border-solid border-[#DBD4C7] w-96 mt-8" />
 
-      <div className="flex mt-8 space-x-2 w-[340px] space-x-6">
-        <div className="flex flex-col justify-center items-center space-y-4">
+      <div className="flex mt-8 w-[340px] h-36 ">
+        <div className="flex flex-col justify-start items-center space-y-4">
           <span className=" text-[15px]">여성이 뽑은 1위</span>
           <img
             className="w-[160px]"
@@ -67,11 +67,11 @@ function StatisticsL() {
             {femaleData.length === 0 ? '' : femaleData[0].personality_name}
           </span>
         </div>
-        <div className="border-solid border h-auto  border-[#DBD4C7] " />
-        <div className="flex flex-col justify-center items-center space-y-4">
+        <div className="border-solid border h-auto mx-3 border-[#DBD4C7] " />
+        <div className="flex flex-col justify-start items-center space-y-4">
           <span className=" text-[15px]">남성이 뽑은 1위</span>
           <img
-            className="w-auto"
+            className="w-[160px]"
             src={
               maleData.length === 0
                 ? ''
