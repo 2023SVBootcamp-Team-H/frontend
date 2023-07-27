@@ -16,7 +16,7 @@
       "prettier --write"
     ]
   },
-  "proxy": "http://127.0.0.1:8000",
+  "proxy": "https://www.witchsmind.com",
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "animate.css": "^4.1.1",

@@ -107,10 +107,12 @@ function InputWorryL({ props: onClickToggleModal }: any) {
     try {
       setLoading(1);
 
-      const response = await fetch('https://www.witchsmind.com/api/worry/sse', {
+      const response = await fetch('https://www.witchsmind.com/worry/sse/', {
         // const response = await fetch('http://127.0.0.1:8000/worry/sse', {
         method: 'POST',
         headers: {
+          Connection: 'keep-alive',
+          'Cache-Control': 'no-cache',
           'Content-Type': 'text/event-stream',
         },
         body: JSON.stringify(data),
