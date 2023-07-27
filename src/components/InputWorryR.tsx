@@ -12,6 +12,7 @@ import {
   contentState,
   loadingState,
   messageState,
+  charcterButtonState,
 } from '@/Recoil';
 import grandma from '@/assets/images/category/grandma.png';
 import popularbuttonIconBr from '@/assets/images/popularbuttonIconBr.svg';
@@ -34,6 +35,10 @@ function InputWorryR({ props: onClickToggleModal }: any) {
   const [showPersonality, setShowPersonality] =
     useRecoilState(personalityState);
 
+  // 버튼에서 받아온 사용자가 선택한 인격
+  const [CharacterButton, setCharacterButton] =
+    useRecoilState(charcterButtonState);
+
   const loading = useRecoilValue(loadingState);
   const message = useRecoilValue(messageState);
 
@@ -55,12 +60,12 @@ function InputWorryR({ props: onClickToggleModal }: any) {
         <div>
           <div className="flex flex-col justify-center items-center m-auto space-y-5">
             <div className="font-ham-m text-textTitle text-center text-[25px]">
-              {`${showPersonality}`}의 답변
+              {`${CharacterButton}`}의 답변
             </div>
             <img
               className=" w-[180px]"
-              src={findImage(showPersonality)}
-              alt={`${showPersonality}`}
+              src={findImage(CharacterButton)}
+              alt={`${CharacterButton}`}
             />
             <div className="w-[350px] h-[230px] text-center font-ham-l text-[16px] leading-6">
               {message}
@@ -92,12 +97,12 @@ function InputWorryR({ props: onClickToggleModal }: any) {
         <div>
           <div className="flex flex-col justify-center items-center m-auto space-y-5">
             <div className="font-ham-m text-textTitle text-center text-[25px]">
-              {`${showPersonality}`}의 답변
+              {`${CharacterButton}`}의 답변
             </div>
             <img
               className="w-[180px]"
-              src={findImage(showPersonality)}
-              alt={`${showPersonality}`}
+              src={findImage(CharacterButton)}
+              alt={`${CharacterButton}`}
             />
             <div className="w-[350px] h-[230px] flex-wrap overflow-auto text-center font-ham-l text-[16px] leading-6">
               {message}
@@ -109,7 +114,7 @@ function InputWorryR({ props: onClickToggleModal }: any) {
              bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
               border border-stone-400"
             >
-              <span className="font-bold text-textTitle">{`${showPersonality}`}</span>
+              <span className="font-bold text-textTitle">{`${CharacterButton}`}</span>
               의 답변을 만족하시나요?
             </button>
           </div>

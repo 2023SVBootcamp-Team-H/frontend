@@ -12,6 +12,7 @@ import {
   messageState,
   answeridState,
   activeButtonState,
+  charcterButtonState,
 } from '@/Recoil';
 
 // interface InputWorryLProps {
@@ -35,6 +36,9 @@ function InputWorryL({ props: onClickToggleModal }: any) {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [message, setMessage] = useRecoilState(messageState);
   const [answerId, setAnswerId] = useRecoilState(answeridState);
+
+  const [CharacterButton, setCharacterButton] =
+    useRecoilState(charcterButtonState);
 
   const handleButtonClick = () => {
     // Check if the input field is indeed present
@@ -101,7 +105,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
     try {
       setLoading(1);
 
-      const response = await fetch('http://34.195.3.25:5000/worry/sse', {
+      const response = await fetch('https://www.witchsmind.com/api/worry/sse', {
         // const response = await fetch('http://127.0.0.1:8000/worry/sse', {
         method: 'POST',
         headers: {
@@ -117,6 +121,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
       while (true) {
         // value: 서버에서 보내는 딸깍 단어, done: 스트림이 끝났는지 여부
         const { value, done } = await reader.read();
+        console.log(value);
         // 스트림이 끝나면 break! (여기서 하고싶은 작업을 한다.. ex: 로딩창 제거)
         if (value === 'stop') {
           const { value, done } = await reader.read();
@@ -266,7 +271,10 @@ function InputWorryL({ props: onClickToggleModal }: any) {
           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
           disabled={isSubmitButtonDisabled()}
-          onClick={handleWorrySubmit}
+          onClick={() => {
+            handleWorrySubmit();
+            setCharacterButton(showPersonality);
+          }}
         >
           {/* {`${showPersonality}`}에게 고민 상담 받기 */}
           {showPersonality === ''
