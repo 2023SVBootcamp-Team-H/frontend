@@ -50,7 +50,7 @@ function StatisticsL() {
         <div className="flex flex-col justify-center items-center space-y-4">
           <span className=" text-[15px]">여성이 뽑은 1위</span>
           <img
-            className="w-auto"
+            className="w-[160px]"
             src={
               femaleData.length === 0
                 ? ''
@@ -71,7 +71,7 @@ function StatisticsL() {
         <div className="flex flex-col justify-center items-center space-y-4">
           <span className=" text-[15px]">남성이 뽑은 1위</span>
           <img
-            className="w-auto "
+            className="w-auto"
             src={
               maleData.length === 0
                 ? ''

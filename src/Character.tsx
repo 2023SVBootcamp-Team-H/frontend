@@ -16,11 +16,11 @@ class Character {
 }
 
 const AllCharacter = [
-  new Character('맑눈광', friendF),
+  new Character('F 친구', friendF),
   new Character('할머니', grandma),
-  new Character('친구', friendT),
+  new Character('T 친구', friendT),
   new Character('래퍼', rapper),
-  new Character('중2병', gradeTwo),
+  new Character('중2', gradeTwo),
 ];
 
 export default AllCharacter;
