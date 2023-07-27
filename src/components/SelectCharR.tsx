@@ -24,6 +24,10 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
   const handleCharButtonClick = (character: string) => {
     setPersonality(character);
     onSelectChar(character);
+    console.log('캐릭터');
+    console.log(character);
+    console.log('인격');
+    console.log(personality);
   };
 
   // const [currentClick, setCurrentClick] = useState(null);
@@ -89,9 +93,9 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
           onMouseOut={() => setIsHoveringF(false)}
           onFocus={() => setIsHoveringF(true)}
           onBlur={() => setIsHoveringF(false)}
-          onClick={() => handleCharButtonClick('맑눈광')}
+          onClick={() => handleCharButtonClick('F 친구')}
         >
-          {personality === '맑눈광' ? (
+          {personality === 'F 친구' ? (
             <img
               className="flex items-center justify-center w-[180px] px-4"
               src={friendF_on}
@@ -114,9 +118,9 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
           onMouseOut={() => setIsHoveringT(false)}
           onFocus={() => setIsHoveringT(true)}
           onBlur={() => setIsHoveringT(false)}
-          onClick={() => handleCharButtonClick('친구')}
+          onClick={() => handleCharButtonClick('T 친구')}
         >
-          {personality === '친구' ? (
+          {personality === 'T 친구' ? (
             <img
               className="flex items-center justify-center w-[180px] px-4"
               src={friendT_on}
@@ -166,9 +170,9 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
           onMouseOut={() => setIsHoveringGradeT(false)}
           onFocus={() => setIsHoveringGradeT(true)}
           onBlur={() => setIsHoveringGradeT(false)}
-          onClick={() => handleCharButtonClick('중2병')}
+          onClick={() => handleCharButtonClick('중2')}
         >
-          {personality === '중2병' ? (
+          {personality === '중2' ? (
             <img
               className="flex items-center justify-center w-[180px] px-4"
               src={gradeTwo_on}

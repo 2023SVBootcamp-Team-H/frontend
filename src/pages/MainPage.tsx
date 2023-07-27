@@ -12,6 +12,7 @@ import {
   loadingState,
   messageState,
   activeButtonState,
+  nicknameState,
 } from '@/Recoil';
 import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
 
@@ -27,7 +28,8 @@ function MainPage() {
   const [, setLoading] = useRecoilState(loadingState);
   const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
   const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
-  const [answerId, setAnswerId] = useRecoilState(answeridState);
+  const [, setAnswerId] = useRecoilState(answeridState);
+  const [, setInputNickname] = useRecoilState(nicknameState);
 
   // recoil state 초기화
   setCategory('');
@@ -39,6 +41,7 @@ function MainPage() {
   setLoading(0);
   setAnswerId(0);
   setLike(0);
+  setInputNickname('');
 
   function toBook() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수

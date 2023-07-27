@@ -18,6 +18,7 @@ import {
   loadingState,
   messageState,
   activeButtonState,
+  nicknameState,
 } from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
@@ -37,7 +38,8 @@ function SatisfactionPage() {
   const [, setLoading] = useRecoilState(loadingState);
   const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
   const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
-  const [answerId, setAnswerId] = useRecoilState(answeridState);
+  const [, setAnswerId] = useRecoilState(answeridState);
+  const [, setInputNickname] = useRecoilState(nicknameState);
 
   // recoil state 초기화
   setCategory('');
@@ -49,11 +51,12 @@ function SatisfactionPage() {
   setLoading(0);
   setAnswerId(0);
   setLike(0);
+  setInputNickname('');
 
   // const [totaldata, setTotalData] = useState([]);
   function toStatistics() {
     const totalRating = axios
-      .get('http://34.195.3.25:5000/rank/')
+      .get('https://www.witchsmind.com/api/rank/')
       .then((response) => {
         console.log(response);
         setTotalData(response.data.result);
@@ -62,7 +65,7 @@ function SatisfactionPage() {
     // console.log(totalRating.data.result);
     // setTotalData(totalRating.data.result);
     const genderRating = axios
-      .get('http://34.195.3.25:5000/rank/gender/')
+      .get('https://www.witchsmind.com/api/rank/gender/')
       .then((response) => {
         console.log(response);
         setFemaleData(response.data.result.female);

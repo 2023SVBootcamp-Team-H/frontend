@@ -49,7 +49,7 @@ function BookPageThree(attribute: handleProps) {
         </div>
         {/* 오른쪽 페이지 */}
         <div
-          className=" flex flex-col
+          className=" flex flex-col justify-center items-center
           bg-pageBackgroud h-[620px] w-[450px]
             bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat "
         >

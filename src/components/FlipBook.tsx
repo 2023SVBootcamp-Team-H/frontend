@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil';
 import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
+import NicknamePage from '@/pages/NicknamePage';
 import SatisfactionModal from '@/components/SatisfactionModal';
 
 function FlipBook() {
@@ -45,8 +46,14 @@ function FlipBook() {
     }
   };
   const pages = [
+    <div key="page0">
+      <NicknamePage handleNextPage={handleNextPage} />
+    </div>,
     <div key="page1">
-      <BookPage handleNextPage={handleNextPage} />
+      <BookPage
+        handlePrevPage={handlePrevPage}
+        handleNextPage={handleNextPage}
+      />
     </div>,
     <div key="page2">
       <BookPageTwo
