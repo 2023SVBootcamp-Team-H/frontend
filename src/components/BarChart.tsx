@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  plugins,
 } from 'chart.js';
 
 ChartJS.register(
@@ -56,6 +57,9 @@ const options = {
       },
     },
     y: {
+      suggestedMin: 0,
+      suggestedMax: 5,
+      stepSize: 1,
       grid: {
         display: false,
         drawBorder: false,
@@ -64,6 +68,7 @@ const options = {
     },
   },
 };
+
 const labels = ['할머니', '중2', 'T 친구', 'F 친구', '래퍼'];
 
 type itemType = {
@@ -79,18 +84,20 @@ type BarChartPropsType = {
 export function BarChart({ avgData }: BarChartPropsType) {
   console.log('avgData');
   console.log(avgData);
-  const likeList =
-    avgData.length === 0 ? [] : avgData.map((item) => item.personality_name);
-  const avgList = avgData.length === 0 ? [] : avgData.map((item) => item.avg);
+  // const likeList =
+  //   avgData.length === 0 ? [] : avgData.map((item) => item.personality_name);
+  // const avgList = avgData.length === 0 ? [] : avgData.map((item) => item.avg);
   const data = {
     labels:
-      avgData.length === 0 ? [] : avgData.map((item) => item.personality_name),
+      avgData.length === 0
+        ? ['', '', '', '', '']
+        : avgData.map((item) => item.personality_name),
     datasets: [
       {
-        label: '인기도',
+        // label: '인기도',
         data:
           avgData.length === 0
-            ? []
+            ? [0, 0, 0, 0, 0]
             : avgData.map((item) => {
                 if (item.avg < 0) {
                   return 0;
@@ -116,5 +123,18 @@ export function BarChart({ avgData }: BarChartPropsType) {
       },
     ],
   };
-  return <Bar options={options} data={data} width="100%" height="100%" />;
+  return (
+    <Bar
+      options={{
+        ...options,
+        plugins: {
+          ...options.plugins,
+          legend: { ...options.plugins.legend, display: false },
+        },
+      }}
+      data={data}
+      width="100%"
+      height="100%"
+    />
+  );
 }
