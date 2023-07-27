@@ -8,15 +8,8 @@ function StatisticsR() {
   const navigate = useNavigate();
 
   const [avgData, setAvgData] = useRecoilState(avgState);
-  // const ranklabel = {
-  //   /* ranklabel 데이터를 정의하세요 */
-  // };
-  // const rankdata = {
-  //   /* rankdata 데이터를 정의하세요 */
-  // };
 
   function toMain() {
-    // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
     navigate('/');
   }
 
