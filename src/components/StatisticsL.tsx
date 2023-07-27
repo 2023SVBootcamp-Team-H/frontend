@@ -44,7 +44,7 @@ function StatisticsL() {
         </span>
       </div>
 
-      <div className="border border-solid border-[#DBD4C7] w-96 mt-8" />
+      <div className="border border-solid border-[#DBD4C7] w-96" />
 
       <div className="flex mt-8 w-[340px] h-36 ">
         <div className="flex flex-col justify-start items-center space-y-4">
