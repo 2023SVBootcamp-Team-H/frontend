@@ -1,7 +1,6 @@
 import React from 'react';
-import { colorify, replaceColor, flatten, getColors } from 'lottie-colorify';
 import Lottie from 'lottie-react';
-import loadingLottie from '@/assets/lottie';
+import loadingLottie from '@/assets/loadingLottie';
 
 function LoadingScreen() {
   const defaultOptions = {

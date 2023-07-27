@@ -102,6 +102,11 @@ const charcterButtonState = atom<string>({
   default: '',
 });
 
+const nicknameState = atom<string>({
+  key: 'nicknameState',
+  default: '',
+});
+
 export {
   categoryState,
   activeButtonState,
@@ -119,4 +124,5 @@ export {
   femaleState,
   maleState,
   charcterButtonState,
+  nicknameState,
 };
