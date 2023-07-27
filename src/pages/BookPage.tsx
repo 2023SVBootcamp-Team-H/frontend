@@ -9,10 +9,11 @@ export interface SelectWorryProps {
 }
 
 type handleProps = {
+  handlePrevPage: () => void;
   handleNextPage: () => void;
 };
 
-function BookPage({ handleNextPage }: handleProps) {
+function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
   const [selectedButton, setSelectedButton] = useState<string>('');
 
   const handleSelectButtonL: SelectWorryProps['handleSelectButton'] = (
@@ -39,6 +40,17 @@ function BookPage({ handleNextPage }: handleProps) {
             selectedButton={selectedButton}
             handleSelectButton={handleSelectButtonL}
           />
+          <button
+            type="button"
+            onClick={() => {
+              handlePrevPage();
+            }}
+            className="px-6 py-1 mt-[26px] items-center
+        bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
+         text-[#7C5197] font-ham-l text-center"
+          >
+            Prev
+          </button>
         </div>
         <div
           className="bg-pageBackgroud h-[620px] w-[450px] 
