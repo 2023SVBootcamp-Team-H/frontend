@@ -26,16 +26,18 @@ function BookPage({ handleNextPage }: handleProps) {
         flex flex-col items-center justify-center"
         >
           {/* 오른쪽 페이지 */}
-          <NickameR />
-          {/* <button
-            type="button"
-            onClick={() => {
-              handleNextPage();
-            }}
-            className="px-6 py-1 mt-48 bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197] text-[#7C5197] font-ham-l text-center"
-          >
-            Next
-          </button> */}
+          <NickameR handleNextPage={handleNextPage} />
+          <div className="my-auto mt-[115px]">
+            <button
+              type="button"
+              onClick={() => {
+                handleNextPage();
+              }}
+              className="px-6 py-1 bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197] text-[#7C5197] font-ham-l text-center"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>

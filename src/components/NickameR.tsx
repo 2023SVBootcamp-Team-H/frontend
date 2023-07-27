@@ -2,7 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { nicknameState } from '@/Recoil';
 
-function NickameR() {
+type handleProps = {
+  handleNextPage: () => void;
+};
+
+function NickameR({ handleNextPage }: handleProps) {
   const [inputNickname, setInputNickname] = useRecoilState(nicknameState);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const handleButtonClick = () => {
@@ -20,9 +24,9 @@ function NickameR() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
-        {/* <span className="text-[20px] font-ham-m text-textTitle">
+        <span className="mt-48 text-[20px] font-ham-m text-textTitle">
           닉네임을 입력해주세요
-        </span> */}
+        </span>
         {/* <input
           className="w-[300px] h-[50px] px-3 font-ham
           bg-opacity-20 bg-[#DBD4C7]
@@ -32,7 +36,7 @@ function NickameR() {
         /> */}
         {/* 고민 입력 박스 */}
         <button
-          className="w-[280px] h-[200px]"
+          className="w-[280px] h-[200px] mt-12"
           onClick={handleButtonClick}
           type="button"
         >
@@ -45,6 +49,17 @@ function NickameR() {
             onChange={handleInputNicknameChange}
             placeholder="닉네임을 입력해주세요."
           />
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            handleNextPage();
+          }}
+          className="mt-8 p-3 px-6 text-[12px] font-ham-m text-center  text-stone-600 
+             bg-[#d2c9be] bg-opacity-20 rounded-[29px] shadow-inner
+              border border-stone-200"
+        >
+          완료
         </button>
       </div>
       <div className="flex justify-center" />

@@ -18,6 +18,7 @@ import {
   loadingState,
   messageState,
   activeButtonState,
+  nicknameState,
 } from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
@@ -37,7 +38,8 @@ function SatisfactionPage() {
   const [, setLoading] = useRecoilState(loadingState);
   const [, setActiveButton] = useRecoilState(activeButtonState); // 선택된 카테고리
   const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
-  const [answerId, setAnswerId] = useRecoilState(answeridState);
+  const [, setAnswerId] = useRecoilState(answeridState);
+  const [, setInputNickname] = useRecoilState(nicknameState);
 
   // recoil state 초기화
   setCategory('');
@@ -49,6 +51,7 @@ function SatisfactionPage() {
   setLoading(0);
   setAnswerId(0);
   setLike(0);
+  setInputNickname('');
 
   // const [totaldata, setTotalData] = useState([]);
   function toStatistics() {

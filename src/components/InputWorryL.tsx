@@ -13,6 +13,7 @@ import {
   answeridState,
   activeButtonState,
   charcterButtonState,
+  nicknameState,
 } from '@/Recoil';
 
 // interface InputWorryLProps {
@@ -25,6 +26,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
   const [age, setAge] = useRecoilState(ageState);
   const [gender, setGender] = useRecoilState(genderState);
   const [inputText, setInputText] = useRecoilState(contentState);
+  const [inputNickname, setInputNickname] = useRecoilState(nicknameState);
 
   const [showPersonality, setShowPersonality] =
     useRecoilState(personalityState);
@@ -94,8 +96,8 @@ function InputWorryL({ props: onClickToggleModal }: any) {
     const data = {
       gender,
       age,
-      job: '안녕',
-      nickname: '민아',
+      job: '민아',
+      nickname: inputNickname,
       address: '123rf',
       content: inputText,
       category: activeButton,
