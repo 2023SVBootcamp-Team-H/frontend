@@ -3,6 +3,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { nicknameState } from '@/Recoil';
 import witch from '@/assets/images/witch.png';
 import 'hover.css/css/hover-min.css';
+import 'justinaguilar.css';
 
 type handleProps = {
   handleNextPage: () => void;
@@ -25,7 +26,7 @@ function NickameR({ handleNextPage }: handleProps) {
 
   return (
     <div className=" flex flex-col items-center ">
-      <img className="mt-3" src={witch} alt="witch" />
+      <img className="mt-10 floating" src={witch} alt="witch" />
 
       {/* 고민 입력 박스 */}
       <button
@@ -48,7 +49,7 @@ function NickameR({ handleNextPage }: handleProps) {
         onClick={() => {
           handleNextPage();
         }}
-        className="mt-4 p-3 px-6 text-[12px] font-ham-m text-center  text-stone-600 
+        className="mt-6 p-3 px-6 text-[12px] font-ham-m text-center  text-stone-600 
              bg-[#d2c9be] bg-opacity-20 rounded-[29px] shadow-inner
 "
       >

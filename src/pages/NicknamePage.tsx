@@ -9,7 +9,7 @@ type handleProps = {
 
 function BookPage({ handleNextPage }: handleProps) {
   return (
-    <div className="flex justify-center items-center  hvr-curl-bottom-right ">
+    <div className=" flex justify-center items-center  hvr-curl-bottom-right ">
       <div
         className="flex justify-center items-center w-[fit] h-[fit] p-4
        bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8 "

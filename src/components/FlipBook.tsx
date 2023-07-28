@@ -78,11 +78,12 @@ function FlipBook() {
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}
       <FlipPage
-        orientation="horizontal"
+        orientation="horizontal" // 삼항연산자
         uncutPages
         ref={flipPageRef}
-        width={920}
+        width={920} // 삼항연산자
         height={670}
+        // style={{ width: '80vw' }}
         className="animate__animated animate__jackInTheBox
         outline-pageOutline outline outline-[15px] rounded-md "
       >
