@@ -55,16 +55,12 @@ function MainPage() {
   }
 
   return (
-    // <div
-    //   className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
-    // flex justify-center items-end"
-    // >
     <div
       className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
-    "
+    relative flex justify-center items-end"
     >
       <span
-        className="flex justify-end items-center pt-5 pr-5 space-x-2
+        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
         font-ham text-[#E1C0E7] "
       >
         <span>BGM</span>
