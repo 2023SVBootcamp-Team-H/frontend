@@ -28,7 +28,7 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
     setSelectedButton(categorySelected);
   };
   return (
-    <div className="">
+    <div className="flex justify-center items-center">
       <div className="flex justify-center items-center w-[fit] h-[fit] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8">
         <div
           className="bg-pageBackgroud  h-[620px] w-[450px]
