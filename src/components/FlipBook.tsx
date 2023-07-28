@@ -79,6 +79,7 @@ function FlipBook() {
       ) : null}
       <FlipPage
         orientation="horizontal"
+        uncutPages
         ref={flipPageRef}
         width={920}
         height={670}

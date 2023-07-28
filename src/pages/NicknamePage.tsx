@@ -9,8 +9,11 @@ type handleProps = {
 
 function BookPage({ handleNextPage }: handleProps) {
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex justify-center items-center w-[fit] h-[fit] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8">
+    <div className="flex justify-center items-center  hvr-curl-bottom-right ">
+      <div
+        className="flex justify-center items-center w-[fit] h-[fit] p-4
+       bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8 "
+      >
         <div
           className="bg-pageBackgroud h-[620px] w-[450px]
           bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
@@ -21,7 +24,7 @@ function BookPage({ handleNextPage }: handleProps) {
           <NickameL />
         </div>
         <div
-          className="bg-pageBackgroud h-[620px] w-[450px]
+          className="bg-pageBackgroud h-[620px] w-[450px] 
           bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
       flex flex-col items-center"
         >

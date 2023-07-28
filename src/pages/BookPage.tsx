@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'animate.css';
+import 'hover.css/css/hover-min.css';
 import SelectWorryL from '@/components/SelectWorryL';
 import SelectWorryR from '@/components/SelectWorryR';
 
@@ -28,10 +29,10 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
     setSelectedButton(categorySelected);
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center hvr-curl-bottom-right">
       <div className="flex justify-center items-center w-[fit] h-[fit] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8">
         <div
-          className="bg-pageBackgroud  h-[620px] w-[450px]
+          className="bg-pageBackgroud  h-[620px] w-[450px] 
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
         flex flex-col items-center"

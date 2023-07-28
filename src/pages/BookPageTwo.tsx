@@ -18,11 +18,11 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
 
   return (
     // 배경
-    <div className=" flex justify-center items-center">
+    <div className=" flex justify-center items-center ">
       {/* 책 전체 요소 */}
       <div
         className=" 
-        flex justify-center items-center
+        flex justify-center items-center hvr-curl-bottom-right
         w-[fit] h-[fit] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
        px-4 pt-5 pb-8"
@@ -32,7 +32,7 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
           className="bg-pageBackgroud  h-[620px] w-[450px]
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
-        flex flex-col items-center
+        flex flex-col items-center 
         "
         >
           {/* 왼쪽 이미지 */}

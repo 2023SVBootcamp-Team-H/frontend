@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { nicknameState } from '@/Recoil';
 import witch from '@/assets/images/witch.png';
+import 'hover.css/css/hover-min.css';
 
 type handleProps = {
   handleNextPage: () => void;
@@ -24,7 +25,7 @@ function NickameR({ handleNextPage }: handleProps) {
 
   return (
     <div className=" flex flex-col items-center ">
-      <img className="mt-3 animate-pulse" src={witch} alt="witch" />
+      <img className="mt-3" src={witch} alt="witch" />
 
       {/* 고민 입력 박스 */}
       <button
