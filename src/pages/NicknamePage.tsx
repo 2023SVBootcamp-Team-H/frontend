@@ -9,13 +9,18 @@ type handleProps = {
 
 function BookPage({ handleNextPage }: handleProps) {
   return (
-    <div className=" flex justify-center items-center  hvr-curl-bottom-right ">
+    <div
+      id="1001"
+      className=" flex justify-center items-center  hvr-curl-bottom-right w-[100%] h-[100%] "
+    >
       <div
-        className="flex justify-center items-center w-[fit] h-[fit] p-4
-       bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8 "
+        id="1002"
+        className="flex justify-center items-center w-[100%] h-[100%]
+       bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-4 pb-4 "
       >
         <div
-          className="bg-pageBackgroud h-[620px] w-[450px]
+          id="1003"
+          className="bg-pageBackgroud h-[100%] w-[100%]
           bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
           flex flex-col items-center justify-center       
           border-solid border-r-[3px] border-[#D9D3C8] "
@@ -24,9 +29,9 @@ function BookPage({ handleNextPage }: handleProps) {
           <NickameL />
         </div>
         <div
-          className="bg-pageBackgroud h-[620px] w-[450px] 
+          className="bg-pageBackgroud  h-[100%] w-[100%]
           bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
-      flex flex-col items-center"
+      flex items-center"
         >
           {/* 오른쪽 페이지 */}
           <NickameR handleNextPage={handleNextPage} />

@@ -115,7 +115,7 @@ function FlipBook() {
           windowWidth - widthGap > maxWidth ? maxWidth : windowWidth - widthGap
         } // 삼항연산자
         height={
-          windowWidth > maxWidth
+          windowWidth - widthGap > maxWidth
             ? maxHeight
             : windowWidth < limitWidth
             ? windowHeight - heightGap
