@@ -37,12 +37,12 @@ function Button({
         handleButtonClick(buttonText);
         console.log(buttonText);
       }}
-      className={`flex flex-col items-center justify-center opacity-60 mr-10 ml-10 ${
+      className={`flex flex-col items-center justify-center opacity-60${
         activeButton === category ? 'text-textTitle opacity-90' : ''
       }`}
     >
-      <img className="w-[90px] h-[90px]" src={imageSrc} alt={category} />
-      <div className="mt-1 ">{buttonText}</div>
+      <img className="w-[45%] h-[45%]" src={imageSrc} alt={category} />
+      <div className="mt-2 ">{buttonText}</div>
     </button>
   );
 }
@@ -58,8 +58,8 @@ function SelectWorryR({
   };
 
   return (
-    <div className="">
-      <div className="font-ham-m flex justify-center items-center mt-6">
+    <div className="flex flex-col justify-around w-[100%] h-[100%]">
+      <div className="font-ham-m flex justify-around items-center">
         <Button
           category="운동"
           imageSrc={sports}
@@ -75,7 +75,7 @@ function SelectWorryR({
           activeButton={activeButton}
         />
       </div>
-      <div className="font-ham-m flex justify-center items-center mt-8">
+      <div className="font-ham-m flex justify-center items-center">
         <Button
           category="결혼"
           imageSrc={wedding}
@@ -91,7 +91,7 @@ function SelectWorryR({
           activeButton={activeButton}
         />
       </div>
-      <div className="font-ham-m flex justify-center items-center mt-10">
+      <div className="font-ham-m flex justify-center items-center">
         <Button
           category="경제"
           imageSrc={money}
@@ -107,7 +107,7 @@ function SelectWorryR({
           activeButton={activeButton}
         />
       </div>
-      <div className="font-ham-m flex justify-center items-center mt-8">
+      <div className="font-ham-m flex justify-center items-center">
         <Button
           category="건강"
           imageSrc={health}

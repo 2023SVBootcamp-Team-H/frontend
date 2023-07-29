@@ -68,10 +68,10 @@ function FlipBook() {
     }
   };
   const pages = [
-    <div key="page0" className="w-[100%] h-[100%]">
+    <div id="1000" key="page0" className="w-[100%] h-[100%]">
       <NicknamePage handleNextPage={handleNextPage} />
     </div>,
-    <div key="page1">
+    <div id="2000" key="page1" className="w-[100%] h-[100%]">
       <BookPage
         handlePrevPage={handlePrevPage}
         handleNextPage={handleNextPage}

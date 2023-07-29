@@ -31,10 +31,10 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
     setSelectedButton(categorySelected);
   };
   return (
-    <div className="flex justify-center items-center hvr-curl-bottom-right">
-      <div className="flex justify-center items-center w-[fit] h-[fit] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-5 pb-8">
+    <div className="flex justify-center items-center hvr-curl-bottom-right w-[100%] h-[100%]">
+      <div className="flex justify-center items-center w-[100%] h-[100%] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md">
         <div
-          className="bg-pageBackgroud  h-[620px] w-[450px] 
+          className="bg-pageBackgroud  w-[100%] h-[100%] 
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
         flex flex-col items-center"
@@ -48,7 +48,7 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
             onClick={() => {
               handlePrevPage();
             }}
-            className="px-6 py-1 mt-[26px] items-center
+            className=" w-[20%] h-[4%] items-center text-[1vw]
         bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
          text-[#7C5197] font-ham-l text-center"
           >
@@ -56,9 +56,9 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
           </button>
         </div>
         <div
-          className="bg-pageBackgroud h-[620px] w-[450px] 
+          className="bg-pageBackgroud w-[100%] h-[100%] 
           bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat
-        flex flex-col items-center"
+        flex flex-col content-center items-center"
         >
           <SelectWorryR
             selectedButton={selectedButton}
@@ -69,7 +69,7 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
             onClick={() => {
               handleNextPage();
             }}
-            className="px-6 py-1 mt-10 bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197] text-[#7C5197] font-ham-l text-center"
+            className=" w-[20%] h-[4%] mt-auto items-center text-[1vw] bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197] text-[#7C5197] font-ham-l text-center"
           >
             Next
           </button>
