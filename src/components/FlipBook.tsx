@@ -114,13 +114,17 @@ function FlipBook() {
         width={
           windowWidth - widthGap > maxWidth ? maxWidth : windowWidth - widthGap
         } // 삼항연산자
-        height={
-          windowWidth - widthGap > maxWidth
-            ? maxHeight
-            : windowWidth < limitWidth
-            ? windowHeight - heightGap
-            : (windowWidth - widthGap) * widthPerHeight
-        }
+        height={(() => {
+          let ret = 0;
+          if (windowWidth - widthGap > maxWidth) {
+            ret = maxHeight;
+          } else if (windowWidth < limitWidth) {
+            ret = windowHeight - heightGap;
+          } else {
+            ret = (windowWidth - widthGap) * widthPerHeight;
+          }
+          return ret;
+        })()}
         // style={{ width: '80vw' }}
         className="animate__animated animate__jackInTheBox
         outline-pageOutline outline outline-[15px] rounded-md "
