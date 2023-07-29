@@ -3,25 +3,44 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 // @ts-ignore
 import FlipPage, { ReactFlipPage } from 'react-flip-page';
 import { useRecoilState } from 'recoil';
+import { windowWidthState, windowHeightState } from '@/Recoil';
 import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
 import NicknamePage from '@/pages/NicknamePage';
 import AudioButton from '@/components/AudioButton';
 import SatisfactionModal from '@/components/SatisfactionModal';
+import {
+  heightGap,
+  limitWidth,
+  maxHeight,
+  maxWidth,
+  widthGap,
+  widthPerHeight,
+} from '@/assets/values';
 
 function FlipBook() {
   const [isOpenModal, setOpenModal] = useState<boolean>(() => false);
+  const [windowWidth, setWindowWidth] = useRecoilState(windowWidthState);
+  const [windowHeight, setWindowHeight] = useRecoilState(windowHeightState);
   const flipPageRef = useRef<ReactFlipPage | null>(null);
 
   const onClickToggleModal = useCallback(() => {
     setOpenModal(!isOpenModal);
   }, [isOpenModal]);
 
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+  };
+
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
       // handle touch move event here
     };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     if (flipPageRef.current) {
       document.addEventListener('touchmove', handleTouchMove, {
@@ -30,6 +49,8 @@ function FlipBook() {
     }
 
     return () => {
+      window.removeEventListener('resize', handleResize);
+
       if (flipPageRef.current) {
         document.removeEventListener('touchmove', handleTouchMove);
       }
@@ -47,7 +68,7 @@ function FlipBook() {
     }
   };
   const pages = [
-    <div key="page0">
+    <div key="page0" className="w-[100%] h-[100%]">
       <NicknamePage handleNextPage={handleNextPage} />
     </div>,
     <div key="page1">
@@ -90,8 +111,16 @@ function FlipBook() {
         orientation="horizontal" // 삼항연산자
         uncutPages
         ref={flipPageRef}
-        width={920} // 삼항연산자
-        height={670}
+        width={
+          windowWidth - widthGap > maxWidth ? maxWidth : windowWidth - widthGap
+        } // 삼항연산자
+        height={
+          windowWidth > maxWidth
+            ? maxHeight
+            : windowWidth < limitWidth
+            ? windowHeight - heightGap
+            : (windowWidth - widthGap) * widthPerHeight
+        }
         // style={{ width: '80vw' }}
         className="animate__animated animate__jackInTheBox
         outline-pageOutline outline outline-[15px] rounded-md "
