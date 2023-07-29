@@ -77,7 +77,7 @@ function FlipBook() {
         handleNextPage={handleNextPage}
       />
     </div>,
-    <div key="page2">
+    <div id="3000" key="page2" className="w-[100%] h-[100%]">
       <BookPageTwo
         handlePrevPage={handlePrevPage}
         handleNextPage={handleNextPage}
