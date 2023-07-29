@@ -17,40 +17,38 @@ function BookPageThree(attribute: handleProps) {
 
   return (
     // 배경
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center w-[100%] h-[100%]">
       {/* 책 전체 요소 */}
       <div
         className="flex justify-center items-center
-        w-[fit] h-[fit] p-4 bg-pageBackgroud 
+        w-[100%] h-[100%] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
-       px-4 pt-5 pb-8"
+       "
       >
         {/* 왼쪽 페이지 */}
         <div
-          className="bg-pageBackgroud  h-[620px] w-[450px]
-        bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
+          className="flex flex-col bg-pageBackgroud  w-[100%] h-[100%]
+        bg-bookframe bg-center  p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
         "
         >
-          <div>
-            <InputWorryL />
-            <button
-              type="button"
-              onClick={() => {
-                attribute.handlePrevPage();
-              }}
-              className="px-6 py-1 mt-10 ml-40
+          <InputWorryL />
+          <button
+            type="button"
+            onClick={() => {
+              attribute.handlePrevPage();
+            }}
+            className="w-[20%] h-[4%] text-[1vw] self-center mt-auto
                bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
                text-[#7C5197] font-ham-l text-center"
-            >
-              Prev
-            </button>
-          </div>
+          >
+            Prev
+          </button>
         </div>
         {/* 오른쪽 페이지 */}
         <div
           className=" flex flex-col justify-center items-center
-          bg-pageBackgroud h-[620px] w-[450px]
+          bg-pageBackgroud w-[100%] h-[100%]
             bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat "
         >
           <InputWorryR props={attribute.onClickToggleModal} />

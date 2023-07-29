@@ -83,7 +83,7 @@ function FlipBook() {
         handleNextPage={handleNextPage}
       />
     </div>,
-    <div key="page3">
+    <div id="4000" key="page3" className="w-[100%] h-[100%]">
       <BookPageThree
         onClickToggleModal={onClickToggleModal}
         handlePrevPage={handlePrevPage}
