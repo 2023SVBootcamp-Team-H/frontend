@@ -4,6 +4,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import FlipPage, { ReactFlipPage } from 'react-flip-page';
 import { useRecoilState } from 'recoil';
 import { windowWidthState, windowHeightState } from '@/Recoil';
+import BookPageV from '@/pagesV/BookPageV';
 import NicknamePageV from '@/pagesV/NicknamePageV';
 import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
@@ -19,6 +20,7 @@ import {
   maxWidth,
   widthGap,
   widthPerHeight,
+  widthPerHeight2,
 } from '@/assets/values';
 
 function FlipBook() {
@@ -94,7 +96,7 @@ function FlipBook() {
   ];
   const pagesV = [
     <div
-      style={{ height: windowHeight - heightGap }}
+      style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
       id="1000"
       key="page0"
       className="w-[100%]"
@@ -102,18 +104,18 @@ function FlipBook() {
       <NicknamePageV handleNextPage={handleNextPage} />
     </div>,
     <div
-      style={{ height: windowHeight - heightGap }}
+      style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
       id="2000"
       key="page1"
       className="w-[100%]"
     >
-      <BookPage
+      <BookPageV
         handlePrevPage={handlePrevPage}
         handleNextPage={handleNextPage}
       />
     </div>,
     <div
-      style={{ height: windowHeight - heightGap }}
+      style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
       id="3000"
       key="page2"
       className="w-[100%]"
@@ -124,7 +126,7 @@ function FlipBook() {
       />
     </div>,
     <div
-      style={{ height: windowHeight - heightGap }}
+      style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
       id="4000"
       key="page3"
       className="w-[100%]"
@@ -165,7 +167,7 @@ function FlipBook() {
           if (windowWidth - widthGap > maxWidth) {
             ret = maxHeight;
           } else if (windowWidth < limitWidth) {
-            ret = windowHeight - heightGap;
+            ret = (windowWidth - heightGap) / widthPerHeight2;
           } else {
             ret = (windowWidth - widthGap) * widthPerHeight;
           }
