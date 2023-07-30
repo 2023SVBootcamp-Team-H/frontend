@@ -8,6 +8,7 @@ import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
 import NicknamePage from '@/pages/NicknamePage';
+import NicknamePageV from '@/pagesV/NicknamePageV';
 import AudioButton from '@/components/AudioButton';
 import SatisfactionModal from '@/components/SatisfactionModal';
 import {
@@ -90,6 +91,49 @@ function FlipBook() {
       />
     </div>,
   ];
+  const pagesV = [
+    <div
+      style={{ height: windowHeight - heightGap }}
+      id="1000"
+      key="page0"
+      className={`w-[100%]`}
+    >
+      <NicknamePageV handleNextPage={handleNextPage} />
+    </div>,
+    <div
+      style={{ height: windowHeight - heightGap }}
+      id="2000"
+      key="page1"
+      className={`w-[100%]`}
+    >
+      <BookPage
+        handlePrevPage={handlePrevPage}
+        handleNextPage={handleNextPage}
+      />
+    </div>,
+    <div
+      style={{ height: windowHeight - heightGap }}
+      id="3000"
+      key="page2"
+      className="w-[100%]"
+    >
+      <BookPageTwo
+        handlePrevPage={handlePrevPage}
+        handleNextPage={handleNextPage}
+      />
+    </div>,
+    <div
+      style={{ height: windowHeight - heightGap }}
+      id="4000"
+      key="page3"
+      className="w-[100%]"
+    >
+      <BookPageThree
+        onClickToggleModal={onClickToggleModal}
+        handlePrevPage={handlePrevPage}
+      />
+    </div>,
+  ];
   return (
     <div
       className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
@@ -108,7 +152,8 @@ function FlipBook() {
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}
       <FlipPage
-        orientation="horizontal" // 삼항연산자
+        orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
+        // orientation="vertical"
         uncutPages
         ref={flipPageRef}
         width={
@@ -129,7 +174,7 @@ function FlipBook() {
         className="animate__animated animate__jackInTheBox
         outline-pageOutline outline outline-[15px] rounded-md "
       >
-        {pages}
+        {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>
     </div>
   );
