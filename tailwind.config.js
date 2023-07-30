@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+
   theme: {
     extend: {
       colors: {
@@ -29,6 +30,11 @@ export default {
         bgsub: "url('@/assets/images/backgroundSub.png')",
         bookframe: "url('@/assets/images/frame.png')",
       },
+    },
+    screens: {
+      sm: { min: '600px', max: '819px' },
+      md: { min: '820px', max: '1023px' },
+      lg: { min: '1080px' },
     },
   },
 

@@ -57,37 +57,40 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
   const [isHoveringRap, setIsHoveringRap] = useState(false);
 
   return (
-    <div className="justify-center items-center ml-2">
-      <div className="font-ham-m text-textCategory flex justify-center items-center mt-6">
-        {/* 할머니 버튼 */}
-        <button
-          type="button"
-          onMouseOver={() => setIsHoveringGrandma(true)}
-          onMouseOut={() => setIsHoveringGrandma(false)}
-          onFocus={() => setIsHoveringGrandma(true)}
-          onBlur={() => setIsHoveringGrandma(false)}
-          onClick={() => handleCharButtonClick('할머니')}
-        >
-          {personality === '할머니' ? (
-            <img
-              className="flex items-center justify-center opacity-100 onclick:opacity-100 w-[140px]"
-              src={grandma_on}
-              alt="grandma_on"
-            />
-          ) : (
-            <img
-              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[140px]"
-              src={isHoveringGrandma ? grandma_on : grandma_off}
-              alt="grandma_on"
-            />
-          )}
-          <div className="flex justify-center">할머니</div>
-        </button>
-      </div>
+    <div className="flex flex-col justify-around w-[100%] h-[100%]">
+      <button
+        className="w-[50%] self-center"
+        type="button"
+        onMouseOver={() => setIsHoveringGrandma(true)}
+        onMouseOut={() => setIsHoveringGrandma(false)}
+        onFocus={() => setIsHoveringGrandma(true)}
+        onBlur={() => setIsHoveringGrandma(false)}
+        onClick={() => handleCharButtonClick('할머니')}
+      >
+        {personality === '할머니' ? (
+          <img
+            className="w-[100%] flex items-center justify-center opacity-100 onclick:opacity-100 px-8"
+            src={grandma_on}
+            alt="grandma_on"
+          />
+        ) : (
+          <img
+            className="w-[100%] flex items-center justify-center opacity-70 hover:opacity-100 px-8"
+            src={isHoveringGrandma ? grandma_on : grandma_off}
+            alt="grandma_on"
+          />
+        )}
+        <div className="flex justify-center">할머니</div>
+      </button>
 
-      <div className="font-ham-m text-textCategory flex justify-center items-center mt-6">
+      {/* <div className="font-ham-m text-textCategory flex justify-center items-center">
+        할머니 버튼
+      </div> */}
+
+      <div className="font-ham-m text-textCategory flex justify-center items-center">
         {/* F친구 버튼 */}
         <button
+          className="w-[50%]"
           type="button"
           onMouseOver={() => setIsHoveringF(true)}
           onMouseOut={() => setIsHoveringF(false)}
@@ -97,13 +100,13 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         >
           {personality === 'F 친구' ? (
             <img
-              className="flex items-center justify-center w-[180px] px-4"
+              className="flex items-center justify-center w-[100%]  px-8 "
               src={friendF_on}
               alt="friendF_on"
             />
           ) : (
             <img
-              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[100%]  px-8"
               src={isHoveringF ? friendF_on : friendF_off}
               alt="friendF_on"
             />
@@ -113,6 +116,7 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
 
         {/* T친구 버튼 */}
         <button
+          className="w-[50%]"
           type="button"
           onMouseOver={() => setIsHoveringT(true)}
           onMouseOut={() => setIsHoveringT(false)}
@@ -122,13 +126,13 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         >
           {personality === 'T 친구' ? (
             <img
-              className="flex items-center justify-center w-[180px] px-4"
+              className="flex items-center justify-center w-[100%]  px-8"
               src={friendT_on}
               alt="friendT_on"
             />
           ) : (
             <img
-              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[100%]  px-8"
               src={isHoveringT ? friendT_on : friendT_off}
               alt="friendF_on"
             />
@@ -137,9 +141,10 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         </button>
       </div>
 
-      <div className="font-ham-m text-textCategory flex justify-center items-center mt-6">
+      <div className="font-ham-m text-textCategory flex justify-center items-center">
         {/* 래퍼 버튼 */}
         <button
+          className="w-[50%]"
           type="button"
           onMouseOver={() => setIsHoveringRap(true)}
           onMouseOut={() => setIsHoveringRap(false)}
@@ -149,13 +154,13 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         >
           {personality === '래퍼' ? (
             <img
-              className="flex items-center justify-center w-[180px] px-4"
+              className="flex items-center justify-center w-[100%]  px-8"
               src={rapper_on}
               alt="rapper_on"
             />
           ) : (
             <img
-              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[100%]  px-8"
               src={isHoveringRap ? rapper_on : rapper_off}
               alt="friendF_on"
             />
@@ -165,6 +170,7 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
 
         {/* 중2 버튼 */}
         <button
+          className="w-[50%]"
           type="button"
           onMouseOver={() => setIsHoveringGradeT(true)}
           onMouseOut={() => setIsHoveringGradeT(false)}
@@ -174,13 +180,13 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         >
           {personality === '중2' ? (
             <img
-              className="flex items-center justify-center w-[180px] px-4"
+              className="flex items-center justify-center w-[100%]  px-8"
               src={gradeTwo_on}
               alt="gradeTwo_on"
             />
           ) : (
             <img
-              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[180px] px-4"
+              className="flex items-center justify-center opacity-70 hover:opacity-100 w-[100%]  px-8"
               src={isHoveringGradeT ? gradeTwo_on : gradeTwo_off}
               alt="gradeTwo_on"
             />

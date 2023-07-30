@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import 'animate.css';
-// eslint-disable-next-line import/no-unresolved
 import 'hover.css/css/hover-min.css';
-import AudioButton from '@/components/AudioButton';
 import SelectWorryL from '@/components/SelectWorryL';
 import SelectWorryR from '@/components/SelectWorryR';
 
@@ -16,7 +14,7 @@ type handleProps = {
   handleNextPage: () => void;
 };
 
-function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
+function BookPageV({ handlePrevPage, handleNextPage }: handleProps) {
   const [selectedButton, setSelectedButton] = useState<string>('');
 
   const handleSelectButtonL: SelectWorryProps['handleSelectButton'] = (
@@ -32,7 +30,7 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
   };
   return (
     <div className="flex justify-center items-center hvr-curl-bottom-right w-[100%] h-[100%]">
-      <div className="flex justify-center items-center w-[100%] h-[100%] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md">
+      <div className="flex flex-col justify-center items-center w-[100%] h-[100%] p-4 bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md">
         <div
           className="bg-pageBackgroud  w-[100%] h-[100%] 
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
@@ -79,4 +77,4 @@ function BookPage({ handlePrevPage, handleNextPage }: handleProps) {
   );
 }
 
-export default BookPage;
+export default BookPageV;

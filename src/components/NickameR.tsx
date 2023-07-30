@@ -31,15 +31,16 @@ function NickameR({ handleNextPage }: handleProps) {
 
       {/* 고민 입력 박스 */}
       <button
-        className="w-[250px] h-[50px] "
+        className="w-[70%] h-[10%] "
         onClick={handleButtonClick}
         type="button"
       >
         <textarea
+          id="1004"
           ref={textareaRef}
           className="z-50 py-4 px-4
-          w-[250px] h-[50px] bg-slate-100 bg-opacity-30 rounded-full outline-none
-         font-ham-l text-[#505050] text-[14px] text-center"
+          w-[100%] h-[50px] bg-slate-100 bg-opacity-30 rounded-full outline-none
+         font-ham-l text-[#505050] text-[1vw] text-center"
           value={inputNickname}
           onChange={handleInputNicknameChange}
           placeholder="닉네임을 입력해주세요."
@@ -50,7 +51,7 @@ function NickameR({ handleNextPage }: handleProps) {
         onClick={() => {
           handleNextPage();
         }}
-        className="mt-6 p-3 px-6 text-[12px] font-ham-m text-center  text-stone-600 
+        className="mt-2 p-3 w-[25%] h-[5%] text-[1vw] font-ham-m text-center  text-stone-600 
              bg-[#d2c9be] bg-opacity-20 rounded-[29px] shadow-inner
 "
       >

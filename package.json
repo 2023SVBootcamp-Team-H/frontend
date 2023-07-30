@@ -1,4 +1,9 @@
 {
+  "husky": {
+    "hooks": {
+      "pre-push": ""
+    }
+  },
   "name": "frontend",
   "private": true,
   "version": "0.0.0",

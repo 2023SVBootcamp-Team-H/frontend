@@ -7,7 +7,7 @@ type handleProps = {
   handleNextPage: () => void;
 };
 
-function BookPage({ handleNextPage }: handleProps) {
+function BookPageV({ handleNextPage }: handleProps) {
   return (
     <div
       id="1001"
@@ -15,7 +15,7 @@ function BookPage({ handleNextPage }: handleProps) {
     >
       <div
         id="1002"
-        className="flex justify-center items-center w-[100%] h-[100%]
+        className="flex flex-col justify-center items-center w-[100%] h-[100%]
        bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md px-4 pt-4 pb-4 "
       >
         <div
@@ -51,4 +51,4 @@ function BookPage({ handleNextPage }: handleProps) {
   );
 }
 
-export default BookPage;
+export default BookPageV;

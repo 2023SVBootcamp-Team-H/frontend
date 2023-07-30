@@ -8,7 +8,7 @@ type handleProps = {
   onClickToggleModal: () => void;
   handlePrevPage: () => void;
 };
-function BookPageThree(attribute: handleProps) {
+function BookPageThreeV(attribute: handleProps) {
   // const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
   // const onSelectChar = (char: string) => {
@@ -20,7 +20,7 @@ function BookPageThree(attribute: handleProps) {
     <div className="flex justify-center items-center w-[100%] h-[100%]">
       {/* 책 전체 요소 */}
       <div
-        className="flex justify-center items-center
+        className="flex flex-col justify-center items-center
         w-[100%] h-[100%] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
        "
@@ -58,4 +58,4 @@ function BookPageThree(attribute: handleProps) {
   );
 }
 
-export default BookPageThree;
+export default BookPageThreeV;

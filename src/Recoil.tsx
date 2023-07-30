@@ -2,6 +2,16 @@ import { atom } from 'recoil';
 
 // atom은 recoil의 기본적인 state를 정의하는 것
 
+const windowWidthState = atom<number>({
+  key: 'windowWidthState',
+  default: 0,
+});
+
+const windowHeightState = atom<number>({
+  key: 'windowHeightState',
+  default: 0,
+});
+
 // auido play state
 const audioState = atom<boolean>({
   key: 'audioState',
@@ -131,5 +141,7 @@ export {
   maleState,
   charcterButtonState,
   nicknameState,
+  windowWidthState,
+  windowHeightState,
   audioState,
 };

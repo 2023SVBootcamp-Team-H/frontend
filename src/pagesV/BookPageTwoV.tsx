@@ -9,7 +9,7 @@ type handleProps = {
   handleNextPage: () => void;
 };
 
-function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
+function BookPageTwoV({ handlePrevPage, handleNextPage }: handleProps) {
   const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
   const onSelectChar = (char: string) => {
@@ -22,7 +22,7 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
       {/* 책 전체 요소 */}
       <div
         className=" 
-        flex justify-center items-center hvr-curl-bottom-right
+        flex flex-col justify-center items-center hvr-curl-bottom-right
         w-[100%] h-[100%] p-4 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md "
       >
@@ -73,4 +73,4 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
   );
 }
 
-export default BookPageTwo;
+export default BookPageTwoV;

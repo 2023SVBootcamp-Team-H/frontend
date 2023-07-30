@@ -57,30 +57,32 @@ function InputWorryR({ props: onClickToggleModal }: any) {
     }
     if (loading === 2) {
       return (
-        <div>
-          <div className="flex flex-col justify-center items-center m-auto space-y-5">
-            <div className="font-ham-m text-textTitle text-center text-[25px]">
-              {`${CharacterButton}`}의 답변
-            </div>
-            <img
-              className=" w-[180px]"
-              src={findImage(CharacterButton)}
-              alt={`${CharacterButton}`}
-            />
-            <div className="w-[350px] h-[230px] text-center font-ham-l text-[16px] leading-6">
-              {message}
-            </div>
-            <button
-              type="button"
-              onClick={onClickToggleModal}
-              className="w-72 py-2 text-[16px] invisible text-textTitle font-ham-l text-center bg-[#D8D7DA] rounded-full shadow-inner"
-            >
-              {`${showPersonality}`}의 답변을 만족하시나요?
-            </button>
+        <div className="w-[100%] h-[100%] flex flex-col justify-around items-center">
+          <div className="font-ham-m mt-[2vw] text-textTitle text-center text-[1.5vw]">
+            {`${CharacterButton}`}의 답변
+          </div>
+          <img
+            className="w-[40%]"
+            src={findImage(CharacterButton)}
+            alt={`${CharacterButton}`}
+          />
+          <div className="w-[85%] h-auto flex-grow flex-wrap overflow-auto text-center font-ham-l text-[1.2vw] leading-6">
+            {message}
           </div>
           <button
             type="button"
-            className="invisible flex mt-3 ml-32 text-[12px] text-stone-600 font-ham"
+            onClick={onClickToggleModal}
+            className="w-[60%] py-3 text-[1vw] font-ham-m text-center text-stone-600 
+             bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
+              border border-stone-400"
+          >
+            <span className="font-bold text-textTitle">{`${showPersonality}할머니`}</span>
+            의 답변을 만족하시나요?
+          </button>
+          <button
+            type="button"
+            onClick={() => toMain()}
+            className="w-[100%] h-[4%] flex invisible justify-center items-center text-[1vw] text-stone-600 font-ham"
           >
             홈으로 돌아가기
             <img
@@ -94,34 +96,32 @@ function InputWorryR({ props: onClickToggleModal }: any) {
     }
     if (loading === 3) {
       return (
-        <div>
-          <div className="flex flex-col justify-center items-center m-auto space-y-5">
-            <div className="font-ham-m text-textTitle text-center text-[25px]">
-              {`${CharacterButton}`}의 답변
-            </div>
-            <img
-              className="w-[180px]"
-              src={findImage(CharacterButton)}
-              alt={`${CharacterButton}`}
-            />
-            <div className="w-[350px] h-[230px] flex-wrap overflow-auto text-center font-ham-l text-[16px] leading-6">
-              {message}
-            </div>
-            <button
-              type="button"
-              onClick={onClickToggleModal}
-              className="w-72  p-3 px-9 text-[13px] font-ham-m text-center  text-stone-600 
-             bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
-              border border-stone-400"
-            >
-              <span className="font-bold text-textTitle">{`${CharacterButton}`}</span>
-              의 답변을 만족하시나요?
-            </button>
+        <div className="w-[100%] h-[100%] flex flex-col justify-around items-center">
+          <div className="font-ham-m mt-[2vw] text-textTitle text-center text-[1.5vw]">
+            {`${CharacterButton}`}의 답변
+          </div>
+          <img
+            className="w-[40%]"
+            src={findImage(CharacterButton)}
+            alt={`${CharacterButton}`}
+          />
+          <div className="w-[85%] h-auto flex-grow flex-wrap overflow-auto text-center font-ham-l text-[1.2vw] leading-6">
+            {message}
           </div>
           <button
             type="button"
+            onClick={onClickToggleModal}
+            className="w-[60%] py-3 text-[1vw] font-ham-m text-center text-stone-600 
+             bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
+              border border-stone-400"
+          >
+            <span className="font-bold text-textTitle">{CharacterButton}</span>
+            의 답변을 만족하시나요?
+          </button>
+          <button
+            type="button"
             onClick={() => toMain()}
-            className="flex mt-3 ml-32 text-[12px] text-stone-600 font-ham"
+            className="w-[100%] h-[4%] flex justify-center items-center text-[1vw] text-stone-600 font-ham"
           >
             홈으로 돌아가기
             <img
@@ -136,7 +136,7 @@ function InputWorryR({ props: onClickToggleModal }: any) {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center m-auto space-y-5">
+    <div className="flex flex-col justify-center items-center w-[100%] h-[100%]">
       {currentLoading()}
     </div>
   );
