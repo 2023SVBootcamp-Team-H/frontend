@@ -4,7 +4,7 @@ import 'animate.css';
 function SelectCharL() {
   return (
     <div
-      className="h-full font-ham text-textTitle text-[2.5vw] flex justify-center items-center text-center 
+      className="h-full font-ham text-textTitle text-[1.5vw] flex justify-center items-center text-center 
       leading-[55px] tracking-wider
       "
     >
