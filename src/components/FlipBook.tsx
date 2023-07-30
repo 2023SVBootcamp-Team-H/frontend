@@ -4,6 +4,8 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import FlipPage, { ReactFlipPage } from 'react-flip-page';
 import { useRecoilState } from 'recoil';
 import { windowWidthState, windowHeightState } from '@/Recoil';
+import NicknamePageV from '@/pagesV/NicknamePageV';
+import NicknamePage from '@/pages/NicknamePage';
 import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
@@ -96,7 +98,7 @@ function FlipBook() {
       style={{ height: windowHeight - heightGap }}
       id="1000"
       key="page0"
-      className={`w-[100%]`}
+      className="w-[100%]"
     >
       <NicknamePageV handleNextPage={handleNextPage} />
     </div>,
@@ -104,7 +106,7 @@ function FlipBook() {
       style={{ height: windowHeight - heightGap }}
       id="2000"
       key="page1"
-      className={`w-[100%]`}
+      className="w-[100%]"
     >
       <BookPage
         handlePrevPage={handlePrevPage}
