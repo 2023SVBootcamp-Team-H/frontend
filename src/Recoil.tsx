@@ -2,6 +2,12 @@ import { atom } from 'recoil';
 
 // atom은 recoil의 기본적인 state를 정의하는 것
 
+// auido play state
+const audioState = atom<boolean>({
+  key: 'audioState',
+  default: false,
+});
+
 // 카테고리(string)
 const categoryState = atom<string>({
   key: 'categoryState', // unique ID (다른 atoms/selectors을 구별하기 위해서)
@@ -125,4 +131,5 @@ export {
   maleState,
   charcterButtonState,
   nicknameState,
+  audioState,
 };

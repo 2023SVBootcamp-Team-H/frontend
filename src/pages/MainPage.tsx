@@ -15,6 +15,7 @@ import {
   nicknameState,
 } from '@/Recoil';
 import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
+import AudioButton from '@/components/AudioButton';
 import AudioPlayer from '@/components/AudioPlayer';
 
 // import back from '@/assets/images/back.png';
@@ -65,7 +66,7 @@ function MainPage() {
       >
         <span>BGM</span>
         <span>
-          <AudioPlayer />
+          <AudioButton />
         </span>
       </span>
 

@@ -7,6 +7,7 @@ import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
 import NicknamePage from '@/pages/NicknamePage';
+import AudioButton from '@/components/AudioButton';
 import SatisfactionModal from '@/components/SatisfactionModal';
 
 function FlipBook() {
@@ -73,7 +74,15 @@ function FlipBook() {
       className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     flex justify-center items-center"
     >
-      {' '}
+      <span
+        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
+        font-ham text-[#E1C0E7] "
+      >
+        <span>BGM</span>
+        <span>
+          <AudioButton />
+        </span>
+      </span>{' '}
       {isOpenModal ? (
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}

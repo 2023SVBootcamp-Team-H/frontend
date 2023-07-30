@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'animate.css';
 import 'hover.css/css/hover-min.css';
+import AudioButton from '@/components/AudioButton';
 import SelectWorryL from '@/components/SelectWorryL';
 import SelectWorryR from '@/components/SelectWorryR';
 
