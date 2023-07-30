@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { nicknameState } from '@/Recoil';
 import witch from '@/assets/images/witch.png';
+// eslint-disable-next-line import/no-unresolved
 import 'hover.css/css/hover-min.css';
 import 'justinaguilar.css';
 
