@@ -3,6 +3,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 // @ts-ignore
 import FlipPage, { ReactFlipPage } from 'react-flip-page';
 import { useRecoilState } from 'recoil';
+// eslint-disable-next-line
 import { windowWidthState, windowHeightState } from '@/Recoil';
 import BookPageThreeV from '@/pagesV/BookPageThreeV';
 import BookPageTwoV from '@/pagesV/BookPageTwoV';
@@ -12,7 +13,6 @@ import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
 import NicknamePage from '@/pages/NicknamePage';
-import NicknamePageV from '@/pagesV/NicknamePageV';
 import AudioButton from '@/components/AudioButton';
 import SatisfactionModal from '@/components/SatisfactionModal';
 import {

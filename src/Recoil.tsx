@@ -141,4 +141,7 @@ export {
   maleState,
   charcterButtonState,
   nicknameState,
+  windowWidthState,
+  windowHeightState,
+  audioState,
 };

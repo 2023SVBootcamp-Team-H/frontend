@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useRecoilState } from 'recoil';
+// eslint-disable-next-line
 import { audioState } from '@/Recoil';
 
 function AudioPlayer(): JSX.Element {
