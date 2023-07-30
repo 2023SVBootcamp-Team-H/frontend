@@ -9,12 +9,14 @@ import {
 } from 'recoil';
 import MainPage from '@/pages/MainPage';
 import FlipBook from '@/components/FlipBook';
+import AudioPlayer from './components/AudioPlayer';
 import SatisfactionPage from './pages/SatisfactionPage';
 
 function App() {
   return (
     <RecoilRoot>
       <BrowserRouter>
+        <AudioPlayer />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/book" element={<FlipBook />} />

@@ -15,6 +15,8 @@ import {
   nicknameState,
 } from '@/Recoil';
 import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
+import AudioButton from '@/components/AudioButton';
+import AudioPlayer from '@/components/AudioPlayer';
 
 // import back from '@/assets/images/back.png';
 
@@ -55,38 +57,53 @@ function MainPage() {
 
   return (
     <div
-      className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center 
-    flex justify-center items-end pb-6 "
+      className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
+    relative flex justify-center items-end"
     >
-      <div className="flex flex-col items-center justify-center z-50  ">
-        {/* 로고 텍스트 */}
-        <div className="text-white font-ham text-[90px] ">Witch&rsquo;s</div>
-        <div className="text-white font-ham text-[105px] ">Mind</div>
+      <span
+        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
+        font-ham text-[#E1C0E7] "
+      >
+        <span>BGM</span>
+        <span>
+          <AudioButton />
+        </span>
+      </span>
 
-        {/* 고민해결하러가기 버튼 */}
-        <button
-          className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
+      <div className=" flex justify-center items-stretch ">
+        <div className=" self-end pb-6">
+          {/* 로고 텍스트 */}
+          <div className="flex flex-col items-center justify-center z-50">
+            <div className="text-white font-ham text-[90px] ">
+              Witch&rsquo;s
+            </div>
+            <div className="text-white font-ham text-[105px] ">Mind</div>
+
+            {/* 고민해결하러가기 버튼 */}
+            <button
+              className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
           transition hover:bg-[#F8ECFF] hover:text-mainbutton
           animate-pulse "
-          onClick={() => toBook()}
-          type="button"
-        >
-          고민 해결하러 가기
-        </button>
-
-        {/* 통계 보러가기 버튼 */}
-        <button
-          className="flex items-center justify-center mt-4 text-white font-ham-l text-[15px]"
-          onClick={() => toStatistics()}
-          type="button"
-        >
-          상담 인격 인기도 보러 가기
-          <img
-            className="w-5 ml-1 mt-[1px]"
-            src={popularbuttonwhiteIcon}
-            alt="popularbuttonwhiteIcon"
-          />
-        </button>
+              onClick={() => toBook()}
+              type="button"
+            >
+              고민 해결하러 가기
+            </button>
+            {/* 통계 보러가기 버튼 */}
+            <button
+              className="flex justify-center mt-4 text-white font-ham-l text-[15px]"
+              onClick={() => toStatistics()}
+              type="button"
+            >
+              상담 인격 인기도 보러 가기
+              <img
+                className="w-5 ml-1 mt-[1px]"
+                src={popularbuttonwhiteIcon}
+                alt="popularbuttonwhiteIcon"
+              />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
