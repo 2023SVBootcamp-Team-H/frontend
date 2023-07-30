@@ -5,7 +5,6 @@ import FlipPage, { ReactFlipPage } from 'react-flip-page';
 import { useRecoilState } from 'recoil';
 import { windowWidthState, windowHeightState } from '@/Recoil';
 import NicknamePageV from '@/pagesV/NicknamePageV';
-import NicknamePage from '@/pages/NicknamePage';
 import BookPage from '@/pages/BookPage';
 import BookPageThree from '@/pages/BookPageThree';
 import BookPageTwo from '@/pages/BookPageTwo';
