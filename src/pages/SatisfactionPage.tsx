@@ -111,6 +111,7 @@ function SatisfactionPage() {
       className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     flex justify-center items-center"
     >
+      {/* BGM 버튼 */}
       <span
         className="absolute top-5 right-7 flex justify-end items-center  space-x-2
         font-ham text-[#E1C0E7] "
