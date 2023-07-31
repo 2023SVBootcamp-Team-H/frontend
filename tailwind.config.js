@@ -27,6 +27,7 @@ export default {
       },
       backgroundImage: {
         bgmain: "url('@/assets/images/backgroundMain.png')",
+        bgmainV: "url('@/assets/images/backgroundMainV.png')",
         bgsub: "url('@/assets/images/backgroundSub.png')",
         bookframe: "url('@/assets/images/frame.png')",
         bookframeV: "url('@/assets/images/frameV.png')",

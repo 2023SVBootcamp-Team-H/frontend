@@ -57,10 +57,19 @@ function MainPage() {
 
   return (
     <div
-      className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
+      className=" bg-dontworrybg bg-bgmainV min-h-screen w-full bg-contain bg-no-repeat bg-center
     relative flex justify-center items-end"
     >
-      <AudioButton />
+      <span
+        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
+        font-ham text-[#E1C0E7] "
+      >
+        <span>BGM</span>
+        <span>
+          <AudioButton />
+        </span>
+      </span>
+
       <div className=" flex justify-center items-stretch ">
         <div className=" self-end pb-6">
           {/* 로고 텍스트 */}
