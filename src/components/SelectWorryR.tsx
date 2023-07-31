@@ -58,8 +58,11 @@ function SelectWorryR({
   };
 
   return (
-    <div className="flex flex-col justify-around w-[100%] h-[100%]">
-      <div className="font-ham-m flex justify-around items-center">
+    <div
+      className="flex flex-col justify-around w-[90%] h-[100%]
+    font-ham-m text-[1.3vw]"
+    >
+      <div className=" flex justify-around items-center">
         <Button
           category="운동"
           imageSrc={sports}
@@ -75,7 +78,7 @@ function SelectWorryR({
           activeButton={activeButton}
         />
       </div>
-      <div className="font-ham-m flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <Button
           category="결혼"
           imageSrc={wedding}
@@ -91,7 +94,7 @@ function SelectWorryR({
           activeButton={activeButton}
         />
       </div>
-      <div className="font-ham-m flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <Button
           category="경제"
           imageSrc={money}
@@ -107,7 +110,7 @@ function SelectWorryR({
           activeButton={activeButton}
         />
       </div>
-      <div className="font-ham-m flex justify-center items-center">
+      <div className=" flex justify-center items-center">
         <Button
           category="건강"
           imageSrc={health}

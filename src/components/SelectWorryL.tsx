@@ -35,7 +35,7 @@ function Button({
         handleButtonClick(buttonText);
         console.log(buttonText);
       }}
-      className={`flex flex-col items-center justify-center opacity-80${
+      className={`flex flex-col items-center justify-center opacity-70${
         activeButton === category ? 'text-textTitle opacity-100' : ''
       }`}
     >
@@ -56,12 +56,15 @@ function SelectWorryL({
   };
 
   return (
-    <div className="flex flex-col justify-around w-[100%] h-[100%]">
-      <div className="font-ham text-textTitle text-[1.2vw] mt-[1vw] flex justify-center items-center mb-[1vw] lg:text-xl">
+    <div className="flex flex-col  w-[90%] h-[100%]">
+      <div
+        className="font-ham text-textTitle text-[1.6vw] mt-[3vw] mb-[2vw]
+       flex justify-center items-center"
+      >
         고민 카테고리를 골라주세요
       </div>
-      <div className="flex-grow flex flex-col justify-around">
-        <div className="font-ham-m flex justify-around items-center mt-[2vw]">
+      <div className="flex-grow flex flex-col font-ham-m text-[1.3vw] ">
+        <div className="flex flex-grow justify-around items-center ">
           <Button
             category="가족관계"
             imageSrc={family}
@@ -77,7 +80,7 @@ function SelectWorryL({
             activeButton={activeButton}
           />
         </div>
-        <div className="font-ham-m flex justify-around items-center">
+        <div className="flex grow justify-around items-center">
           <Button
             category="직장/알바"
             imageSrc={job}
@@ -93,7 +96,7 @@ function SelectWorryL({
             activeButton={activeButton}
           />
         </div>
-        <div className="font-ham-m flex justify-around items-center">
+        <div className="flex grow justify-around items-center">
           <Button
             category="우정"
             imageSrc={friendship}
