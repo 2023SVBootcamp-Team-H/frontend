@@ -177,7 +177,7 @@ function FlipBook() {
         })()}
         // style={{ width: '80vw' }}
         className="animate__animated animate__jackInTheBox
-        outline-pageOutline outline outline-[15px] rounded-md "
+        outline-pageOutline outline outline-[1.8vw] rounded-md "
       >
         {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>
