@@ -23,7 +23,7 @@ function StatisticsL() {
   return (
     <div className="h-[100%] w-[100%] flex flex-col justify-center  items-center font-ham-m  text-textTitle ">
       <div className="flex flex-col space-y-[3%] justify-center items-center w-[100%] h-[60%]">
-        <span className="flex flex-col justify-end text-[23px]">
+        <span className="flex flex-col justify-end text-[1.5vw]">
           인기도 1위 인격
         </span>
         <img
@@ -40,7 +40,7 @@ function StatisticsL() {
               : findImage(totalData[0].personality_name)
           }
         />
-        <span className="flex justify-center w-[100%] text-[20px]">
+        <span className="flex justify-center w-[100%] text-[1.3vw]">
           {totalData.length === 0 ? '' : totalData[0].personality_name}
           {/* {`${totaldata[0]}`} */}
         </span>
@@ -50,7 +50,7 @@ function StatisticsL() {
 
       <div className="flex justify-center w-[100%] h-[40%] ">
         <div className="w-[50%] flex flex-col justify-center space-y-[5%] items-center">
-          <span className=" text-[15px]">여성이 뽑은 1위</span>
+          <span className=" text-[1.08vw]">여성이 뽑은 1위</span>
           <img
             className="w-[70%]"
             src={
@@ -64,14 +64,14 @@ function StatisticsL() {
                 : findImage(femaleData[0].personality_name)
             }
           />
-          <span className="text-[12px]">
+          <span className="text-[0.8vw]">
             {' '}
             {femaleData.length === 0 ? '' : femaleData[0].personality_name}
           </span>
         </div>
         <div className="self-center border-solid border h-[85%] border-[#DBD4C7] " />
         <div className="w-[50%] flex flex-col justify-center space-y-[5%] items-center">
-          <span className=" text-[15px]">남성이 뽑은 1위</span>
+          <span className=" text-[1.08vw]">남성이 뽑은 1위</span>
           <img
             className="w-[70%]"
             src={
@@ -85,7 +85,7 @@ function StatisticsL() {
                 : findImage(maleData[0].personality_name)
             }
           />
-          <span className="text-[12px]">
+          <span className="text-[0.8vw]">
             {maleData.length === 0 ? '' : maleData[0].personality_name}
           </span>
         </div>
