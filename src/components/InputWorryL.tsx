@@ -277,14 +277,12 @@ function InputWorryL({ props: onClickToggleModal }: any) {
         className={`w-[60%] text-center py-[0.8vw] text-[0.8vw]
           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
-        // disabled={isSubmitButtonDisabled()}
+        disabled={isSubmitButtonDisabled()}
         onClick={() => {
-          // handleWorrySubmit();
-          // setCharacterButton(showPersonality);
-          setLoading(3);
+          handleWorrySubmit();
+          setCharacterButton(showPersonality);
         }}
       >
-        {/* {`${showPersonality}`}에게 고민 상담 받기 */}
         {showPersonality === ''
           ? '선택된 인격이 없습니다.'
           : `${showPersonality}에게 고민 상담 받기`}
