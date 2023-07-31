@@ -25,14 +25,16 @@ function BookPageThree(attribute: handleProps) {
        outline-pageOutline outline outline-[15px] rounded-md 
        "
       >
-        {/* 왼쪽 페이지 */}
-        <div
-          className="flex flex-col bg-pageBackgroud  w-[100%] h-[100%]
+        <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">
+          {/* 왼쪽 페이지 */}
+          <div
+            className="flex flex-col bg-pageBackgroud  w-[100%] h-[100%]
         bg-bookframe bg-center  p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
         "
-        >
-          <InputWorryL />
+          >
+            <InputWorryL />
+          </div>
           <button
             type="button"
             onClick={() => {
@@ -45,13 +47,28 @@ function BookPageThree(attribute: handleProps) {
             Prev
           </button>
         </div>
+
         {/* 오른쪽 페이지 */}
-        <div
-          className=" flex flex-col justify-center items-center
-          bg-pageBackgroud w-[100%] h-[100%]
-            bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat "
-        >
-          <InputWorryR props={attribute.onClickToggleModal} />
+        <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">
+          <div
+            className=" flex flex-col bg-pageBackgroud  w-[100%] h-[100%]
+            bg-bookframe bg-center  p-3 bg-contain bg-no-repeat 
+            "
+          >
+            <InputWorryR props={attribute.onClickToggleModal} />
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              attribute.handlePrevPage();
+            }}
+            className=" flex-grow
+            w-[20%] h-[4%] text-[1vw] self-center mt-auto
+               bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
+               text-[#7C5197] font-ham-l text-center"
+          >
+            Prev
+          </button>
         </div>
       </div>
     </div>
