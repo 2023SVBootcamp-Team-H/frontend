@@ -14,23 +14,20 @@ function StatisticsR() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full mt-12">
-      <div className="text-[23px]">인기도 통계</div>
-      <div className="w-96 h-full mt-10 ">
-        {/* <BarChart avgData={[50, 92, 24, 56, 78]} /> */}
-        {/* <BarChart avgData={avgData} /> */}
+    <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full">
+      <div className="p-3 space-y-[5%] flex flex-col justify-center items-center w-[100%] h-[100%]">
+        <div className="flex flex-col justify-end text-[23px]">인기도 통계</div>
         <BarChart avgData={avgData} />
-
-        <button
-          className="m-auto text-center p-3 px-9 text-[13px] mt-6 ml-28
+      </div>
+      <button
+        className="w-[60%] mb-[5%] text-center py-3 text-[13px]
           bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m"
-          onClick={() => toMain()}
-          type="button"
-        >
-          홈페이지로 돌아가기
-        </button>
-      </div>
+        onClick={() => toMain()}
+        type="button"
+      >
+        홈페이지로 돌아가기
+      </button>
     </div>
   );
 }
