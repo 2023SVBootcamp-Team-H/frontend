@@ -35,8 +35,8 @@ function Button({
         handleButtonClick(buttonText);
         console.log(buttonText);
       }}
-      className={`flex flex-col items-center justify-center opacity-60${
-        activeButton === category ? 'text-textTitle opacity-90' : ''
+      className={`flex flex-col items-center justify-center opacity-80${
+        activeButton === category ? 'text-textTitle opacity-100' : ''
       }`}
     >
       <img className="w-[50%] h-[50%]" src={imageSrc} alt={category} />
