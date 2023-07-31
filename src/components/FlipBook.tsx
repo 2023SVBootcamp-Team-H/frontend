@@ -99,7 +99,7 @@ function FlipBook() {
   const pagesV = [
     <div
       style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
-      id="1000"
+      id="1001"
       key="page0"
       className="w-[100%]"
     >
@@ -107,7 +107,7 @@ function FlipBook() {
     </div>,
     <div
       style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
-      id="2000"
+      id="2001"
       key="page1"
       className="w-[100%]"
     >
@@ -118,7 +118,7 @@ function FlipBook() {
     </div>,
     <div
       style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
-      id="3000"
+      id="3001"
       key="page2"
       className="w-[100%]"
     >
@@ -129,7 +129,7 @@ function FlipBook() {
     </div>,
     <div
       style={{ height: (windowWidth - heightGap) / widthPerHeight2 }}
-      id="4000"
+      id="4001"
       key="page3"
       className="w-[100%]"
     >

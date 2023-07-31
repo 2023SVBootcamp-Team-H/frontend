@@ -22,6 +22,7 @@ import {
   windowWidthState,
   windowHeightState,
 } from '@/Recoil';
+import AudioButton from '@/components/AudioButton';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
 import {
@@ -110,6 +111,16 @@ function SatisfactionPage() {
       className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     flex justify-center items-center"
     >
+      <span
+        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
+        font-ham text-[#E1C0E7] "
+      >
+        <span>BGM</span>
+        <span>
+          <AudioButton />
+        </span>
+      </span>
+
       {/* 책 전체 요소 */}
       <div
         style={{
