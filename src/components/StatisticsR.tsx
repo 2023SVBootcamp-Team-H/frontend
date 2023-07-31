@@ -16,11 +16,13 @@ function StatisticsR() {
   return (
     <div className="flex flex-col justify-center items-center font-ham-m  text-textTitle w-full h-full">
       <div className="p-3 space-y-[5%] flex flex-col justify-center items-center w-[100%] h-[100%]">
-        <div className="flex flex-col justify-end text-[23px]">인기도 통계</div>
+        <div className="flex flex-col justify-end text-[1.5vw]">
+          인기도 통계
+        </div>
         <BarChart avgData={avgData} />
       </div>
       <button
-        className="w-[60%] mb-[5%] text-center py-3 text-[13px]
+        className="w-[60%] mb-[5%] text-center py-3 text-[0.85vw]
           bg-stone-300 bg-opacity-25 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m"
         onClick={() => toMain()}

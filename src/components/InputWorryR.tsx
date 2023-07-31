@@ -46,7 +46,7 @@ function InputWorryR({ props: onClickToggleModal }: any) {
     if (loading === 0) {
       return (
         <img
-          className="w-[300px] opacity-30"
+          className="w-[20vw] opacity-30"
           src={waitLoading}
           alt="waitLoading"
         />
@@ -66,23 +66,27 @@ function InputWorryR({ props: onClickToggleModal }: any) {
             src={findImage(CharacterButton)}
             alt={`${CharacterButton}`}
           />
-          <div className="w-[85%] h-auto flex-grow flex-wrap overflow-auto text-center font-ham-l text-[1.2vw] leading-6">
+          <div className="w-[85%] h-[40%] flex-wrap overflow-auto text-center font-ham-l text-[1vw] leading-6">
             {message}
           </div>
           <button
             type="button"
             onClick={onClickToggleModal}
-            className="w-[60%] py-3 text-[1vw] font-ham-m text-center text-stone-600 
-             bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
-              border border-stone-400"
+            className="invisible
+            w-[60%] py-3 text-[0.9vw] font-ham-m text-center text-stone-600 
+           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
+            border border-stone-400"
           >
-            <span className="font-bold text-textTitle">{`${showPersonality}할머니`}</span>
+            <span className="font-bold text-[0.9vw] text-textTitle">
+              {CharacterButton}
+            </span>
             의 답변을 만족하시나요?
           </button>
           <button
             type="button"
             onClick={() => toMain()}
-            className="w-[100%] h-[4%] flex invisible justify-center items-center text-[1vw] text-stone-600 font-ham"
+            className="invisible
+            w-[100%] h-[4%] flex justify-center items-center text-[0.8vw] text-stone-600 font-ham"
           >
             홈으로 돌아가기
             <img
@@ -105,23 +109,25 @@ function InputWorryR({ props: onClickToggleModal }: any) {
             src={findImage(CharacterButton)}
             alt={`${CharacterButton}`}
           />
-          <div className="w-[85%] h-auto flex-grow flex-wrap overflow-auto text-center font-ham-l text-[1.2vw] leading-6">
+          <div className="w-[85%] h-[40%] flex-wrap overflow-auto text-center font-ham-l text-[1vw] leading-6">
             {message}
           </div>
           <button
             type="button"
             onClick={onClickToggleModal}
-            className="w-[60%] py-3 text-[1vw] font-ham-m text-center text-stone-600 
+            className="w-[60%] py-3 text-[0.9vw] font-ham-m text-center text-stone-600 
              bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner
               border border-stone-400"
           >
-            <span className="font-bold text-textTitle">{CharacterButton}</span>
+            <span className="font-bold text-[0.9vw] text-textTitle">
+              {CharacterButton}
+            </span>
             의 답변을 만족하시나요?
           </button>
           <button
             type="button"
             onClick={() => toMain()}
-            className="w-[100%] h-[4%] flex justify-center items-center text-[1vw] text-stone-600 font-ham"
+            className="w-[100%] h-[4%] flex justify-center items-center text-[0.8vw] text-stone-600 font-ham"
           >
             홈으로 돌아가기
             <img

@@ -66,7 +66,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
 
   // 선택된 나이 버튼의 색상을 반환하는 함수
   const getAgeButtonStyle = (ageSelected: number) => {
-    return `w-[30%] py-[0.5vw] bg ${
+    return `w-[30%] py-[0.5vw] text-[0.8vw]  bg ${
       age === ageSelected ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
     } rounded-[39px] border ${
       age === ageSelected ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
@@ -75,7 +75,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
 
   // 선택된 성별 버튼의 색상을 반환하는 함수
   const getGenderButtonStyle = (genderSelected: string) => {
-    return `w-[40%] py-[0.5vw] bg ${
+    return `w-[40%] py-[0.5vw] text-[0.8vw]  bg ${
       gender === genderSelected ? 'bg-[#ECE6F5]' : 'bg-[#ECE7DE]'
     } rounded-[39px] border ${
       gender === genderSelected ? 'border-[#7C5197]' : 'border-[#B1AAA2]'
@@ -154,19 +154,19 @@ function InputWorryL({ props: onClickToggleModal }: any) {
   };
 
   return (
-    <div className=" flex flex-col items-center justify-around w-[100%] h-[100%]">
+    <div className=" flex flex-col items-center justify-center w-[100%] h-[100%] font-ham-m space-y-[2.5vw]">
       {/* 고민 입력 창 제목 */}
-      <div className="font-ham-m text-textTitle text-[1.5vw] mt-[2vw]">
+      <div className=" text-textTitle text-[1.5vw] mt-[2vw]">
         무엇이 고민인가요?
       </div>
       {/* 나이, 성별, 고민 입력 전체 배경 */}
-      <div className="p-[1.2vw] m-[1.2vw] mt-[2vw] flex flex-col justify-center w-[90%] h-[100%] bg-[#E6DED3] rounded-[19px] shadow-inner">
+      <div className="p-[1.2vw] m-[1.2vw] mt-[2vw] flex flex-col justify-center w-[80%] h-[65%] bg-[#E6DED3] rounded-[19px] shadow-inner">
         <div className="flex justify-center items-center font-ham-m mt-[1vw]">
-          <div className="w-[30%] font-ham-m text-textTitle text-[1vw] flex justify-center">
+          <div className="w-[30%] text-textTitle text-[1vw] flex justify-center">
             나이대
           </div>
 
-          <div className="flex flex-col justify-around w-[70%] px-2">
+          <div className="flex flex-col justify-around w-[70%] px-2 ">
             <div className="flex justify-around">
               {/* 10대 버튼 */}
               <button
@@ -256,7 +256,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
         </div>
         {/* 고민 입력 박스 */}
         <button
-          className="w-[100%] p-[0.8vw] flex-grow"
+          className="h-[70%] p-[0.8vw] mt-[8%]"
           onClick={handleButtonClick}
           type="button"
         >
@@ -264,7 +264,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
             ref={textareaRef}
             className="leading-6 p-[0.8vw]
           w-[100%] h-[100%] bg-slate-100 bg-opacity-30 rounded-[19px] outline-none
-         font-ham-l text-[#505050] text-[0.8vw]"
+         font-ham-l text-[#505050] text-[1vw]"
             value={inputText}
             onChange={handleInputTextChange}
             placeholder="고민을 입력해주세요."
@@ -274,16 +274,15 @@ function InputWorryL({ props: onClickToggleModal }: any) {
       {/* 고민 상담받기 버튼 */}
       <button
         type="button"
-        className={`w-[60%] text-center py-3 text-[1vw]
+        className={`w-[60%] text-center py-[0.8vw] text-[0.8vw]
           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
-        // disabled={isSubmitButtonDisabled()}
+        disabled={isSubmitButtonDisabled()}
         onClick={() => {
           handleWorrySubmit();
           setCharacterButton(showPersonality);
         }}
       >
-        {/* {`${showPersonality}`}에게 고민 상담 받기 */}
         {showPersonality === ''
           ? '선택된 인격이 없습니다.'
           : `${showPersonality}에게 고민 상담 받기`}
