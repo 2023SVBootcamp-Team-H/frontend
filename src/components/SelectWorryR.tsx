@@ -60,7 +60,7 @@ function SelectWorryR({
   return (
     <div
       className="flex flex-col justify-around w-[90%] h-[100%]
-    font-ham-m text-[1.3vw]"
+    font-ham-m text-[1vw]"
     >
       <div className=" flex justify-around items-center">
         <Button

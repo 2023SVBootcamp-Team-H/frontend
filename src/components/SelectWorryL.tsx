@@ -58,12 +58,12 @@ function SelectWorryL({
   return (
     <div className="flex flex-col  w-[90%] h-[100%]">
       <div
-        className="font-ham text-textTitle text-[1.6vw] mt-[3vw] mb-[2vw]
+        className="font-ham text-textTitle text-[1.3vw] mt-[3vw] mb-[1.2vw]
        flex justify-center items-center"
       >
         고민 카테고리를 골라주세요
       </div>
-      <div className="flex-grow flex flex-col font-ham-m text-[1.3vw] ">
+      <div className="flex-grow flex flex-col font-ham-m text-[1vw] ">
         <div className="flex flex-grow justify-around items-center ">
           <Button
             category="가족관계"
