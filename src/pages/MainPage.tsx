@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useResetRecoilState, useRecoilState } from 'recoil';
 import {
@@ -13,8 +13,11 @@ import {
   messageState,
   activeButtonState,
   nicknameState,
+  windowWidthState,
+  windowHeightState,
 } from '@/Recoil';
 import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
+import MainPageV from '@/pagesV/MainPageV';
 import AudioButton from '@/components/AudioButton';
 import AudioPlayer from '@/components/AudioPlayer';
 
@@ -32,6 +35,15 @@ function MainPage() {
   const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
   const [, setAnswerId] = useRecoilState(answeridState);
   const [, setInputNickname] = useRecoilState(nicknameState);
+
+  const [windowWidth, setWindowWidth] = useRecoilState(windowWidthState);
+  const [windowHeight, setWindowHeight] = useRecoilState(windowHeightState);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+    console.log(windowWidth, windowHeight);
+  };
 
   // recoil state 초기화
   setCategory('');
@@ -55,9 +67,17 @@ function MainPage() {
     navigate('/satis');
   }
 
-  return (
-    <div
-      className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+    // genderStatistics();
+  }, []);
+
+  return {
+    ...(windowWidth > 600 ? (
+      <div
+        className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     relative flex justify-center items-end"
     >
       <AudioButton />
@@ -72,34 +92,37 @@ function MainPage() {
               Mind
             </div>
 
-            {/* 고민해결하러가기 버튼 */}
-            <button
-              className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
+              {/* 고민해결하러가기 버튼 */}
+              <button
+                className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
           transition hover:bg-[#F8ECFF] hover:text-mainbutton
           animate-pulse "
-              onClick={() => toBook()}
-              type="button"
-            >
-              고민 해결하러 가기
-            </button>
-            {/* 통계 보러가기 버튼 */}
-            <button
-              className="flex justify-center mt-4 text-white font-ham-l text-[15px]"
-              onClick={() => toStatistics()}
-              type="button"
-            >
-              상담 인격 인기도 보러 가기
-              <img
-                className="w-5 ml-1 mt-[1px]"
-                src={popularbuttonwhiteIcon}
-                alt="popularbuttonwhiteIcon"
-              />
-            </button>
+                onClick={() => toBook()}
+                type="button"
+              >
+                고민 해결하러 가기
+              </button>
+              {/* 통계 보러가기 버튼 */}
+              <button
+                className="flex justify-center mt-4 text-white font-ham-l text-[15px]"
+                onClick={() => toStatistics()}
+                type="button"
+              >
+                상담 인격 인기도 보러 가기
+                <img
+                  className="w-5 ml-1 mt-[1px]"
+                  src={popularbuttonwhiteIcon}
+                  alt="popularbuttonwhiteIcon"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    ) : (
+      <MainPageV />
+    )),
+  };
 }
 
 export default MainPage;
