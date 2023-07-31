@@ -4,7 +4,12 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import FlipPage, { ReactFlipPage } from 'react-flip-page';
 import { useRecoilState } from 'recoil';
 // eslint-disable-next-line
-import { windowWidthState, windowHeightState } from '@/Recoil';
+import {
+  windowWidthState,
+  windowHeightState,
+  audioVolumeState,
+  audioState,
+} from '@/Recoil';
 import BookPageThreeV from '@/pagesV/BookPageThreeV';
 import BookPageTwoV from '@/pagesV/BookPageTwoV';
 import BookPageV from '@/pagesV/BookPageV';
@@ -29,7 +34,17 @@ function FlipBook() {
   const [isOpenModal, setOpenModal] = useState<boolean>(() => false);
   const [windowWidth, setWindowWidth] = useRecoilState(windowWidthState);
   const [windowHeight, setWindowHeight] = useRecoilState(windowHeightState);
+  const [volume, setVolume] = useRecoilState(audioVolumeState);
+  const [isPlaying, setIsPlaying] = useRecoilState(audioState);
   const flipPageRef = useRef<ReactFlipPage | null>(null);
+
+  const flipSound = () => {
+    const audio = new Audio('./src/assets/audio/booksori-sarasvatl.mp3');
+    audio.volume = volume;
+    if (isPlaying) {
+      audio.play();
+    }
+  };
 
   const onClickToggleModal = useCallback(() => {
     setOpenModal(!isOpenModal);
@@ -144,20 +159,13 @@ function FlipBook() {
       className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     flex justify-center items-center"
     >
-      <span
-        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
-        font-ham text-[#E1C0E7] "
-      >
-        <span>BGM</span>
-        <span>
-          <AudioButton />
-        </span>
-      </span>{' '}
+      <AudioButton />
       {isOpenModal ? (
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}
       <FlipPage
         orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
+        onStartPageChange={() => flipSound()}
         // orientation="vertical"
         uncutPages
         ref={flipPageRef}
