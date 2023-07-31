@@ -46,7 +46,7 @@ function InputWorryR({ props: onClickToggleModal }: any) {
     if (loading === 0) {
       return (
         <img
-          className="w-[25vw] opacity-30"
+          className="w-[20vw] opacity-30"
           src={waitLoading}
           alt="waitLoading"
         />

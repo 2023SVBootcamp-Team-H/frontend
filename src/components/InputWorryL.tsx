@@ -154,13 +154,13 @@ function InputWorryL({ props: onClickToggleModal }: any) {
   };
 
   return (
-    <div className=" flex flex-col items-center justify-around w-[100%] h-[100%] font-ham-m">
+    <div className=" flex flex-col items-center justify-center w-[100%] h-[100%] font-ham-m space-y-[2.5vw]">
       {/* 고민 입력 창 제목 */}
       <div className=" text-textTitle text-[1.5vw] mt-[2vw]">
         무엇이 고민인가요?
       </div>
       {/* 나이, 성별, 고민 입력 전체 배경 */}
-      <div className="p-[1.2vw] m-[1.2vw] mt-[2vw] flex flex-col justify-around w-[80%] h-[65%] bg-[#E6DED3] rounded-[19px] shadow-inner">
+      <div className="p-[1.2vw] m-[1.2vw] mt-[2vw] flex flex-col justify-center w-[80%] h-[65%] bg-[#E6DED3] rounded-[19px] shadow-inner">
         <div className="flex justify-center items-center font-ham-m mt-[1vw]">
           <div className="w-[30%] text-textTitle text-[1vw] flex justify-center">
             나이대
@@ -256,7 +256,7 @@ function InputWorryL({ props: onClickToggleModal }: any) {
         </div>
         {/* 고민 입력 박스 */}
         <button
-          className=" h-[50%] p-[0.8vw] "
+          className="h-[70%] p-[0.8vw] mt-[8%]"
           onClick={handleButtonClick}
           type="button"
         >

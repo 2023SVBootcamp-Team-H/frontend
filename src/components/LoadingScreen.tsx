@@ -12,7 +12,7 @@ function LoadingScreen() {
     },
   };
   return (
-    <div className="w-[25vw]">
+    <div className="w-[20vw]">
       <Lottie animationData={loadingLottie} data-testid="lottie-animation" />
     </div>
   );
