@@ -19,15 +19,35 @@ import {
   messageState,
   activeButtonState,
   nicknameState,
+  windowWidthState,
+  windowHeightState,
 } from '@/Recoil';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
+import {
+  heightGap,
+  limitWidth,
+  maxHeight,
+  maxWidth,
+  widthGap,
+  widthPerHeight,
+  widthPerHeight2,
+} from '@/assets/values';
 
 function SatisfactionPage() {
   const [totalData, setTotalData] = useRecoilState(dataState);
   const [femaleData, setFemaleData] = useRecoilState(femaleState);
   const [maleData, setMaleData] = useRecoilState(maleState);
   const [avgData, setAvgData] = useRecoilState(avgState);
+
+  const [windowWidth, setWindowWidth] = useRecoilState(windowWidthState);
+  const [windowHeight, setWindowHeight] = useRecoilState(windowHeightState);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+    console.log(windowWidth, windowHeight);
+  };
 
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
   const [, setLike] = useRecoilState(likeState);
@@ -78,6 +98,10 @@ function SatisfactionPage() {
 
   useEffect(() => {
     toStatistics();
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
     // genderStatistics();
   }, [setTotalData, setAvgData, setFemaleData, setMaleData]);
   return (
@@ -88,14 +112,31 @@ function SatisfactionPage() {
     >
       {/* 책 전체 요소 */}
       <div
+        style={{
+          width:
+            windowWidth - widthGap > maxWidth
+              ? maxWidth
+              : windowWidth - widthGap,
+          height: (() => {
+            let ret = 0;
+            if (windowWidth - widthGap > maxWidth) {
+              ret = maxHeight;
+            } else if (windowWidth < limitWidth) {
+              ret = (windowWidth - heightGap) / widthPerHeight2;
+            } else {
+              ret = (windowWidth - widthGap) * widthPerHeight;
+            }
+            return ret;
+          })(),
+        }}
         className="animate__animated animate__fadeIn
         flex justify-center items-center
-        w-[fit] h-[fit] px-4 pt-5 pb-8 bg-pageBackgroud 
-       outline-pageOutline outline outline-[15px] rounded-md "
+        h-[100%] w-[100%] p-4 pb-8 bg-pageBackgroud 
+       outline-pageOutline outline outline-[15px] rounded-md"
       >
         {/* 왼쪽 페이지 */}
         <div
-          className="bg-pageBackgroud  h-[620px] w-[450px]
+          className="bg-pageBackgroud  h-[100%] w-[50%]
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
         "
@@ -105,7 +146,7 @@ function SatisfactionPage() {
 
         {/* 오른쪽 페이지 */}
         <div
-          className="bg-pageBackgroud h-[620px] w-[450px]
+          className="bg-pageBackgroud h-[100%] w-[50%]
       bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
   flex "
         >
