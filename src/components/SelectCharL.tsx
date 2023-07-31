@@ -4,13 +4,13 @@ import 'animate.css';
 function SelectCharL() {
   return (
     <div
-      className="h-full font-ham text-textTitle text-[1.5vw] flex justify-center items-center text-center 
-      leading-[55px] tracking-wider
+      className="h-full font-ham text-textTitle text-[1.8vw]
+      flex flex-col justify-center items-center text-center 
+      leading-[3vw] tracking-wider
       "
     >
-      고민 상담받고 싶은
-      <br />
-      인격을 골라 주세요
+      <span>고민 상담받고 싶은</span>
+      <span>인격을 골라 주세요</span>
     </div>
   );
 }

@@ -23,19 +23,20 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
       <div
         className=" 
         flex justify-center items-center hvr-curl-bottom-right
-        w-[100%] h-[100%] p-4 bg-pageBackgroud 
+        w-[100%] h-[100%] px-2 pt-3 pb-1 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md "
       >
         {/* 왼쪽 페이지 */}
-        <div
-          className="bg-pageBackgroud  w-[100%] h-[100%]
+        <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">
+          <div
+            className="bg-pageBackgroud  w-[100%] h-[100%]
         bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-r-[3px] border-[#D9D3C8] 
         flex flex-col justify-center items-center 
         "
-        >
-          {/* 왼쪽 이미지 */}
-          <SelectCharL />
+          >
+            <SelectCharL />
+          </div>
           <button
             type="button"
             onClick={() => {
@@ -48,14 +49,16 @@ function BookPageTwo({ handlePrevPage, handleNextPage }: handleProps) {
             Prev
           </button>
         </div>
+
         {/* 오른쪽 페이지 */}
-        <div
-          className="bg-pageBackgroud w-[100%] h-[100%]
+        <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">
+          <div
+            className="bg-pageBackgroud w-[100%] h-[100%]
       bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
   flex flex-col items-center"
-        >
-          {/* 오른쪽 이미지 */}
-          <SelectCharR onSelectChar={onSelectChar} />
+          >
+            <SelectCharR onSelectChar={onSelectChar} />
+          </div>
           <button
             type="button"
             onClick={() => {

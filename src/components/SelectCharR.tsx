@@ -57,7 +57,10 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
   const [isHoveringRap, setIsHoveringRap] = useState(false);
 
   return (
-    <div className="flex flex-col justify-around w-[100%] h-[100%]">
+    <div
+      className="flex flex-col justify-around w-[100%] h-[100%]
+    font-ham-m text-textCategory text-[1.2vw]"
+    >
       <button
         className="w-[50%] self-center"
         type="button"
@@ -87,7 +90,7 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         할머니 버튼
       </div> */}
 
-      <div className="font-ham-m text-textCategory flex justify-center items-center">
+      <div className=" flex justify-center items-center">
         {/* F친구 버튼 */}
         <button
           className="w-[50%]"
@@ -141,7 +144,7 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
         </button>
       </div>
 
-      <div className="font-ham-m text-textCategory flex justify-center items-center">
+      <div className="flex justify-center items-center">
         {/* 래퍼 버튼 */}
         <button
           className="w-[50%]"

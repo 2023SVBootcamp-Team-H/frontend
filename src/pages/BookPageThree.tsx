@@ -21,7 +21,7 @@ function BookPageThree(attribute: handleProps) {
       {/* 책 전체 요소 */}
       <div
         className="flex justify-center items-center
-        w-[100%] h-[100%] p-4 bg-pageBackgroud 
+        w-[100%] h-[100%] px-2 pt-3 pb-1 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md 
        "
       >
