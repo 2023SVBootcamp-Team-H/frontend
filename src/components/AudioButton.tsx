@@ -33,7 +33,6 @@ function AudioButton(): JSX.Element {
         type="range"
         onChange={(e) => {
           setVolume(Number(e.target.value) / 100);
-          console.log(volume);
         }}
       />
     </div>

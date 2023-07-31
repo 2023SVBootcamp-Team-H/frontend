@@ -20,7 +20,7 @@ const audioState = atom<boolean>({
 
 const audioVolumeState = atom<number>({
   key: 'audioVolumeState',
-  default: 0,
+  default: 0.5,
 });
 
 // 카테고리(string)
