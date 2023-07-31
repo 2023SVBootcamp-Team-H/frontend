@@ -82,17 +82,18 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
       <div>
         {/* 모달창  */}
         <div
-          className="-translate-y-1/2-translate-y-1/2 fixed top-44 right-1/2 z-50 box-border h-96
-          w-[410px] translate-x-1/2  transform rounded-[20px] bg-satisfactionBack
-          sm:w-2/4 sm:h-96"
+          className="-translate-y-1/2-translate-y-1/2 fixed top-44 right-1/2 z-50 box-border h-72
+          w-2/5 translate-x-1/2  transform rounded-[20px] bg-satisfactionBack
+          sm:w-2/5 sm:h-48
+          "
         >
           {/* 모달 상단 헤더 */}
           <div
-            className="flex justify-center
-            bg-satisfactionTop rounded-t-[20px] p-6
+            className="flex justify-center items-center
+            bg-satisfactionTop rounded-t-[20px] h-[20%]
             "
           >
-            <div className="text-[21px] font-ham-m">
+            <div className="text-[1.5vw] font-ham-m ">
               <span className="text-[#7A44A4]">{`${showPersonality}`}</span>
               <span>의 답변을 평가해주세요!</span>
             </div>
@@ -105,41 +106,42 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
             </button> */}
           </div>
 
-          {/* 별점 */}
-          <div className="">
-            <div className="flex justify-center items-center mt-20 space-x-3 ">
-              {renderStars()}
-            </div>
-            {/* 버튼 */}
-            <div className="flex justify-center mt-16 drop-shadow-md">
-              <button
-                type="button"
-                onClick={() => {
-                  starSubmit();
-                  toMain();
-                }}
-                className="font-ham text-[#A16AE7] 
-                bg-satisfactionButton px-12 py-4 rounded-full
-                mr-4"
-              >
-                평가 완료
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  starSubmit();
-                  toStatistics();
-                }}
-                className="flex font-ham text-[#A16AE7]  justify-items-center
-                bg-satisfactionButton px-8 py-4 rounded-full"
-              >
-                인기있는 인격 순위 보러가기
-                <img
-                  className="w-5 ml-1"
-                  src={popularbuttonIcon}
-                  alt="popularbuttonIcon"
-                />
-              </button>
+          <div className="h-[80%] ">
+            {/* 별점 */}
+            <div className="px-7 flex flex-col justify-around items-center h-full">
+              <div className="flex justify-center items-center space-x-3 ">
+                {renderStars()}
+              </div>
+              {/* 버튼 */}
+              <div className="flex w-full h-[20%] justify-center drop-shadow-md space-x-4 text-[1vw]">
+                <button
+                  type="button"
+                  onClick={() => {
+                    starSubmit();
+                    toMain();
+                  }}
+                  className="font-ham text-[#A16AE7] 
+                bg-satisfactionButton w-[30%] h-[100%] rounded-full "
+                >
+                  평가 완료
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    starSubmit();
+                    toStatistics();
+                  }}
+                  className="flex justify-center items-center font-ham text-[#A16AE7] 
+                bg-satisfactionButton w-[70%]  rounded-full"
+                >
+                  인기있는 인격 순위 보러가기
+                  <img
+                    className="w-5 ml-1"
+                    src={popularbuttonIcon}
+                    alt="popularbuttonIcon"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>

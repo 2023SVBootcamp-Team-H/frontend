@@ -51,7 +51,7 @@ function BookPageThree(attribute: handleProps) {
         {/* 오른쪽 페이지 */}
         <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">
           <div
-            className=" flex flex-col bg-pageBackgroud  w-[100%] h-[100%]
+            className=" flex flex-col bg-pageBackgroud  w-[100%] h-[96%]
             bg-bookframe bg-center  p-3 bg-contain bg-no-repeat 
             "
           >
@@ -62,7 +62,7 @@ function BookPageThree(attribute: handleProps) {
             onClick={() => {
               attribute.handlePrevPage();
             }}
-            className=" flex-grow
+            className=" flex-grow invisible
             w-[20%] h-[4%] text-[1vw] self-center mt-auto
                bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
                text-[#7C5197] font-ham-l text-center"
