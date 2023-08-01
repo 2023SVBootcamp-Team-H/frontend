@@ -30,13 +30,18 @@ function BookPageV({ handlePrevPage, handleNextPage }: handleProps) {
   };
   return (
     <div className="flex justify-center items-center hvr-curl-bottom-right w-[100%] h-[100%]">
-      <div className="flex flex-col justify-center items-center w-[100%] h-[100%] p-[1%] bg-pageBackgroud outline-pageOutline outline outline-[15px] rounded-md">
+      <div
+        className="
+          flex flex-col justify-center items-center hvr-curl-bottom-right
+          w-[100%] h-[100%] p-[1%] bg-pageBackgroud 
+          outline-pageOutline outline outline-[15px] rounded-md "
+      >
         <button
           type="button"
           onClick={() => {
             handlePrevPage();
           }}
-          className=" w-[20%] h-[7%] items-center text-[1vw]
+          className=" w-[20%] h-[7%] items-center text-[1vw] justify-self-end
         bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
          text-[#7C5197] font-ham-l text-center"
         >
@@ -55,7 +60,7 @@ function BookPageV({ handlePrevPage, handleNextPage }: handleProps) {
         </div>
         <div
           className="bg-pageBackgroud w-[100%] h-[100%] 
-          bg-bookframeV bg-center bg-origin-padding p-4 bg-contain bg-no-repeat
+          bg-bookframeV bg-center bg-origin-padding p-3 bg-contain bg-no-repeat
         flex flex-col content-center items-center"
         >
           <SelectWorryB
