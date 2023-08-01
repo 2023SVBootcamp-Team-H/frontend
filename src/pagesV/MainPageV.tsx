@@ -74,10 +74,10 @@ function MainPage() {
         <div className=" self-end pb-[30%]">
           {/* 로고 텍스트 */}
           <div className="flex flex-col items-center justify-center z-50">
-            <div className="text-white font-ham  text-[20vw] ">
+            <div className="text-white font-ham  text-[21vw] ">
               Witch&rsquo;s
             </div>
-            <div className="text-white font-ham text-[21vw]">Mind</div>
+            <div className="text-white font-ham text-[22vw]">Mind</div>
 
             {/* 고민해결하러가기 버튼 */}
             <button
@@ -97,7 +97,7 @@ function MainPage() {
             >
               상담 인격 인기도 보러 가기
               <img
-                className="w-5 ml-1"
+                className="w-5 ml-1 "
                 src={popularbuttonwhiteIcon}
                 alt="popularbuttonwhiteIcon"
               />
