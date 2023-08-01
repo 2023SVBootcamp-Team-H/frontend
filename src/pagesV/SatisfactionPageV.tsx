@@ -22,7 +22,8 @@ import {
   windowWidthState,
   windowHeightState,
 } from '@/Recoil';
-import SatisfactionPageV from '@/pagesV/SatisfactionPageV';
+import StatisticsB from '@/componentsV/StatisticsB';
+import StatisticsT from '@/componentsV/StatisticsT';
 import AudioButton from '@/components/AudioButton';
 import StatisticsL from '@/components/StatisticsL';
 import StatisticsR from '@/components/StatisticsR';
@@ -36,7 +37,7 @@ import {
   widthPerHeight2,
 } from '@/assets/values';
 
-function SatisfactionPage() {
+function SatisfactionPageV() {
   const [totalData, setTotalData] = useRecoilState(dataState);
   const [femaleData, setFemaleData] = useRecoilState(femaleState);
   const [maleData, setMaleData] = useRecoilState(maleState);
@@ -106,73 +107,69 @@ function SatisfactionPage() {
     return () => window.removeEventListener('resize', handleResize);
     // genderStatistics();
   }, [setTotalData, setAvgData, setFemaleData, setMaleData]);
-
-  return {
-    ...(windowWidth > 600 ? (
-      // 배경
-      <div
-        className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
+  return (
+    // 배경
+    <div
+      className=" bg-dontworrybg bg-bgsubV min-h-screen w-full bg-cover bg-no-repeat bg-center
     flex justify-center items-center"
-      >
-        {/* BGM 버튼 */}
-        <span
-          className="absolute top-5 right-7 flex justify-end items-center  space-x-2
+    >
+      {/* BGM 버튼 */}
+      <span
+        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
         font-ham text-[#E1C0E7] "
-        >
-          <span>BGM</span>
-          <span>
-            <AudioButton />
-          </span>
+      >
+        <span>BGM</span>
+        <span>
+          <AudioButton />
         </span>
+      </span>
 
-        {/* 책 전체 요소 */}
-        <div
-          style={{
-            width:
-              windowWidth - widthGap > maxWidth
-                ? maxWidth
-                : windowWidth - widthGap,
-            height: (() => {
-              let ret = 0;
-              if (windowWidth - widthGap > maxWidth) {
-                ret = maxHeight;
-              } else if (windowWidth < limitWidth) {
-                ret = (windowWidth - heightGap) / widthPerHeight2;
-              } else {
-                ret = (windowWidth - widthGap) * widthPerHeight;
-              }
-              return ret;
-            })(),
-          }}
-          className="animate__animated animate__fadeIn
-        flex justify-center items-center
-        h-[100%] w-[100%] p-4 pb-8 bg-pageBackgroud 
+      {/* 책 전체 요소 */}
+      <div
+        style={{
+          width:
+            windowWidth - widthGap > maxWidth
+              ? maxWidth
+              : windowWidth - widthGap,
+          height: (() => {
+            let ret = 0;
+            if (windowWidth - widthGap > maxWidth) {
+              ret = maxHeight;
+            } else if (windowWidth < limitWidth) {
+              ret = (windowWidth - heightGap) / widthPerHeight2;
+            } else {
+              ret = (windowWidth - widthGap) * widthPerHeight;
+            }
+            return ret;
+          })(),
+        }}
+        className="animate__animated animate__fadeIn
+        flex flex-col justify-center items-center
+        h-[100%] w-[100%] px-3 bg-pageBackgroud 
        outline-pageOutline outline outline-[15px] rounded-md"
-        >
-          {/* 왼쪽 페이지 */}
-          <div
-            className="bg-pageBackgroud  h-[100%] w-[50%]
-        bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
-        border-solid border-r-[3px] border-[#D9D3C8] 
+      >
+        {/* 왼쪽 페이지 */}
+        <div
+          className="bg-pageBackgroud  w-[100%] h-[50%] 
+          bg-bookframeV bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
+          flex flex-col items-center
+          border-solid border-b-[3px] border-[#D9D3C8]
         "
-          >
-            <StatisticsL />
-          </div>
+        >
+          <StatisticsT />
+        </div>
 
-          {/* 오른쪽 페이지 */}
-          <div
-            className="bg-pageBackgroud h-[100%] w-[50%]
-      bg-bookframe bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
-      flex "
-          >
-            <StatisticsR />
-          </div>
+        {/* 오른쪽 페이지 */}
+        <div
+          className="bg-pageBackgroud w-[100%] h-[50%] 
+          bg-bookframeV bg-center bg-origin-padding p-4 bg-contain bg-no-repeat
+        flex flex-col content-center items-center"
+        >
+          <StatisticsB />
         </div>
       </div>
-    ) : (
-      <SatisfactionPageV />
-    )),
-  };
+    </div>
+  );
 }
 
-export default SatisfactionPage;
+export default SatisfactionPageV;

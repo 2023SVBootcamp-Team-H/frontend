@@ -24,6 +24,7 @@ export default {
         'ham-l': ['HahmletLight', 'sans-serif'],
         'ham-m': ['HahmletMedium', 'sans-serif'],
         'ham-sb': ['HahmletSemiBold', 'sans-serif'],
+        wiz: ['Wizard', 'Arial', 'sans-serif'],
       },
       backgroundImage: {
         bgmain: "url('@/assets/images/backgroundMain.png')",
