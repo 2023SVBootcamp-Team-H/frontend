@@ -57,7 +57,7 @@ function MainPage() {
 
   return (
     <div
-      className=" bg-dontworrybg bg-bgmainV min-h-screen w-full bg-contain bg-no-repeat bg-center
+      className=" bg-dontworrybg bg-bgsubV bg-cover min-h-screen bg-no-repeat bg-center
     relative flex justify-center items-end"
     >
       <span
@@ -71,19 +71,17 @@ function MainPage() {
       </span>
 
       <div className=" flex justify-center items-stretch ">
-        <div className=" self-end pb-6">
+        <div className=" self-end pb-[30%]">
           {/* 로고 텍스트 */}
           <div className="flex flex-col items-center justify-center z-50">
-            <div className="text-white font-ham sm:text-[70px] text-[90px] ">
+            <div className="text-white font-ham  text-[20vw] ">
               Witch&rsquo;s
             </div>
-            <div className="text-white font-ham sm:text-[85px] text-[105px]">
-              Mind
-            </div>
+            <div className="text-white font-ham text-[21vw]">Mind</div>
 
             {/* 고민해결하러가기 버튼 */}
             <button
-              className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
+              className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[16px] mt-[15%]
           transition hover:bg-[#F8ECFF] hover:text-mainbutton
           animate-pulse "
               onClick={() => toBook()}
@@ -93,13 +91,13 @@ function MainPage() {
             </button>
             {/* 통계 보러가기 버튼 */}
             <button
-              className="flex justify-center mt-4 text-white font-ham-l text-[15px]"
+              className="flex justify-center mt-[10%] text-white font-ham-l text-[14px]"
               onClick={() => toStatistics()}
               type="button"
             >
               상담 인격 인기도 보러 가기
               <img
-                className="w-5 ml-1 mt-[1px]"
+                className="w-5 ml-1"
                 src={popularbuttonwhiteIcon}
                 alt="popularbuttonwhiteIcon"
               />
