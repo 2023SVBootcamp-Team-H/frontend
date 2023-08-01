@@ -157,6 +157,8 @@ function FlipBook() {
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}
       <FlipPage
+        disableSwipe
+        flipOnTouch
         orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
         // orientation="vertical"
         uncutPages
@@ -177,7 +179,7 @@ function FlipBook() {
         })()}
         // style={{ width: '80vw' }}
         className="animate__animated animate__jackInTheBox
-        outline-pageOutline outline outline-[15px] rounded-md "
+        outline-pageOutline outline outline-[1.8vw] rounded-md "
       >
         {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>

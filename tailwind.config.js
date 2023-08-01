@@ -29,6 +29,7 @@ export default {
         bgmain: "url('@/assets/images/backgroundMain.png')",
         bgsub: "url('@/assets/images/backgroundSub.png')",
         bookframe: "url('@/assets/images/frame.png')",
+        bookframeV: "url('@/assets/images/frameV.png')",
       },
     },
     screens: {

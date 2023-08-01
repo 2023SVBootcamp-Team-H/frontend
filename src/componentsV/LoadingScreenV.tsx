@@ -2,7 +2,7 @@ import React from 'react';
 import Lottie from 'lottie-react';
 import loadingLottie from '@/assets/loadingLottie';
 
-function LoadingScreen() {
+function LoadingScreenV() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -12,10 +12,10 @@ function LoadingScreen() {
     },
   };
   return (
-    <div className="w-[21vw]">
+    <div className="w-[32vw]">
       <Lottie animationData={loadingLottie} data-testid="lottie-animation" />
     </div>
   );
 }
 
-export default LoadingScreen;
+export default LoadingScreenV;
