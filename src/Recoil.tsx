@@ -18,6 +18,11 @@ const audioState = atom<boolean>({
   default: false,
 });
 
+const audioVolumeState = atom<number>({
+  key: 'audioVolumeState',
+  default: 0.5,
+});
+
 // 카테고리(string)
 const categoryState = atom<string>({
   key: 'categoryState', // unique ID (다른 atoms/selectors을 구별하기 위해서)
@@ -144,4 +149,5 @@ export {
   windowWidthState,
   windowHeightState,
   audioState,
+  audioVolumeState,
 };

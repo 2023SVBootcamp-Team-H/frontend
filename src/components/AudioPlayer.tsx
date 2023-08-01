@@ -1,18 +1,19 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useRecoilState } from 'recoil';
 // eslint-disable-next-line
-import { audioState } from '@/Recoil';
+import { audioState, audioVolumeState } from '@/Recoil';
 
 function AudioPlayer(): JSX.Element {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useRecoilState(audioState);
+  const [volume, setVolume] = useRecoilState(audioVolumeState);
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.05; // 볼륨을 0.05로 설정
+      audioRef.current.volume = volume; // 볼륨을 0.05로 설정
       isPlaying ? audioRef.current.play() : audioRef.current.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, volume]);
 
   function togglePlay(): void {
     setIsPlaying((prevIsPlaying) => !prevIsPlaying);
