@@ -24,7 +24,7 @@ function StatisticsB() {
         </div>
       </div>
       <button
-        className="w-[40%] h-[10%] mb-[5%]  text-center text-[0.5vw] 
+        className="w-[60%] h-[10%] mb-[5%]  text-center text-[0.5vw] 
           bg-stone-300 bg-opacity-25 rounded-[15px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m"
         onClick={() => toMain()}
