@@ -157,6 +157,8 @@ function FlipBook() {
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}
       <FlipPage
+        disableSwipe
+        flipOnTouch
         orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
         // orientation="vertical"
         uncutPages

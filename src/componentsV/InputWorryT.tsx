@@ -63,7 +63,7 @@ function InputWorryT({ props: onClickToggleModal }: any) {
   // 선택된 나이 버튼의 색상을 반환하는 함수
   const getAgeButtonStyle = (ageSelected: number) => {
     return `w-[30%] py-[0.5vw] rounded-[39px] border shadow-inner text-stone-600 
-    text-[0.2vw] origin-center leading-[13.20px] ${
+    text-[1vw] origin-center leading-[13.20px] ${
       age === ageSelected
         ? 'bg-[#ECE6F5] border-[#7C5197]'
         : 'bg-[#ECE7DE] border-[#B1AAA2]'
@@ -152,13 +152,13 @@ function InputWorryT({ props: onClickToggleModal }: any) {
   };
 
   return (
-    <div className=" flex flex-col items-center justify-center w-[100%] h-[100%] font-ham-m space-y-[2.5vw]">
+    <div className="flex flex-col items-center justify-center w-[100%] h-[100%] font-ham-m space-y-[1vw]">
       {/* 고민 입력 창 제목 */}
       <div className=" text-textTitle text-[3.5vw]">무엇이 고민인가요?</div>
       {/* 나이, 성별, 고민 입력 전체 배경 */}
       <div
         className="
-        flex flex-col justify-around p-[1.2vw] w-[90%] h-[65%] 
+        flex flex-col justify-around p-[1.2vw] w-[90%] h-auto 
       bg-[#E6DED3] rounded-[19px] shadow-inner"
       >
         <div className="flex justify-center items-center font-ham-m">
@@ -256,7 +256,7 @@ function InputWorryT({ props: onClickToggleModal }: any) {
         </div>
         {/* 고민 입력 박스 */}
         <button
-          className="flex items-center justify-center w-[100%] h-[60%] p-[0.8vw] mt-[3%]"
+          className="flex items-center self-center justify-center w-[80%] h-[60%] p-[0.8vw] mt-[3%]"
           onClick={handleButtonClick}
           type="button"
         >

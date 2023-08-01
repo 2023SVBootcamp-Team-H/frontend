@@ -8,7 +8,12 @@ type handleProps = {
   onClickToggleModal: () => void;
   handlePrevPage: () => void;
 };
+
 function BookPageThreeV(attribute: handleProps) {
+  function handleNextPage() {
+    throw new Error('Function not implemented.');
+  }
+
   // const [selectedChar, setSelectedChar] = useState<string | undefined>();
 
   // const onSelectChar = (char: string) => {
@@ -38,7 +43,7 @@ function BookPageThreeV(attribute: handleProps) {
         </button>
         {/* 왼쪽 페이지 */}
         <div
-          className="bg-pageBackgroud  w-[100%] h-[100%]
+          className="bg-pageBackgroud  w-[100%] h-[46%]
         bg-bookframeV bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-b-[3px] border-[#D9D3C8] 
         flex flex-col items-center 
@@ -48,12 +53,24 @@ function BookPageThreeV(attribute: handleProps) {
         </div>
         {/* 오른쪽 페이지 */}
         <div
-          className="bg-pageBackgroud w-[100%] h-[100%]
+          className="bg-pageBackgroud w-[100%] h-[46%]
       bg-bookframeV bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
   flex flex-col content-center items-center"
         >
           <InputWorryB props={attribute.onClickToggleModal} />
         </div>
+        <button
+          type="button"
+          onClick={() => {
+            handleNextPage();
+          }}
+          className="invisible
+          w-[20%] h-[4%] items-center text-[1vw]
+        bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
+         text-[#7C5197] font-ham-l text-center"
+        >
+          Next
+        </button>
       </div>
     </div>
   );

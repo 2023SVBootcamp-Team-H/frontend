@@ -31,7 +31,7 @@ function BookPageTwoV({ handlePrevPage, handleNextPage }: handleProps) {
           onClick={() => {
             handlePrevPage();
           }}
-          className="w-[20%] h-[7%] items-center text-[1vw] justify-self-end
+          className="w-[20%] h-[4%] items-center text-[1vw] justify-self-end
         bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
          text-[#7C5197] font-ham-l text-center"
         >
@@ -39,7 +39,7 @@ function BookPageTwoV({ handlePrevPage, handleNextPage }: handleProps) {
         </button>
         {/* 왼쪽 페이지 */}
         <div
-          className="bg-pageBackgroud  w-[100%] h-[100%]
+          className="bg-pageBackgroud  w-[100%] h-[46%]
         bg-bookframeV bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
         border-solid border-b-[3px] border-[#D9D3C8] 
         flex flex-col items-center 
@@ -50,7 +50,7 @@ function BookPageTwoV({ handlePrevPage, handleNextPage }: handleProps) {
         </div>
         {/* 오른쪽 페이지 */}
         <div
-          className="bg-pageBackgroud w-[100%] h-[100%]
+          className="bg-pageBackgroud w-[100%] h-[46%]
       bg-bookframeV bg-center bg-origin-padding p-3 bg-contain bg-no-repeat 
   flex flex-col content-center items-center"
         >
@@ -62,7 +62,7 @@ function BookPageTwoV({ handlePrevPage, handleNextPage }: handleProps) {
           onClick={() => {
             handleNextPage();
           }}
-          className="w-[20%] h-[7%] items-center text-[1vw]
+          className="w-[20%] h-[4%] items-center text-[1vw]
         bg-[#ECE6F3] rounded-full border border-solid border-[#7C5197]
          text-[#7C5197] font-ham-l text-center"
         >
