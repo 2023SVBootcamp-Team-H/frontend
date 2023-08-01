@@ -156,8 +156,10 @@ function FlipBook() {
   ];
   return (
     <div
-      className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
-    flex justify-center items-center"
+      className={`bg-dontworrybg ${
+        windowWidth > 600 ? 'bg-bgmain bg-contain' : 'bg-bgsubV bg-cover'
+      } min-h-screen w-full  bg-no-repeat bg-center
+      flex justify-center items-center`}
     >
       <AudioButton />
       {isOpenModal ? (
@@ -186,8 +188,10 @@ function FlipBook() {
           return ret;
         })()}
         // style={{ width: '80vw' }}
-        className="animate__animated animate__jackInTheBox
-        outline-pageOutline outline outline-[1.8vw] rounded-md "
+        className={`animate__animated animate__jackInTheBox
+        outline-pageOutline outline ${
+          windowWidth > 600 ? 'outline-[1.2vw]' : ' outline-[1.8vw]'
+        }rounded-md "`}
       >
         {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>
