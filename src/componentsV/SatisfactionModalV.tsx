@@ -82,8 +82,8 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
       <div>
         {/* 모달창  */}
         <div
-          className="-translate-y-1/2-translate-y-1/2 fixed top-44 right-1/2 z-50 box-border h-72
-          w-2/5 translate-x-1/2  transform rounded-[20px] bg-satisfactionBack
+          className="-translate-y-1/2-translate-y-1/2 fixed top-44 right-1/2 z-50 box-border h-[50%] 
+          w-4/5 translate-x-1/2  transform rounded-[20px] bg-satisfactionBack
           sm:w-2/5 sm:h-48
           "
         >
@@ -108,7 +108,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
 
           <div className="h-[80%] ">
             {/* 별점 */}
-            <div className="px-7 flex flex-col justify-around items-center h-full">
+            <div className=" flex flex-col justify-around items-center h-full">
               <div className="flex justify-center items-center space-x-3 ">
                 {renderStars()}
               </div>

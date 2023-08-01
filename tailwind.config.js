@@ -40,6 +40,10 @@ export default {
       md: { min: '820px', max: '1023px' },
       lg: { min: '1080px' },
     },
+    outlineWidth: {
+      8: '8px',
+      15: '15px',
+    },
   },
 
   plugins: [],

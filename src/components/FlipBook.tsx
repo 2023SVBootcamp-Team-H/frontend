@@ -166,6 +166,7 @@ function FlipBook() {
         <SatisfactionModal onClickToggleModal={onClickToggleModal} />
       ) : null}
       <FlipPage
+        style={{ 'outline-width': windowWidth > 600 ? '1.2vw' : '1.8vw' }}
         disableSwipe
         flipOnTouch
         orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
@@ -188,10 +189,8 @@ function FlipBook() {
           return ret;
         })()}
         // style={{ width: '80vw' }}
-        className={`animate__animated animate__jackInTheBox
-        outline-pageOutline outline ${
-          windowWidth > 600 ? 'outline-[1.2vw]' : ' outline-[1.8vw]'
-        }rounded-md "`}
+        className={`animate__animated animate__jackInTheBox 
+        outline-pageOutline outline rounded-md "`}
       >
         {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>
