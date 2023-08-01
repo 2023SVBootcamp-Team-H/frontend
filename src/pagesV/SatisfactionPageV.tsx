@@ -114,15 +114,7 @@ function SatisfactionPageV() {
     flex justify-center items-center"
     >
       {/* BGM 버튼 */}
-      <span
-        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
-        font-ham text-[#E1C0E7] "
-      >
-        <span>BGM</span>
-        <span>
-          <AudioButton />
-        </span>
-      </span>
+      <AudioButton />
 
       {/* 책 전체 요소 */}
       <div
@@ -146,7 +138,7 @@ function SatisfactionPageV() {
         className="animate__animated animate__fadeIn
         flex flex-col justify-center items-center
         h-[100%] w-[100%] px-3 bg-pageBackgroud 
-       outline-pageOutline outline outline-[15px] rounded-md"
+       outline-pageOutline outline outline-[1.2vw] rounded-md"
       >
         {/* 왼쪽 페이지 */}
         <div

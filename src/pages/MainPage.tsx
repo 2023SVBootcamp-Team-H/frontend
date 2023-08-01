@@ -79,18 +79,18 @@ function MainPage() {
       <div
         className=" bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
     relative flex justify-center items-end"
-    >
-      <AudioButton />
-      <div className=" flex justify-center items-stretch ">
-        <div className=" self-end pb-6">
-          {/* 로고 텍스트 */}
-          <div className="flex flex-col items-center justify-center z-50">
-            <div className="text-white font-ham sm:text-[70px] text-[90px] ">
-              Witch&rsquo;s
-            </div>
-            <div className="text-white font-ham sm:text-[85px] text-[105px]">
-              Mind
-            </div>
+      >
+        <AudioButton />
+        <div className=" flex justify-center items-stretch ">
+          <div className=" self-end pb-6">
+            {/* 로고 텍스트 */}
+            <div className="flex flex-col items-center justify-center z-50">
+              <div className="text-white font-ham sm:text-[70px] text-[90px] ">
+                Witch&rsquo;s
+              </div>
+              <div className="text-white font-ham sm:text-[85px] text-[105px]">
+                Mind
+              </div>
 
               {/* 고민해결하러가기 버튼 */}
               <button
