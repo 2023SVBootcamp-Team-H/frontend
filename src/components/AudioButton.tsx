@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useRecoilState } from 'recoil';
 // eslint-disable-next-line
 import { audioState, audioVolumeState } from '@/Recoil';
+import play from '../assets/images/play.svg';
+import stop from '../assets/images/stop.svg';
 
 function AudioButton(): JSX.Element {
   const [isPlaying, setIsPlaying] = useRecoilState(audioState);
@@ -20,11 +22,7 @@ function AudioButton(): JSX.Element {
         <span>BGM</span>
         <span>
           <button type="button" onClick={togglePlay}>
-            {isPlaying ? (
-              <img src="./src/assets/images/stop.svg" alt="" />
-            ) : (
-              <img src="./src/assets/images/play.svg" alt="" />
-            )}
+            {isPlaying ? <img src={stop} alt="" /> : <img src={play} alt="" />}
           </button>
         </span>
       </span>
