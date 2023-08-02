@@ -56,6 +56,18 @@ function FlipBook() {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
   };
+  let isBookin = false;
+  useEffect(() => {
+    if (!isBookin) {
+      const audio = new Audio('./src/assets/audio/book-in.mp3');
+      audio.volume = volume;
+      if (isPlaying) {
+        audio.play();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        isBookin = true;
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
