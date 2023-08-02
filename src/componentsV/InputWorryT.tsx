@@ -101,7 +101,6 @@ function InputWorryT({ props: onClickToggleModal }: any) {
       category: activeButton,
       personality,
     };
-    console.log(data);
     try {
       setLoading(1);
       const response = await fetch('https://www.witchsmind.com/worry/sse/', {
@@ -114,15 +113,11 @@ function InputWorryT({ props: onClickToggleModal }: any) {
       });
 
       const answer = await response.json();
+      const answerList = answer.message;
       const answerId = answer.answer_id;
       // 0보다 작으면 error message 출력
-      if (answerId <= 0) {
-        console.log(answer.message);
-        return;
-      }
-      const answerList = answer.message;
-      console.log(answerList);
-      setLoading(2);
+      answerId <= 0 ? setLoading(4) : setLoading(2);
+
       let str = '';
       for (let i = 0; i < answerList.length; i += 1) {
         str += answerList[i];
@@ -131,10 +126,10 @@ function InputWorryT({ props: onClickToggleModal }: any) {
         setMessage(str);
       }
 
-      setLoading(3);
-
+      if (answerId < 0) {
+        return;
+      }
       setAnswerId(answerId);
-      console.log(answer.answer_id);
     } catch (e) {
       setLoading(0);
     }
@@ -268,9 +263,9 @@ function InputWorryT({ props: onClickToggleModal }: any) {
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
         disabled={isSubmitButtonDisabled()}
         onClick={() => {
-          // handleWorrySubmit();
-          // setCharacterButton(showPersonality);
-          setLoading(3);
+          handleWorrySubmit();
+          setCharacterButton(showPersonality);
+          // setLoading(3);
         }}
       >
         {showPersonality === ''

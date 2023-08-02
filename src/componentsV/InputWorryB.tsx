@@ -143,6 +143,13 @@ function InputWorryB({ props: onClickToggleModal }: any) {
         </div>
       );
     }
+    if (loading === 4) {
+      return (
+        <div className="flex flex-col justify-center w-[70%] h-[100%] p-3 flex-wrap overflow-auto text-center font-ham-l text-[1vw] leading-3">
+          {message}
+        </div>
+      );
+    }
   }
 
   return (
