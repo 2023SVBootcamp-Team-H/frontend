@@ -279,8 +279,9 @@ function InputWorryT({ props: onClickToggleModal }: any) {
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
         disabled={isSubmitButtonDisabled()}
         onClick={() => {
-          handleWorrySubmit();
-          setCharacterButton(showPersonality);
+          // handleWorrySubmit();
+          // setCharacterButton(showPersonality);
+          setLoading(3);
         }}
       >
         {showPersonality === ''

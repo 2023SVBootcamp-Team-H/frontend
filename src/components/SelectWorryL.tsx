@@ -56,7 +56,7 @@ function SelectWorryL({
   };
 
   return (
-    <div className="flex flex-col  w-[90%] h-[100%]">
+    <div className="flex flex-col w-[90%] h-[100%]">
       <div
         className="font-ham text-textTitle text-[1.3vw] mt-[3vw] mb-[1.2vw]
        flex justify-center items-center"

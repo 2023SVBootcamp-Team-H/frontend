@@ -10,6 +10,7 @@ import {
   audioVolumeState,
   audioState,
 } from '@/Recoil';
+import SatisfactionModalV from '@/componentsV/SatisfactionModalV';
 import BookPageThreeV from '@/pagesV/BookPageThreeV';
 import BookPageTwoV from '@/pagesV/BookPageTwoV';
 import BookPageV from '@/pagesV/BookPageV';
@@ -29,6 +30,7 @@ import {
   widthPerHeight,
   widthPerHeight2,
 } from '@/assets/values';
+import 'animate.css';
 
 function FlipBook() {
   const [isOpenModal, setOpenModal] = useState<boolean>(() => false);
@@ -156,14 +158,29 @@ function FlipBook() {
   ];
   return (
     <div
-      className="bg-dontworrybg bg-bgmain min-h-screen w-full bg-contain bg-no-repeat bg-center
-    flex justify-center items-center"
+      className={`bg-dontworrybg ${
+        windowWidth > 600 ? 'bg-bgmain bg-contain' : 'bg-bgsubV bg-cover'
+      } min-h-screen w-full  bg-no-repeat bg-center
+      flex justify-center items-center`}
     >
       <AudioButton />
-      {isOpenModal ? (
-        <SatisfactionModal onClickToggleModal={onClickToggleModal} />
-      ) : null}
+      {(() => {
+        let ret = null;
+        if (isOpenModal) {
+          if (windowWidth - widthGap > maxWidth) {
+            ret = <SatisfactionModal onClickToggleModal={onClickToggleModal} />;
+          } else {
+            ret = (
+              <SatisfactionModalV onClickToggleModal={onClickToggleModal} />
+            );
+          }
+        } else {
+          ret = null;
+        }
+        return ret;
+      })()}
       <FlipPage
+        style={{ outlineWidth: windowWidth > 600 ? '1.2vw' : '1.8vw' }}
         disableSwipe
         flipOnTouch
         orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
@@ -186,8 +203,8 @@ function FlipBook() {
           return ret;
         })()}
         // style={{ width: '80vw' }}
-        className="animate__animated animate__jackInTheBox
-        outline-pageOutline outline outline-[1.8vw] rounded-md "
+        className={`animate__animated animate__jackInTheBox 
+        outline-pageOutline outline rounded-md `}
       >
         {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>

@@ -24,10 +24,13 @@ export default {
         'ham-l': ['HahmletLight', 'sans-serif'],
         'ham-m': ['HahmletMedium', 'sans-serif'],
         'ham-sb': ['HahmletSemiBold', 'sans-serif'],
+        wiz: ['Wizard', 'Arial', 'sans-serif'],
       },
       backgroundImage: {
         bgmain: "url('@/assets/images/backgroundMain.png')",
+        bgmainV: "url('@/assets/images/backgroundMainV.png')",
         bgsub: "url('@/assets/images/backgroundSub.png')",
+        bgsubV: "url('@/assets/images/backgroundSubV.png')",
         bookframe: "url('@/assets/images/frame.png')",
         bookframeV: "url('@/assets/images/frameV.png')",
       },
@@ -36,6 +39,10 @@ export default {
       sm: { min: '600px', max: '819px' },
       md: { min: '820px', max: '1023px' },
       lg: { min: '1080px' },
+    },
+    outlineWidth: {
+      8: '8px',
+      15: '15px',
     },
   },
 

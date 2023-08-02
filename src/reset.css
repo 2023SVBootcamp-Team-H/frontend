@@ -150,3 +150,7 @@ table {
   font-family: 'HahmletSemiBold';
   src: url('./assets/fonts/HahmletSemiBold.ttf');
 }
+@font-face {
+  font-family: 'Wizard';
+  src: url('./assets/fonts/HalloweenWitchesScript-51VlL.otf');
+}
