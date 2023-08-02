@@ -104,49 +104,38 @@ function InputWorryT({ props: onClickToggleModal }: any) {
     console.log(data);
     try {
       setLoading(1);
-
       const response = await fetch('https://www.witchsmind.com/worry/sse/', {
         // const response = await fetch('http://127.0.0.1:8000/worry/sse', {
         method: 'POST',
         headers: {
-          Connection: 'keep-alive',
-          'Cache-Control': 'no-cache',
-          'Content-Type': 'text/event-stream',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
+
+      const answer = await response.json();
+      const answerId = answer.answer_id;
+      // 0보다 작으면 error message 출력
+      if (answerId <= 0) {
+        console.log(answer.message);
+        return;
+      }
+      const answerList = answer.message;
+      console.log(answerList);
       setLoading(2);
-      const reader = response
-        .body!.pipeThrough(new TextDecoderStream())
-        .getReader();
       let str = '';
-      while (true) {
-        // value: 서버에서 보내는 딸깍 단어, done: 스트림이 끝났는지 여부
-        const { value, done } = await reader.read();
-        console.log(value);
-        // 스트림이 끝나면 break! (여기서 하고싶은 작업을 한다.. ex: 로딩창 제거)
-        if (value === 'stop') {
-          const { value, done } = await reader.read();
-          setAnswerId(Number(value!));
-          break;
-        }
-        // error 발생시 에러 메시지를 읽어올수있다.
-        if (value === 'error_message') {
-          const { value, done } = await reader.read();
-          const error_message = value;
-          console.log(error_message);
-          break;
-        }
-        if (done === true) break;
-        str += value;
+      for (let i = 0; i < answerList.length; i += 1) {
+        str += answerList[i];
+        // eslint-disable-next-line no-promise-executor-return
+        await new Promise((resolve) => setTimeout(resolve, 30));
         setMessage(str);
       }
+
       setLoading(3);
-      //
-      // setMessage(response.data.message);
-      // setAnswerId(response.data.answerid);
+
+      setAnswerId(answerId);
+      console.log(answer.answer_id);
     } catch (e) {
-      console.log(e);
       setLoading(0);
     }
   };
