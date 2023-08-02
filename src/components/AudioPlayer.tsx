@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useRecoilState } from 'recoil';
 // eslint-disable-next-line
 import { audioState, audioVolumeState } from '@/Recoil';
+import bgsound from '../assets/audio/bgsound.mp3';
 
 function AudioPlayer(): JSX.Element {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -23,7 +24,7 @@ function AudioPlayer(): JSX.Element {
     <div>
       <audio id="audio" loop ref={audioRef}>
         <track kind="captions" />
-        <source src="./src/assets/audio/bgsound.mp3" type="audio/mpeg" />
+        <source src={bgsound} type="audio/mpeg" />
       </audio>
       {/* <button type="button" onClick={togglePlay}>
         {isPlaying ? (
