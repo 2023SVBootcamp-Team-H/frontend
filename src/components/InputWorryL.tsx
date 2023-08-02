@@ -127,9 +127,9 @@ function InputWorryL({ props: onClickToggleModal }: any) {
         await new Promise((resolve) => setTimeout(resolve, 30));
         setMessage(str);
       }
-
       if (answerId > 0) {
         setAnswerId(answerId);
+        setLoading(3);
       }
     } catch (e) {
       setLoading(0);

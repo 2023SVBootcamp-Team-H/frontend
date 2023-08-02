@@ -128,6 +128,7 @@ function InputWorryT({ props: onClickToggleModal }: any) {
 
       if (answerId > 0) {
         setAnswerId(answerId);
+        setLoading(3);
       }
     } catch (e) {
       setLoading(0);
