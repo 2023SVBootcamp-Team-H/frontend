@@ -12,7 +12,7 @@ function AudioButton(): JSX.Element {
   }
 
   return (
-    <div id="7000" className="absolute top-5 right-7">
+    <div id="7000" className="absolute top-5 right-7  justify-center">
       <span
         className="flex justify-center items-center  space-x-2
         font-ham text-[#E1C0E7] "
@@ -29,7 +29,7 @@ function AudioButton(): JSX.Element {
         </span>
       </span>
       <input
-        className="w-[100px]"
+        className="w-[82px] mt-1 accent-[#d091dc]"
         type="range"
         onChange={(e) => {
           setVolume(Number(e.target.value) / 100);
