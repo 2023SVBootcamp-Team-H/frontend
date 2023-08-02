@@ -31,6 +31,8 @@ import {
   widthPerHeight2,
 } from '@/assets/values';
 import 'animate.css';
+import bookSound from '../assets/audio/book-in.mp3';
+import booksori from '../assets/audio/booksori-sarasvatl.mp3';
 
 function FlipBook() {
   const [isOpenModal, setOpenModal] = useState<boolean>(() => false);
@@ -41,7 +43,7 @@ function FlipBook() {
   const flipPageRef = useRef<ReactFlipPage | null>(null);
 
   const flipSound = () => {
-    const audio = new Audio('./src/assets/audio/booksori-sarasvatl.mp3');
+    const audio = new Audio(booksori);
     audio.volume = volume;
     if (isPlaying) {
       audio.play();
@@ -56,6 +58,18 @@ function FlipBook() {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
   };
+  let isBookin = false;
+  useEffect(() => {
+    if (!isBookin) {
+      const audio = new Audio(bookSound);
+      audio.volume = volume;
+      if (isPlaying) {
+        audio.play();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        isBookin = true;
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
