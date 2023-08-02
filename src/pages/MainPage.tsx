@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useResetRecoilState, useRecoilState } from 'recoil';
 import {
@@ -15,8 +15,6 @@ import {
   nicknameState,
   windowWidthState,
   windowHeightState,
-  audioVolumeState,
-  audioState,
 } from '@/Recoil';
 import popularbuttonwhiteIcon from '@/assets/images/popularbuttonwhiteIcon.svg';
 import MainPageV from '@/pagesV/MainPageV';
@@ -37,13 +35,9 @@ function MainPage() {
   const [, setPersonality] = useRecoilState(personalityState); // 선택된 인격
   const [, setAnswerId] = useRecoilState(answeridState);
   const [, setInputNickname] = useRecoilState(nicknameState);
-  const [volume, setVolume] = useRecoilState(audioVolumeState);
-  const [isPlaying] = useRecoilState(audioState);
 
   const [windowWidth, setWindowWidth] = useRecoilState(windowWidthState);
   const [windowHeight, setWindowHeight] = useRecoilState(windowHeightState);
-
-  const audioRef = useRef(null);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -63,15 +57,6 @@ function MainPage() {
   setLike(0);
   setInputNickname('');
 
-  const BookSound = () => {
-    const audio = new Audio('./src/assets/audio/book-in.mp3');
-    console.log('play');
-    audio.volume = volume;
-    if (isPlaying) {
-      audio.play();
-    }
-  };
-
   function toBook() {
     // react-router-dom을 이용한 글쓰기 페이지로 이동 함수
     navigate('/book');
@@ -83,14 +68,11 @@ function MainPage() {
   }
 
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume;
-    }
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
     // genderStatistics();
-  }, [isPlaying, volume]);
+  }, []);
 
   return {
     ...(windowWidth > 600 ? (
@@ -99,10 +81,6 @@ function MainPage() {
     relative flex justify-center items-end"
       >
         <AudioButton />
-        <audio id="audio" loop ref={audioRef}>
-          <track kind="captions" />
-          <source src="./src/assets/audio/bgsound.mp3" type="audio/mpeg" />
-        </audio>
         <div className=" flex justify-center items-stretch ">
           <div className=" self-end pb-6">
             {/* 로고 텍스트 */}
@@ -119,10 +97,7 @@ function MainPage() {
                 className="text-white font-ham-l rounded-full bg-mainbutton px-12 py-4 text-[20px] mt-8
           transition hover:bg-[#F8ECFF] hover:text-mainbutton
           animate-pulse "
-                onClick={() => {
-                  toBook();
-                  BookSound();
-                }}
+                onClick={() => toBook()}
                 type="button"
               >
                 고민 해결하러 가기
