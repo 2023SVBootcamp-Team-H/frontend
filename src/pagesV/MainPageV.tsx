@@ -60,15 +60,7 @@ function MainPage() {
       className=" bg-dontworrybg bg-bgsubV bg-cover min-h-screen bg-no-repeat bg-center
     relative flex justify-center items-end"
     >
-      <span
-        className="absolute top-5 right-7 flex justify-end items-center  space-x-2
-        font-ham text-[#E1C0E7] "
-      >
-        <span>BGM</span>
-        <span>
-          <AudioButton />
-        </span>
-      </span>
+      <AudioButton />
 
       <div className=" flex justify-center items-stretch ">
         <div className=" self-end pb-[30%]">
