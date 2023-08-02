@@ -262,7 +262,24 @@ function InputWorryL({ props: onClickToggleModal }: any) {
           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
         disabled={isSubmitButtonDisabled()}
-        onClick={() => {
+        onClick={async () => {
+          if (inputNickname === '' || activeButton === null) {
+            setMessage('');
+            setLoading(4);
+            const answerList =
+              inputNickname === ''
+                ? '닉네임을 입력해주세요.'
+                : '등록된 카테고리가 없습니다.';
+
+            let str = '';
+            for (let i = 0; i < answerList.length; i += 1) {
+              str += answerList[i];
+              // eslint-disable-next-line no-promise-executor-return
+              await new Promise((resolve) => setTimeout(resolve, 30));
+              setMessage(str);
+            }
+            return;
+          }
           handleWorrySubmit();
           setCharacterButton(showPersonality);
         }}
