@@ -101,7 +101,6 @@ function InputWorryT({ props: onClickToggleModal }: any) {
       category: activeButton,
       personality,
     };
-    console.log(data);
     try {
       setLoading(1);
       const response = await fetch('https://www.witchsmind.com/worry/sse/', {
@@ -114,15 +113,11 @@ function InputWorryT({ props: onClickToggleModal }: any) {
       });
 
       const answer = await response.json();
+      const answerList = answer.message;
       const answerId = answer.answer_id;
       // 0보다 작으면 error message 출력
-      if (answerId <= 0) {
-        console.log(answer.message);
-        return;
-      }
-      const answerList = answer.message;
-      console.log(answerList);
-      setLoading(2);
+      answerId <= 0 ? setLoading(4) : setLoading(2);
+
       let str = '';
       for (let i = 0; i < answerList.length; i += 1) {
         str += answerList[i];
@@ -131,10 +126,10 @@ function InputWorryT({ props: onClickToggleModal }: any) {
         setMessage(str);
       }
 
-      setLoading(3);
-
-      setAnswerId(answerId);
-      console.log(answer.answer_id);
+      if (answerId > 0) {
+        setAnswerId(answerId);
+        setLoading(3);
+      }
     } catch (e) {
       setLoading(0);
     }
@@ -267,10 +262,26 @@ function InputWorryT({ props: onClickToggleModal }: any) {
           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
         disabled={isSubmitButtonDisabled()}
-        onClick={() => {
-          // handleWorrySubmit();
-          // setCharacterButton(showPersonality);
-          setLoading(3);
+        onClick={async () => {
+          if (inputNickname === '' || activeButton === null) {
+            setMessage('');
+            setLoading(4);
+            const answerList =
+              inputNickname === ''
+                ? '닉네임을 입력해주세요.'
+                : '등록된 카테고리가 없습니다.';
+
+            let str = '';
+            for (let i = 0; i < answerList.length; i += 1) {
+              str += answerList[i];
+              // eslint-disable-next-line no-promise-executor-return
+              await new Promise((resolve) => setTimeout(resolve, 30));
+              setMessage(str);
+            }
+            return;
+          }
+          handleWorrySubmit();
+          setCharacterButton(showPersonality);
         }}
       >
         {showPersonality === ''

@@ -24,10 +24,6 @@ function SelectCharR({ onSelectChar }: SelectCharRProps) {
   const handleCharButtonClick = (character: string) => {
     setPersonality(character);
     onSelectChar(character);
-    console.log('캐릭터');
-    console.log(character);
-    console.log('인격');
-    console.log(personality);
   };
 
   // const [currentClick, setCurrentClick] = useState(null);

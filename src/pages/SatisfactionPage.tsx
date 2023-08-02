@@ -48,7 +48,6 @@ function SatisfactionPage() {
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
-    console.log(windowWidth, windowHeight);
   };
 
   const navigate = useNavigate(); // react-router-dom useNavigate 사용 선언
@@ -80,22 +79,16 @@ function SatisfactionPage() {
     const totalRating = axios
       .get('https://www.witchsmind.com/api/rank/')
       .then((response) => {
-        console.log(response);
         setTotalData(response.data.result);
         setAvgData(response.data.result);
       });
-    // console.log(totalRating.data.result);
     // setTotalData(totalRating.data.result);
     const genderRating = axios
       .get('https://www.witchsmind.com/api/rank/gender/')
       .then((response) => {
-        console.log(response);
         setFemaleData(response.data.result.female);
-        console.log(femaleData);
         setMaleData(response.data.result.male);
-        console.log(maleData);
       });
-    // console.log(genderRating);
   }
 
   useEffect(() => {

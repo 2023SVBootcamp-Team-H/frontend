@@ -17,8 +17,6 @@ function StatisticsT() {
   const [totalData, setTotalData] = useRecoilState(dataState);
   const [femaleData, setFemaleData] = useRecoilState(femaleState);
   const [maleData, setMaleData] = useRecoilState(maleState);
-  // console.log(totaldata);
-  // useEffect(() => {}, []);
 
   return (
     <div className="h-[100%] w-[100%] flex justify-center  items-center font-ham-m   ">
