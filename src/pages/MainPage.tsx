@@ -42,7 +42,6 @@ function MainPage() {
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
-    console.log(windowWidth, windowHeight);
   };
 
   // recoil state 초기화

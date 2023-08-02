@@ -65,13 +65,11 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
       likes: like,
     };
     try {
-      console.log(data);
       const res = await axios.post(
         'https://www.witchsmind.com/api/answer/',
         data,
       );
       // const res = await axios.post('http://127.0.0.1:8000/answer/', data);
-      console.log(res);
     } catch (e) {
       console.log(e);
     }

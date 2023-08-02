@@ -103,7 +103,6 @@ function InputWorryL({ props: onClickToggleModal }: any) {
       category: activeButton,
       personality,
     };
-    console.log(data);
     try {
       setLoading(1);
       const response = await fetch('https://www.witchsmind.com/worry/sse/', {

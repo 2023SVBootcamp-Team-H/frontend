@@ -81,8 +81,6 @@ type BarChartPropsType = {
 };
 
 export function BarChartV({ avgData }: BarChartPropsType) {
-  console.log('avgData');
-  console.log(avgData);
   // const likeList =
   //   avgData.length === 0 ? [] : avgData.map((item) => item.personality_name);
   // const avgList = avgData.length === 0 ? [] : avgData.map((item) => item.avg);

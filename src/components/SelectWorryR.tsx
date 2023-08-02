@@ -35,7 +35,6 @@ function Button({
       type="button"
       onClick={() => {
         handleButtonClick(buttonText);
-        console.log(buttonText);
       }}
       className={`flex flex-col items-center justify-center opacity-70${
         activeButton === category ? 'text-textTitle opacity-100' : ''
