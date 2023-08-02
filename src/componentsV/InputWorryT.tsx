@@ -126,10 +126,9 @@ function InputWorryT({ props: onClickToggleModal }: any) {
         setMessage(str);
       }
 
-      if (answerId < 0) {
-        return;
+      if (answerId > 0) {
+        setAnswerId(answerId);
       }
-      setAnswerId(answerId);
     } catch (e) {
       setLoading(0);
     }

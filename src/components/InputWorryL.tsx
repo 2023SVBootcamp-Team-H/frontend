@@ -116,15 +116,11 @@ function InputWorryL({ props: onClickToggleModal }: any) {
       });
 
       const answer = await response.json();
+      const answerList = answer.message;
       const answerId = answer.answer_id;
       // 0보다 작으면 error message 출력
-      if (answerId <= 0) {
-        console.log(answer.message);
-        return;
-      }
-      const answerList = answer.message;
-      console.log(answerList);
-      setLoading(2);
+      answerId <= 0 ? setLoading(4) : setLoading(2);
+
       let str = '';
       for (let i = 0; i < answerList.length; i += 1) {
         str += answerList[i];
@@ -133,10 +129,9 @@ function InputWorryL({ props: onClickToggleModal }: any) {
         setMessage(str);
       }
 
-      setLoading(3);
-
-      setAnswerId(answerId);
-      console.log(answer.answer_id);
+      if (answerId > 0) {
+        setAnswerId(answerId);
+      }
     } catch (e) {
       setLoading(0);
     }
