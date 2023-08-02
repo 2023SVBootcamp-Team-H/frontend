@@ -10,6 +10,7 @@ import {
   audioVolumeState,
   audioState,
 } from '@/Recoil';
+import SatisfactionModalV from '@/componentsV/SatisfactionModalV';
 import BookPageThreeV from '@/pagesV/BookPageThreeV';
 import BookPageTwoV from '@/pagesV/BookPageTwoV';
 import BookPageV from '@/pagesV/BookPageV';
@@ -29,6 +30,7 @@ import {
   widthPerHeight,
   widthPerHeight2,
 } from '@/assets/values';
+import 'animate.css';
 
 function FlipBook() {
   const [isOpenModal, setOpenModal] = useState<boolean>(() => false);
@@ -162,11 +164,23 @@ function FlipBook() {
       flex justify-center items-center`}
     >
       <AudioButton />
-      {isOpenModal ? (
-        <SatisfactionModal onClickToggleModal={onClickToggleModal} />
-      ) : null}
+      {(() => {
+        let ret = null;
+        if (isOpenModal) {
+          if (windowWidth - widthGap > maxWidth) {
+            ret = <SatisfactionModal onClickToggleModal={onClickToggleModal} />;
+          } else {
+            ret = (
+              <SatisfactionModalV onClickToggleModal={onClickToggleModal} />
+            );
+          }
+        } else {
+          ret = null;
+        }
+        return ret;
+      })()}
       <FlipPage
-        style={{ 'outline-width': windowWidth > 600 ? '1.2vw' : '1.8vw' }}
+        style={{ outlineWidth: windowWidth > 600 ? '1.2vw' : '1.8vw' }}
         disableSwipe
         flipOnTouch
         orientation={windowWidth < limitWidth ? 'vertical' : 'horizontal'} // 삼항연산자
@@ -190,7 +204,7 @@ function FlipBook() {
         })()}
         // style={{ width: '80vw' }}
         className={`animate__animated animate__jackInTheBox 
-        outline-pageOutline outline rounded-md "`}
+        outline-pageOutline outline rounded-md `}
       >
         {windowWidth > limitWidth ? pages : pagesV}
       </FlipPage>

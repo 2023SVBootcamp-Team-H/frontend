@@ -17,7 +17,7 @@ interface Props {
   onClickToggleModal: () => void;
 }
 
-function SatisfactionModal({ onClickToggleModal }: Props) {
+function SatisfactionModalV({ onClickToggleModal }: Props) {
   const [showPersonality, setShowPersonality] =
     useRecoilState(personalityState);
 
@@ -82,7 +82,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
       <div>
         {/* 모달창  */}
         <div
-          className="-translate-y-1/2-translate-y-1/2 fixed top-44 right-1/2 z-50 box-border h-[50%] 
+          className="-translate-y-1/2-translate-y-1/2 fixed top-44 right-1/2 z-50 box-border h-[40%] 
           w-4/5 translate-x-1/2  transform rounded-[20px] bg-satisfactionBack
           sm:w-2/5 sm:h-48
           "
@@ -93,7 +93,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
             bg-satisfactionTop rounded-t-[20px] h-[20%]
             "
           >
-            <div className="text-[1.5vw] font-ham-m ">
+            <div className="text-[4vw] font-ham-m ">
               <span className="text-[#7A44A4]">{`${showPersonality}`}</span>
               <span>의 답변을 평가해주세요!</span>
             </div>
@@ -108,12 +108,12 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
 
           <div className="h-[80%] ">
             {/* 별점 */}
-            <div className=" flex flex-col justify-around items-center h-full">
+            <div className=" flex flex-col justify-center items-center h-full space-y-[10vw]">
               <div className="flex justify-center items-center space-x-3 ">
                 {renderStars()}
               </div>
               {/* 버튼 */}
-              <div className="flex w-full h-[20%] justify-center drop-shadow-md space-x-4 text-[1vw]">
+              <div className="flex flex-col w-full h-auto items-center justify-center drop-shadow-md text-[1vw] space-y-[5vw]">
                 <button
                   type="button"
                   onClick={() => {
@@ -121,7 +121,7 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
                     toMain();
                   }}
                   className="font-ham text-[#A16AE7] 
-                bg-satisfactionButton w-[30%] h-[100%] rounded-full "
+                bg-satisfactionButton w-[60%] py-[4%] rounded-full "
                 >
                   평가 완료
                 </button>
@@ -132,7 +132,8 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
                     toStatistics();
                   }}
                   className="flex justify-center items-center font-ham text-[#A16AE7] 
-                bg-satisfactionButton w-[70%]  rounded-full"
+                bg-satisfactionButton   rounded-full
+                w-[60%] py-[3%]  "
                 >
                   인기있는 인격 순위 보러가기
                   <img
@@ -164,4 +165,4 @@ function SatisfactionModal({ onClickToggleModal }: Props) {
   );
 }
 
-export default SatisfactionModal;
+export default SatisfactionModalV;
