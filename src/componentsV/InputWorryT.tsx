@@ -35,6 +35,8 @@ function InputWorryT({ props: onClickToggleModal }: any) {
   const [message, setMessage] = useRecoilState(messageState);
   const [answerId, setAnswerId] = useRecoilState(answeridState);
 
+  const [isButton, setIsButton] = useState(false);
+
   const [CharacterButton, setCharacterButton] =
     useRecoilState(charcterButtonState);
 
@@ -91,6 +93,7 @@ function InputWorryT({ props: onClickToggleModal }: any) {
   };
 
   const handleWorrySubmit = async () => {
+    setIsButton(true);
     const data = {
       gender,
       age,
@@ -129,6 +132,7 @@ function InputWorryT({ props: onClickToggleModal }: any) {
       if (answerId > 0) {
         setAnswerId(answerId);
         setLoading(3);
+        setIsButton(false);
       }
     } catch (e) {
       setLoading(0);
@@ -261,7 +265,7 @@ function InputWorryT({ props: onClickToggleModal }: any) {
         className={`w-[60%] text-center py-[0.8vw] text-[0.8vw]
           bg-[#E5DDD2] bg-opacity-20 rounded-[29px] shadow-inner border border-stone-400
           text-stone-600 font-ham-m ${getSubmitButtonOpacityClass()}`}
-        disabled={isSubmitButtonDisabled()}
+        disabled={isButton || isSubmitButtonDisabled()}
         onClick={async () => {
           if (inputNickname === '' || activeButton === null) {
             setMessage('');
