@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -34,6 +34,7 @@
     }
   },
   "rules": {
+    "import/no-cycle": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -136,7 +137,7 @@
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }], // console.log() 금지
     "dot-notation": "error", // 가능하다면 dot notation 사용
     "@typescript-eslint/no-unused-vars": [
-      "error",
+      "off",
       { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
     ],
     "react/react-in-jsx-scope": "off",
@@ -149,6 +150,15 @@
     "no-useless-escape": "off",
     "react/no-array-index-key": "off",
     "no-param-reassign": "off",
-    "react/no-danger": "off"
+    "react/no-danger": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "no-await-in-loop": "off",
+    "no-shadow": "off",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ]
   }
 }
